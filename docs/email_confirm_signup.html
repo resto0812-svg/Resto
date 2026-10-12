@@ -1,0 +1,43 @@
+{{ if eq .Data.locale "en" }}
+<h2>Welcome to Resto</h2>
+<p>Enter this code in the Resto app to activate your account:</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>The code is valid for 1 hour. If you did not create a Resto account, simply ignore this email.</p>
+{{ else if eq .Data.locale "de" }}
+<h2>Willkommen bei Resto</h2>
+<p>Geben Sie diesen Code in der Resto-App ein, um Ihr Konto zu aktivieren:</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>Der Code ist 1 Stunde gültig. Wenn Sie kein Resto-Konto erstellt haben, ignorieren Sie diese E-Mail.</p>
+{{ else if eq .Data.locale "es" }}
+<h2>Bienvenido a Resto</h2>
+<p>Introduzca este código en la aplicación Resto para activar su cuenta:</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>El código es válido durante 1 hora. Si no ha creado una cuenta Resto, ignore este correo.</p>
+{{ else if eq .Data.locale "pt" }}
+<h2>Bem-vindo ao Resto</h2>
+<p>Introduza este código na aplicação Resto para ativar a sua conta:</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>O código é válido durante 1 hora. Se não criou uma conta Resto, ignore este e-mail.</p>
+{{ else if eq .Data.locale "ar" }}
+<div dir="rtl">
+<h2>مرحبًا بك في Resto</h2>
+<p>أدخل هذا الرمز في تطبيق Resto لتفعيل حسابك:</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>الرمز صالح لمدة ساعة واحدة. إذا لم تنشئ حسابًا في Resto، تجاهل هذه الرسالة.</p>
+</div>
+{{ else if eq .Data.locale "zh-Hans" }}
+<h2>欢迎使用 Resto</h2>
+<p>请在 Resto 应用中输入以下验证码以激活您的账户：</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>验证码 1 小时内有效。如果您没有创建 Resto 账户，请忽略此邮件。</p>
+{{ else if eq .Data.locale "zh-Hant" }}
+<h2>歡迎使用 Resto</h2>
+<p>請在 Resto 應用程式中輸入以下驗證碼以啟用您的帳戶：</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>驗證碼 1 小時內有效。如果您沒有建立 Resto 帳戶，請忽略此郵件。</p>
+{{ else }}
+<h2>Bienvenue sur Resto</h2>
+<p>Saisissez ce code dans l'application Resto pour activer votre compte :</p>
+<p style="font-size:32px;font-weight:bold;letter-spacing:8px;color:#8C2D3A">{{ .Token }}</p>
+<p>Le code est valable 1 heure. Si vous n'avez pas créé de compte Resto, ignorez cet e-mail.</p>
+{{ end }}

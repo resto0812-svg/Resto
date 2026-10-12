@@ -1,0 +1,7 @@
+# Traductions de l'interface (gen-l10n). Français = source.
+# Ajouter une langue = ajouter un fichier lib/l10n/app_<code>.arb.
+arb-dir: lib/l10n
+template-arb-file: app_fr.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+nullable-getter: false

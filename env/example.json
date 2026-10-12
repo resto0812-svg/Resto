@@ -1,0 +1,13 @@
+{
+  "APP_ENV": "development",
+  "SUPABASE_URL": "https://VOTRE-PROJET.supabase.co",
+  "SUPABASE_ANON_KEY": "cle-publique-uniquement--jamais-la-service-role",
+  "FIREBASE_PROJECT_ID": "",
+  "FIREBASE_MESSAGING_SENDER_ID": "",
+  "FIREBASE_API_KEY": "",
+  "FIREBASE_ANDROID_APP_ID": "",
+  "FIREBASE_WEB_APP_ID": "",
+  "FIREBASE_WEB_API_KEY": "",
+  "FIREBASE_AUTH_DOMAIN": "",
+  "FIREBASE_VAPID_KEY": ""
+}

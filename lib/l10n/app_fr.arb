@@ -1,0 +1,3252 @@
+{
+  "@@locale": "fr",
+  "appName": "Resto",
+  "environmentBanner": "Environnement : {env}",
+  "@environmentBanner": {
+    "placeholders": {
+      "env": {
+        "type": "String"
+      }
+    }
+  },
+  "configMissingTitle": "Configuration manquante",
+  "configMissingBody": "L'adresse du serveur et la clé publique ne sont pas fournies (fichier env/<environnement>.json).",
+  "languageLabel": "Langue",
+  "systemLanguage": "Langue de l'appareil",
+  "pendingSyncEvents": "{count, plural, =0{Tout est synchronisé} =1{1 opération en attente} other{{count} opérations en attente}}",
+  "@pendingSyncEvents": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorNotAuthenticated": "Veuillez vous connecter.",
+  "errorForbidden": "Vous n'avez pas le droit d'effectuer cette action.",
+  "errorOwnerOnly": "Seul un propriétaire peut effectuer cette action.",
+  "errorRateLimited": "Trop de demandes. Réessayez plus tard.",
+  "errorInvalidTimezone": "Fuseau horaire inconnu.",
+  "errorInvalidRole": "Rôle inconnu.",
+  "errorInvalidEmail": "Adresse e-mail invalide.",
+  "errorInvalidBranch": "Établissement introuvable dans cette organisation.",
+  "errorBranchesRequired": "Choisissez au moins un établissement.",
+  "errorAlreadyMember": "Cette personne fait déjà partie de l'organisation.",
+  "errorInvitationInvalid": "Invitation invalide, expirée ou déjà utilisée.",
+  "errorInvitationWrongAccount": "Cette invitation est destinée à une autre adresse e-mail.",
+  "errorLastOwner": "L'organisation doit garder au moins un propriétaire.",
+  "errorMembershipRevoked": "Ce membre a été retiré de l'organisation.",
+  "errorNetwork": "Connexion impossible. Vérifiez votre accès à Internet.",
+  "errorUnknown": "Une erreur inattendue s'est produite.",
+  "welcomeTitle": "Bienvenue sur Resto",
+  "signInTitle": "Connexion",
+  "signIn": "Se connecter",
+  "signOut": "Se déconnecter",
+  "createAccount": "Créer un compte",
+  "forgotPassword": "Mot de passe oublié",
+  "email": "E-mail",
+  "password": "Mot de passe",
+  "passwordConfirm": "Confirmer le mot de passe",
+  "passwordTooShort": "8 caractères minimum.",
+  "passwordsDiffer": "Les mots de passe ne correspondent pas.",
+  "passwordChanged": "Mot de passe modifié.",
+  "newPasswordTitle": "Nouveau mot de passe",
+  "changePassword": "Changer le mot de passe",
+  "displayName": "Nom",
+  "fieldRequired": "Champ obligatoire",
+  "verifyEmailTitle": "Confirmer votre adresse e-mail",
+  "codeSentTo": "Code envoyé à {email}.",
+  "@codeSentTo": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "code": "Code",
+  "verify": "Valider",
+  "resendCode": "Renvoyer le code",
+  "codeResent": "Un nouveau code a été envoyé.",
+  "sendCode": "Envoyer le code",
+  "authInvalidCredentials": "E-mail ou mot de passe incorrect.",
+  "authEmailNotConfirmed": "Adresse e-mail non confirmée.",
+  "authUserExists": "Un compte existe déjà avec cette adresse.",
+  "authWeakPassword": "Mot de passe trop faible.",
+  "authCodeInvalid": "Code invalide ou expiré.",
+  "authSamePassword": "Le nouveau mot de passe doit être différent de l'ancien.",
+  "errorDuplicate": "Cette valeur existe déjà.",
+  "errorInvalidHours": "Horaires invalides.",
+  "createRestaurant": "Créer mon restaurant",
+  "joinTeam": "Rejoindre une équipe",
+  "organizationName": "Nom de l'organisation",
+  "brandNameOptional": "Nom commercial (facultatif)",
+  "branchNameOptional": "Nom de l'établissement (facultatif)",
+  "country": "Pays",
+  "currency": "Monnaie",
+  "timezone": "Fuseau horaire",
+  "defaultLanguage": "Langue principale",
+  "city": "Ville",
+  "create": "Créer",
+  "invitationCode": "Code d'invitation",
+  "join": "Rejoindre",
+  "navBranches": "Établissements",
+  "navTeam": "Équipe",
+  "navAudit": "Journal",
+  "navAccount": "Compte",
+  "switchOrganization": "Changer d'organisation",
+  "orgSuspended": "Organisation suspendue : consultation uniquement.",
+  "newBranch": "Nouvel établissement",
+  "noBranches": "Aucun établissement.",
+  "branchInfo": "Informations",
+  "openingHours": "Horaires",
+  "floor": "Salle",
+  "name": "Nom",
+  "addressLine1": "Adresse",
+  "addressLine2": "Complément d'adresse",
+  "region": "Région",
+  "postalCode": "Code postal",
+  "phone": "Téléphone",
+  "offeredLanguages": "Langues proposées",
+  "published": "Visible par les clients",
+  "archived": "Archivé",
+  "readOnly": "Consultation uniquement",
+  "save": "Enregistrer",
+  "saved": "Enregistré.",
+  "cancel": "Annuler",
+  "confirm": "Confirmer",
+  "close": "Fermer",
+  "edit": "Modifier",
+  "retry": "Réessayer",
+  "closed": "Fermé",
+  "addSlot": "Ajouter une plage",
+  "opensAt": "Ouverture",
+  "closesAt": "Fermeture",
+  "nextDay": "lendemain",
+  "weekday1": "Lundi",
+  "weekday2": "Mardi",
+  "weekday3": "Mercredi",
+  "weekday4": "Jeudi",
+  "weekday5": "Vendredi",
+  "weekday6": "Samedi",
+  "weekday7": "Dimanche",
+  "newArea": "Nouvelle zone",
+  "areaName": "Zone",
+  "noAreas": "Aucune zone pour l'instant.",
+  "newTable": "Nouvelle table",
+  "tableLabel": "Nom de la table",
+  "seats": "Places",
+  "active": "Actif",
+  "inactive": "désactivé",
+  "tablesCount": "{count, plural, =0{aucune table} =1{1 table} other{{count} tables}}",
+  "@tablesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "seatsCount": "{count, plural, =1{1 place} other{{count} places}}",
+  "@seatsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "invite": "Inviter",
+  "role": "Rôle",
+  "allBranches": "Tous les établissements",
+  "pendingInvitations": "Invitations en attente",
+  "expiresOn": "Expire le {date}",
+  "@expiresOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "revoke": "Retirer",
+  "revokeConfirm": "Retirer {name} de l'organisation ?",
+  "@revokeConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "changeRole": "Modifier le rôle",
+  "you": "vous",
+  "invitationCreatedTitle": "Invitation créée",
+  "invitationCreatedBody": "Transmettez ce code à {email}. Il est valable 7 jours et ne fonctionne qu'avec cette adresse.",
+  "@invitationCreatedBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "invitationMessage": "Vous êtes invité(e) à rejoindre « {organization} » sur Resto. Créez votre compte avec cette adresse e-mail, puis saisissez ce code dans « Rejoindre une équipe » : {code}",
+  "@invitationMessage": {
+    "placeholders": {
+      "organization": {
+        "type": "String"
+      },
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "copyMessage": "Copier le message",
+  "copied": "Copié.",
+  "roleOwner": "Propriétaire",
+  "roleAdmin": "Administrateur",
+  "roleManager": "Responsable",
+  "roleAccountant": "Comptable",
+  "roleCashier": "Caissier",
+  "roleStockKeeper": "Magasinier",
+  "roleWaiter": "Serveur",
+  "roleKitchen": "Cuisine / bar",
+  "roleViewer": "Lecteur",
+  "loadMore": "Afficher plus",
+  "noEntries": "Aucune opération enregistrée.",
+  "actionInsert": "Création",
+  "actionUpdate": "Modification",
+  "actionDelete": "Suppression",
+  "entityOrganization": "Organisation",
+  "entityMembership": "Membre",
+  "entityInvitation": "Invitation",
+  "entityBrand": "Marque",
+  "entityBranch": "Établissement",
+  "entityArea": "Zone",
+  "entityTable": "Table",
+  "navMenus": "Menus",
+  "brand": "Marque",
+  "category": "Catégorie",
+  "description": "Description",
+  "newCategory": "Nouvelle catégorie",
+  "kindFood": "Plat",
+  "kindDrink": "Boisson",
+  "kindOther": "Autre",
+  "selectionRule": "Choix : de {min} à {max}",
+  "@selectionRule": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "allergens": "Allergènes",
+  "allergenGluten": "Gluten",
+  "allergenCrustaceans": "Crustacés",
+  "allergenEggs": "Œufs",
+  "allergenFish": "Poisson",
+  "allergenPeanuts": "Arachides",
+  "allergenSoybeans": "Soja",
+  "allergenMilk": "Lait",
+  "allergenNuts": "Fruits à coque",
+  "allergenCelery": "Céleri",
+  "allergenMustard": "Moutarde",
+  "allergenSesame": "Sésame",
+  "allergenSulphites": "Sulfites",
+  "allergenLupin": "Lupin",
+  "allergenMolluscs": "Mollusques",
+  "translations": "Traductions",
+  "soldOut": "Épuisé",
+  "channelDefault": "Prix de base",
+  "channelDineIn": "Sur place",
+  "channelTakeaway": "À emporter",
+  "channelDelivery": "Livraison",
+  "otherChannels": "Prix par canal",
+  "noPrice": "Sans prix",
+  "errorInvalidPrice": "Prix invalide.",
+  "errorCurrencyLocked": "La monnaie ne peut plus changer : des prix existent déjà dans cet établissement.",
+  "entityItem": "Article",
+  "entityVariant": "Variante",
+  "entityModifier": "Supplément",
+  "entityPrice": "Prix",
+  "menuOfBranch": "Menu de l'établissement",
+  "menuEmptyTitle": "Votre menu est vide",
+  "menuEmptyHint": "Commencez par créer une catégorie (par exemple Plats, Boissons, Desserts), puis ajoutez-y vos articles avec leur prix.",
+  "categoryExamples": "Ex. : Plats, Boissons, Desserts",
+  "descriptionOptional": "Description (facultatif)",
+  "visibleOnMenu": "Visible sur la carte",
+  "hidden": "masqué",
+  "addItem": "Ajouter un article",
+  "addItemIn": "Ajouter un article dans « {category} »",
+  "@addItemIn": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "notSoldHere": "Pas vendu dans cet établissement",
+  "itemName": "Nom de l'article",
+  "itemExamples": "Ex. : Ndolé, Poulet DG, Jus de bissap",
+  "priceTitle": "Prix",
+  "priceAt": "Prix à {branch}",
+  "@priceAt": {
+    "placeholders": {
+      "branch": {
+        "type": "String"
+      }
+    }
+  },
+  "price": "Prix",
+  "severalSizes": "Cet article existe en plusieurs tailles ou formats",
+  "sizeName": "Taille / format",
+  "sizeExamples": "Ex. : Petite, 33 cl",
+  "addSize": "Ajouter une taille",
+  "removeSize": "Retirer cette taille",
+  "sizeNameRequired": "Donnez un nom à chaque taille (par exemple Petite, Grande).",
+  "samePriceEverywhere": "Ce prix s'appliquera dans tous les établissements choisis ci-dessous ; vous pourrez l'adapter ensuite pour chacun.",
+  "salesTitle": "Vente",
+  "soldAt": "Vendu à {branch}",
+  "@soldAt": {
+    "placeholders": {
+      "branch": {
+        "type": "String"
+      }
+    }
+  },
+  "soldOutToday": "Épuisé pour le moment",
+  "optionsForItem": "Options proposées au client",
+  "manageOptions": "Gérer les options",
+  "noOptionsYet": "Aucune option pour l'instant (accompagnement, cuisson, sauce…).",
+  "optionsTitle": "Options et suppléments",
+  "optionsIntro": "Une option est un choix que le client fait en commandant un article : son accompagnement, la cuisson, une sauce, un supplément payant…",
+  "newOptionGroup": "Nouvelle option",
+  "optionGroupName": "Nom de l'option",
+  "optionGroupExamples": "Ex. : Accompagnement, Cuisson, Piment",
+  "customerMust": "Le client :",
+  "ruleRequiredOne": "doit faire 1 choix (obligatoire)",
+  "ruleOptionalOne": "peut faire 1 choix (facultatif)",
+  "ruleOptionalMany": "peut faire plusieurs choix (facultatif)",
+  "ruleRequiredMany": "doit faire au moins 1 choix, plusieurs possibles",
+  "choices": "Choix proposés",
+  "choicePriceHint": "Laissez le prix vide ou à 0 si le choix est gratuit. Prix pour {branch}.",
+  "@choicePriceHint": {
+    "placeholders": {
+      "branch": {
+        "type": "String"
+      }
+    }
+  },
+  "choiceName": "Choix",
+  "choiceExamples": "Ex. : Miondo, Riz",
+  "extraPrice": "Prix en plus",
+  "addChoice": "Ajouter un choix",
+  "removeChoice": "Retirer ce choix",
+  "choicesRequired": "Ajoutez au moins un choix.",
+  "navOrders": "Commandes",
+  "openOrdersCount": "{count, plural, =0{Aucune commande en cours} =1{1 commande en cours} other{{count} commandes en cours}}",
+  "@openOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refresh": "Actualiser",
+  "newTakeaway": "Vente à emporter",
+  "takeawayOrders": "À emporter en cours",
+  "orderNumber": "Commande n° {number}",
+  "@orderNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesAgo": "{count, plural, =0{à l'instant} =1{il y a 1 min} other{il y a {count} min}}",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noTablesYet": "Aucune table : créez la salle dans Établissements → Salle. Les ventes à emporter restent possibles.",
+  "tableFree": "Libre",
+  "toSend": "Articles à envoyer en cuisine",
+  "tableName": "Table {label}",
+  "@tableName": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "menuTab": "Carte",
+  "ticketTab": "Commande ({count})",
+  "@ticketTab": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allCategories": "Tout",
+  "nothingToSell": "Rien à vendre pour l'instant : ajoutez des articles avec un prix dans Menus.",
+  "fromPrice": "dès {price}",
+  "@fromPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "itemSoldOut": "{name} est épuisé.",
+  "@itemSoldOut": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "emptyTicket": "Touchez un article de la carte pour l'ajouter.",
+  "less": "Un de moins",
+  "more": "Un de plus",
+  "cancelLine": "Annuler cette ligne",
+  "cancelOrder": "Annuler la commande",
+  "cancelOrderConfirm": "Annuler cette commande ? Rien n'est encore parti en cuisine.",
+  "reason": "Motif",
+  "subtotal": "Sous-total",
+  "taxLine": "Taxe ({rate} %)",
+  "@taxLine": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "total": "Total",
+  "taxIncluded": "dont taxe {rate} % : {amount}",
+  "@taxIncluded": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "sendToKitchen": "Envoyer en cuisine ({count})",
+  "@sendToKitchen": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sentToKitchen": "{count, plural, =1{1 article envoyé en cuisine} other{{count} articles envoyés en cuisine}}",
+  "@sentToKitchen": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "prepPending": "À envoyer",
+  "prepSent": "En cuisine",
+  "prepPreparing": "En préparation",
+  "prepReady": "Prêt",
+  "prepServed": "Servi",
+  "prepCancelled": "Annulé",
+  "noneOption": "Aucun",
+  "kitchenNote": "Remarque pour la cuisine (facultatif)",
+  "kitchenNoteExamples": "Ex. : sans oignon, bien cuit",
+  "quantity": "Quantité",
+  "addForPrice": "Ajouter · {price}",
+  "@addForPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "taxTitle": "Taxe",
+  "taxRate": "Taux de taxe",
+  "taxRateHint": "Ex. : 19,25 (0 si aucune taxe)",
+  "pricesIncludeTax": "Les prix affichés incluent la taxe",
+  "errorInvalidTaxRate": "Taux invalide (de 0 à 99,999).",
+  "errorOrderNotOpen": "Cette commande n'est plus ouverte.",
+  "errorItemUnavailable": "Cet article n'est pas disponible dans cet établissement.",
+  "errorNoPrice": "Cet article n'a pas de prix dans cet établissement.",
+  "errorOptionsInvalid": "Les options choisies ne respectent pas les règles de l'article.",
+  "errorInvalidQuantity": "Quantité invalide.",
+  "errorItemAlreadySent": "Cette ligne est déjà partie en cuisine : elle ne peut plus être modifiée.",
+  "errorReasonRequired": "Indiquez un motif.",
+  "errorInvalidOrder": "Commande invalide.",
+  "errorBranchInactive": "Cet établissement est archivé.",
+  "navCash": "Caisse",
+  "amount": "Montant",
+  "registerClosed": "fermée",
+  "openRegisterShort": "Ouvrir la caisse",
+  "openRegister": "Ouvrir {name}",
+  "@openRegister": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "openingFloat": "Fond de caisse (monnaie de départ)",
+  "registerOpenSince": "ouverte depuis {time}",
+  "@registerOpenSince": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "expectedCash": "Espèces attendues : {amount}",
+  "@expectedCash": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cashBreakdown": "Fond {float} · entrées {inAmount} · sorties {outAmount}",
+  "@cashBreakdown": {
+    "placeholders": {
+      "float": {
+        "type": "String"
+      },
+      "inAmount": {
+        "type": "String"
+      },
+      "outAmount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentsCount": "{count, plural, =0{aucun paiement} =1{1 paiement} other{{count} paiements}}",
+  "@paymentsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cashIn": "Entrée d'argent",
+  "cashOut": "Sortie d'argent",
+  "movementExamples": "Ex. : achat de gaz, apport de monnaie",
+  "closeRegister": "Fermer la caisse",
+  "countedCash": "Espèces comptées dans le tiroir",
+  "countInfo": "Comptez les billets et pièces du tiroir, fond de caisse compris.",
+  "countResult": "Résultat du comptage",
+  "countedCashValue": "Compté : {amount}",
+  "@countedCashValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "noDifference": "Aucun écart",
+  "differenceValue": "Écart : {amount}",
+  "@differenceValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "awaitingValidation": "Un responsable doit maintenant valider cette clôture.",
+  "awaitingValidationTitle": "Clôtures à valider",
+  "validateClosing": "Valider la clôture",
+  "validate": "Valider",
+  "comment": "Commentaire",
+  "closedSessions": "Dernières clôtures",
+  "dailyReport": "Rapport du jour",
+  "previousDay": "Jour précédent",
+  "nextDayButton": "Jour suivant",
+  "salesTotal": "Chiffre d'affaires",
+  "ordersClosedCount": "Commandes payées",
+  "averageTicket": "Ticket moyen",
+  "taxCollected": "Taxe collectée",
+  "paymentsReceived": "Encaissements par moyen de paiement",
+  "ordersStillOpen": "{count, plural, =0{aucune commande en cours} =1{1 commande encore en cours} other{{count} commandes encore en cours}}",
+  "@ordersStillOpen": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ordersCancelledCount": "{count, plural, =0{aucune annulée} =1{1 annulée} other{{count} annulées}}",
+  "@ordersCancelledCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "linesCancelledCount": "{count, plural, =0{aucune ligne annulée} =1{1 ligne annulée} other{{count} lignes annulées}}",
+  "@linesCancelledCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refundsTotal": "remboursé : {amount}",
+  "@refundsTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "topItems": "Articles les plus vendus",
+  "payCash": "Espèces",
+  "payCard": "Carte",
+  "payMobileMoney": "Mobile Money",
+  "payTransfer": "Virement",
+  "payOther": "Autre",
+  "collectPayment": "Encaisser",
+  "collectAmount": "Encaisser {amount}",
+  "@collectAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "amountDue": "Reste à payer : {amount}",
+  "@amountDue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "splitBill": "Partager l'addition",
+  "splitParts": "{count, plural, =1{1 part} other{{count} parts}}",
+  "@splitParts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "amountToCollect": "Montant encaissé",
+  "cashTendered": "Somme remise par le client (facultatif)",
+  "changeToGive": "À rendre : {amount}",
+  "@changeToGive": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "giveChange": "Monnaie à rendre",
+  "transactionReference": "N° de transaction (facultatif)",
+  "manualPaymentNote": "Carte et Mobile Money : vérifiez que le paiement est bien reçu avant de valider.",
+  "openCashFirst": "Ouvrez d'abord la caisse (section Caisse).",
+  "chooseRegister": "Choisir la caisse",
+  "orderPaidClosed": "Commande payée et clôturée.",
+  "paid": "Déjà payé",
+  "remainingDue": "Reste à payer",
+  "voided": "annulé",
+  "voidPayment": "Annuler ce paiement",
+  "orderClosed": "Commande payée et clôturée",
+  "orderCancelled": "Commande annulée",
+  "errorNoOpenSession": "Aucune caisse ouverte pour cet encaissement.",
+  "errorSessionAlreadyOpen": "Cette caisse est déjà ouverte.",
+  "errorRegisterInactive": "Cette caisse est désactivée.",
+  "errorInvalidAmount": "Montant invalide.",
+  "errorNotEnoughCash": "Il n'y a pas assez d'espèces dans la caisse.",
+  "errorOverpayment": "Le montant dépasse le reste à payer.",
+  "errorTenderedTooLow": "La somme remise est inférieure au montant.",
+  "errorOrderHasPayments": "Cette commande a déjà des paiements : annulez ou remboursez-les d'abord.",
+  "errorPendingLines": "Des articles n'ont pas encore été envoyés en cuisine.",
+  "errorNotFullyPaid": "La commande n'est pas entièrement payée.",
+  "errorSessionNotCounted": "Cette caisse n'a pas encore été comptée.",
+  "navKitchen": "Cuisine",
+  "allStations": "Tous les postes",
+  "stations": "Postes de préparation",
+  "newStation": "Nouveau poste",
+  "stationExamples": "Ex. : Cuisine, Bar, Grillades",
+  "stationPrepares": "Ce poste prépare :",
+  "kitchenEmpty": "Rien à préparer pour le moment.",
+  "allReady": "Tout est prêt",
+  "markServed": "Servi",
+  "errorInvalidStatus": "Ce changement d'état n'est pas possible.",
+  "navStock": "Stocks",
+  "stockLevels": "État des stocks",
+  "ingredientsTab": "Ingrédients",
+  "recipesTab": "Fiches techniques",
+  "inventoriesTab": "Inventaires",
+  "movementsTab": "Mouvements",
+  "stockValue": "Valeur du stock : {amount}",
+  "@stockValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "lowStockCount": "{count, plural, =1{1 ingrédient sous le seuil} other{{count} ingrédients sous le seuil}}",
+  "@lowStockCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "actionsAt": "Mouvements à : {location}",
+  "@actionsAt": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "newLocation": "Nouvel emplacement",
+  "locationExamples": "Ex. : Chambre froide, Cave, Cuisine",
+  "chooseLocation": "Choisir l'emplacement",
+  "toLocation": "Vers l'emplacement",
+  "noIngredientsYet": "Aucun ingrédient pour l'instant : ajoutez-en dans l'onglet Ingrédients.",
+  "alertAt": "alerte à {qty}",
+  "@alertAt": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "avgCost": "coût moyen {amount} / {unit}",
+  "@avgCost": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "alertThreshold": "Seuil d'alerte",
+  "alertBelow": "Alerter en dessous de",
+  "produce": "Produire",
+  "adjustmentQuantity": "Correction (+ ou −)",
+  "unitCost": "Coût par {unit}",
+  "@unitCost": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "unitPiece": "pièce",
+  "unitDozen": "douzaine",
+  "newIngredient": "Nouvel ingrédient",
+  "ingredientExamples": "Ex. : Poulet, Huile de palme, Bouteille de Coca 33 cl",
+  "ingredientKind": "Type",
+  "stockUnit": "Unité de stock",
+  "ingRaw": "Matière première",
+  "ingBeverage": "Boisson",
+  "ingPackaging": "Emballage",
+  "ingSemiFinished": "Préparation maison",
+  "ingConsumable": "Consommable",
+  "mvOpening": "Stock initial",
+  "mvReceipt": "Entrée (achat)",
+  "mvSale": "Vente",
+  "mvProductionIn": "Production",
+  "mvProductionOut": "Utilisé en production",
+  "mvWaste": "Perte / casse",
+  "mvStaffMeal": "Repas du personnel",
+  "mvReturn": "Retour fournisseur",
+  "mvTransferIn": "Transfert reçu",
+  "mvTransferOut": "Transfert",
+  "mvAdjustment": "Ajustement",
+  "mvInventory": "Écart d'inventaire",
+  "recipesIntro": "Une fiche technique indique les ingrédients d'un plat : le stock baisse automatiquement à chaque vente payée et le coût de revient est calculé.",
+  "noRecipe": "Sans fiche",
+  "costPrice": "Coût de revient : {amount}",
+  "@costPrice": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "sellingPrice": "prix {amount}",
+  "@sellingPrice": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "marginPercent": "marge {percent} %",
+  "@marginPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "recipeOf": "Fiche : {name}",
+  "@recipeOf": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "portions": "Nombre de portions",
+  "yieldQuantity": "Quantité obtenue",
+  "ingredient": "Ingrédient",
+  "wastePercent": "Perte",
+  "removeLine": "Retirer la ligne",
+  "addIngredientLine": "Ajouter un ingrédient",
+  "preparationNotes": "Notes de préparation (facultatif)",
+  "newInventory": "Nouvel inventaire",
+  "inventoriesIntro": "Un inventaire compare le stock compté au stock calculé ; les écarts sont enregistrés après validation par un responsable.",
+  "inventoryValidated": "{count, plural, =0{validé, aucun écart} =1{validé, 1 écart} other{validé, {count} écarts}}",
+  "@inventoryValidated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryDraft": "{count, plural, =0{en cours, rien de compté} =1{en cours, 1 ligne comptée} other{en cours, {count} lignes comptées}}",
+  "@inventoryDraft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryOf": "Inventaire : {location}",
+  "@inventoryOf": {
+    "placeholders": {
+      "location": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryHint": "Saisissez ce que vous comptez réellement. Les lignes laissées vides ne sont pas modifiées.",
+  "inventoryDifference": "écart {qty}",
+  "@inventoryDifference": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "search": "Rechercher",
+  "validateInventory": "Valider l'inventaire",
+  "validateInventoryConfirm": "Valider cet inventaire ? Les écarts seront enregistrés dans le stock et l'inventaire ne pourra plus être modifié.",
+  "inventoryAdjustments": "{count, plural, =0{Inventaire validé : aucun écart} =1{Inventaire validé : 1 écart enregistré} other{Inventaire validé : {count} écarts enregistrés}}",
+  "@inventoryAdjustments": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorInvalidMovement": "Mouvement de stock invalide.",
+  "errorUnitLocked": "L'unité de stock ne peut plus changer : cet ingrédient a déjà des mouvements.",
+  "errorNoRecipe": "Cette préparation n'a pas de fiche technique.",
+  "errorInvalidRecipe": "Fiche technique invalide : vérifiez les ingrédients, quantités et unités.",
+  "errorInventoryClosed": "Cet inventaire est déjà validé.",
+  "navGroupService": "Service",
+  "navGroupManagement": "Gestion",
+  "navGroupOrganization": "Organisation",
+  "navPurchases": "Achats",
+  "navExpenses": "Dépenses",
+  "navReports": "Rapports",
+  "invoicesTab": "Factures",
+  "purchaseOrdersTab": "Bons de commande",
+  "receiptsTab": "Réceptions",
+  "suppliersTab": "Fournisseurs",
+  "newSupplier": "Nouveau fournisseur",
+  "noSuppliersYet": "Aucun fournisseur pour l'instant. Ajoutez vos fournisseurs habituels (marché, grossiste, brasserie…).",
+  "addSupplierFirst": "Ajoutez d'abord un fournisseur (onglet Fournisseurs).",
+  "contactName": "Personne à contacter",
+  "taxId": "N° contribuable / fiscal",
+  "paymentTermsLabel": "Délai de paiement",
+  "days": "jours",
+  "paymentTerms": "{days, plural, =1{paiement à 1 jour} other{paiement à {days} jours}}",
+  "@paymentTerms": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "supplier": "Fournisseur",
+  "supplierOptional": "Fournisseur (facultatif)",
+  "newPurchaseOrder": "Nouveau bon de commande",
+  "noPurchaseOrders": "Aucun bon de commande. Un bon de commande prépare un achat ; à la livraison, « Réceptionner » fait entrer la marchandise en stock.",
+  "poNumber": "Bon n° {number}",
+  "@poNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "poDraft": "brouillon",
+  "poSent": "envoyé",
+  "poPartial": "reçu en partie",
+  "poReceived": "reçu",
+  "poCancelled": "annulé",
+  "poMarkSent": "Marquer comme envoyé",
+  "poReceive": "Réceptionner",
+  "poCancel": "Annuler le bon",
+  "cancelPoConfirm": "Annuler ce bon de commande ?",
+  "expectedOn": "livraison prévue le {date}",
+  "@expectedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "expectedDateOptional": "Date de livraison prévue (facultatif)",
+  "unitPrice": "Prix par {unit}",
+  "@unitPrice": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "totalAmount": "Total : {amount}",
+  "@totalAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "newReceipt": "Nouvelle réception",
+  "receiptsIntro": "Une réception enregistre la marchandise livrée : le stock et le coût moyen sont mis à jour automatiquement.",
+  "receiveOrder": "Réception du bon n° {number}",
+  "@receiveOrder": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "receiptHint": "Indiquez les quantités réellement livrées et leur prix ; elles entrent en stock dès l'enregistrement.",
+  "deliveryNoteNumber": "N° du bon de livraison (facultatif)",
+  "recordReceipt": "Enregistrer la réception",
+  "receiptRecorded": "Réception enregistrée : le stock est à jour.",
+  "newInvoice": "Nouvelle facture",
+  "invoicesIntro": "Enregistrez ici les factures de vos fournisseurs pour suivre ce que vous leur devez et vos paiements.",
+  "supplierDebt": "Total dû aux fournisseurs : {amount}",
+  "@supplierDebt": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "dueOn": "échéance le {date}",
+  "@dueOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "remaining": "reste {amount}",
+  "@remaining": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "invoicePaid": "payée",
+  "invoiceCancelled": "annulée",
+  "invoiceNumber": "N° de facture du fournisseur",
+  "invoiceDateValue": "Facture du {date}",
+  "@invoiceDateValue": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dueDateOptional": "Échéance (facultatif : délai du fournisseur)",
+  "amountExclTax": "Montant hors taxe",
+  "taxAmount": "Taxe",
+  "linkedReceipts": "Réceptions concernées",
+  "attachDocument": "Joindre un justificatif (PDF ou photo)",
+  "fileTooLarge": "Fichier trop volumineux (5 Mo au plus).",
+  "viewDocument": "Voir le justificatif",
+  "payInvoice": "Payer",
+  "cancelInvoice": "Annuler la facture",
+  "paidFromRegister": "Payé avec l'argent de la caisse",
+  "newExpense": "Nouvelle dépense",
+  "noExpenses": "Aucune dépense ce mois-ci.",
+  "previousMonth": "Mois précédent",
+  "nextMonth": "Mois suivant",
+  "includingTax": "dont taxe {amount}",
+  "@includingTax": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelledLabel": "annulée",
+  "cancelExpense": "Annuler la dépense",
+  "expenseExamples": "Ex. : facture d'électricité d'octobre, réparation du congélateur",
+  "amountInclTax": "Montant payé",
+  "includedTaxOptional": "Dont taxe (facultatif)",
+  "expRent": "Loyer",
+  "expElectricity": "Électricité",
+  "expWater": "Eau",
+  "expGas": "Gaz",
+  "expSalaries": "Salaires",
+  "expTransport": "Transport",
+  "expMaintenance": "Entretien et réparations",
+  "expMarketing": "Publicité",
+  "expSupplies": "Fournitures",
+  "expTaxes": "Impôts et taxes",
+  "expBankFees": "Frais bancaires",
+  "expOther": "Autres",
+  "periodToday": "Aujourd'hui",
+  "periodLast7": "7 derniers jours",
+  "periodMonth": "Ce mois-ci",
+  "periodLastMonth": "Mois dernier",
+  "periodCustom": "Autre période…",
+  "salesInclTax": "Chiffre d'affaires TTC",
+  "salesExclTax": "Chiffre d'affaires HT",
+  "collected": "Encaissements",
+  "costOfSales": "Coût des ventes",
+  "grossMargin": "Marge brute",
+  "lossesValue": "Pertes et écarts",
+  "expensesExclTax": "Dépenses HT",
+  "estimatedResult": "Résultat estimé",
+  "purchasesValue": "Achats (factures HT)",
+  "supplierDebtShort": "Dû aux fournisseurs",
+  "ordersCountShort": "{count, plural, =0{aucune commande} =1{1 commande} other{{count} commandes}}",
+  "@ordersCountShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ruleSales": "Total des commandes payées et clôturées sur la période (date de service).",
+  "ruleSalesHt": "Chiffre d'affaires TTC moins la taxe collectée.",
+  "ruleCollected": "Argent réellement reçu sur la période, tous moyens confondus, moins les remboursements. Peut différer du chiffre d'affaires (acomptes, commandes encore ouvertes).",
+  "ruleCogs": "Valeur des ingrédients consommés par les ventes, d'après les fiches techniques et le coût moyen d'achat. Les plats sans fiche n'y figurent pas.",
+  "ruleGrossMargin": "Chiffre d'affaires HT moins le coût des ventes.",
+  "ruleLosses": "Valeur des pertes, repas du personnel, ajustements et écarts d'inventaire.",
+  "ruleExpenses": "Dépenses enregistrées sur la période, hors taxe (les dépenses annulées sont exclues).",
+  "ruleResult": "Marge brute moins pertes et dépenses. Estimation de gestion, sans les amortissements ni les charges non saisies : ce n'est pas un résultat comptable.",
+  "rulePurchases": "Factures fournisseurs (hors taxe) datées dans la période. Les achats entrent en stock : ils ne sont pas une charge tant qu'ils ne sont pas consommés.",
+  "ruleDebt": "Reste à payer sur les factures fournisseurs ouvertes, à ce jour.",
+  "expensesByCategory": "Dépenses par catégorie (HT)",
+  "resultDisclaimer": "Ces chiffres sont calculés à partir des opérations enregistrées dans Resto : ventes, encaissements, consommations théoriques, dépenses. Survolez ⓘ pour la règle de chaque indicateur.",
+  "exportsTitle": "Exports (fichiers CSV, ouvrables dans Excel)",
+  "exportOrders": "Commandes",
+  "exportPayments": "Paiements",
+  "exportExpenses": "Dépenses",
+  "exportDownloaded": "Fichier téléchargé.",
+  "exportCopied": "Données copiées : collez-les dans un tableur.",
+  "marginsByItem": "Marge par plat",
+  "marginsHint": "{count, plural, =0{Tous les plats vendus ont une fiche technique.} =1{1 plat n'a pas encore de fiche technique (Stocks → Fiches techniques).} other{{count} plats n'ont pas encore de fiche technique (Stocks → Fiches techniques).}}",
+  "@marginsHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errorInvalidPurchase": "Achat incomplet : vérifiez le fournisseur, les ingrédients, quantités, unités et prix.",
+  "errorPurchaseNotDraft": "Ce bon de commande n'est plus modifiable.",
+  "errorDuplicateInvoice": "Cette facture de ce fournisseur est déjà enregistrée.",
+  "errorInvoiceNotOpen": "Cette facture n'est plus ouverte.",
+  "errorInvoiceHasPayments": "Cette facture a des paiements : annulez-les d'abord.",
+  "errorInvalidExpense": "Dépense incomplète : catégorie, description et montant sont obligatoires ; la taxe ne peut dépasser le montant.",
+  "errorInvalidAttachment": "Justificatif refusé.",
+  "errorInvalidPeriod": "Période invalide.",
+  "errorBelowMinimum": "Montant minimum de commande non atteint.",
+  "errorDeliveryUnavailable": "Livraison impossible : vérifiez l'adresse et le téléphone, ou choisissez « À emporter ».",
+  "errorInvalidImage": "Photo refusée (format ou emplacement non valide).",
+  "errorNotFound": "Introuvable.",
+  "errorOnlineOrdersClosed": "Ce restaurant ne prend pas de commandes en ligne pour le moment.",
+  "errorTooLateToCancel": "Trop tard : le restaurant a déjà pris la commande en charge.",
+  "errorReviewNotAllowed": "Avis impossible : seule une commande payée, de moins de 30 jours, peut être notée une fois.",
+  "errorReservationsClosed": "Ce restaurant ne prend pas de réservations en ligne.",
+  "errorInvalidPartySize": "Nombre de personnes non accepté pour une réservation en ligne.",
+  "errorInvalidReservationTime": "Horaire non valide : au moins 15 minutes à l'avance et au plus 90 jours.",
+  "errorInvalidReservation": "Réservation incomplète : nom, téléphone et nombre de personnes sont nécessaires.",
+  "errorTablesRequired": "Choisissez au moins une table.",
+  "errorNotEnoughSeats": "Pas assez de places sur les tables choisies.",
+  "errorTableUnavailable": "Cette table est déjà réservée sur ce créneau.",
+  "errorPromotionUnavailable": "Promotion ou code non valable.",
+  "errorPromotionLimit": "Ce client a déjà utilisé cette promotion le nombre de fois permis.",
+  "errorPromotionAlreadyApplied": "Déjà appliquée à cette commande.",
+  "errorNotEnoughPoints": "Pas assez de points de fidélité.",
+  "errorAddressRequired": "Adresse de livraison obligatoire.",
+  "errorTableBusy": "Cette table a déjà une commande en cours.",
+  "errorBetween": "Entre {min} et {max}",
+  "@errorBetween": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "notPublishedHint": "Cet établissement n'est pas encore visible des clients : activez « Publié » dans l'onglet Informations.",
+  "onlineOrdersTitle": "Commandes en ligne",
+  "acceptOnlineOrders": "Accepter les commandes des clients",
+  "acceptOnlineOrdersHint": "Depuis l'application, le site ou le QR code des tables. Chaque commande arrive dans « Commandes » pour être acceptée.",
+  "acceptDelivery": "Proposer la livraison",
+  "deliveryFee": "Frais de livraison",
+  "minimumOrder": "Commande minimum",
+  "reservationsTitle": "Réservations",
+  "acceptReservations": "Accepter les réservations en ligne",
+  "reservationDuration": "Durée d'une réservation",
+  "minutesShort": "min",
+  "maxPartySize": "Personnes au maximum",
+  "publicProfileTitle": "Fiche publique du restaurant",
+  "publicDescription": "Présentation",
+  "publicDescriptionHint": "Ex. : cuisine camerounaise généreuse, poissons braisés du jour, terrasse ombragée.",
+  "cuisinesLabel": "Types de cuisine",
+  "cuisinesHint": "Ex. : africaine, grillades, fruits de mer (séparés par des virgules)",
+  "priceLevel": "Gamme de prix",
+  "publicPageTitle": "Page du restaurant",
+  "publicPageHint": "À partager (réseaux sociaux, WhatsApp) ou à imprimer : les clients y voient la carte et commandent.",
+  "copyLink": "Copier le lien",
+  "sourcePhone": "Par téléphone",
+  "sourceQr": "QR code de la table",
+  "sourceApp": "Application client",
+  "sourcePartner": "Partenaire",
+  "sourceStaff": "Prise en salle",
+  "stageToValidate": "À valider",
+  "stageDraft": "Pas encore envoyée",
+  "stageCooking": "En préparation",
+  "stageReady": "Prête à servir",
+  "stageReadyTakeaway": "Prête à remettre",
+  "stageReadyDelivery": "Prête pour le livreur",
+  "stageToPay": "À encaisser",
+  "stageDone": "Terminée",
+  "stageCancelled": "Annulée",
+  "handToCustomer": "Remise au client",
+  "handToCourier": "Remise au livreur",
+  "guestsCount": "{count, plural, =1{1 personne} other{{count} personnes}}",
+  "@guestsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "forTime": "Pour {time}",
+  "@forTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "billTitle": "Addition",
+  "thankYou": "Merci de votre visite !",
+  "kdsToPrepare": "{count, plural, =0{Rien à préparer} =1{1 commande à préparer} other{{count} commandes à préparer}}",
+  "@kdsToPrepare": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kdsLate": "{count, plural, =1{1 en retard} other{{count} en retard}}",
+  "@kdsLate": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kdsReadyCount": "{count, plural, =0{Aucune prête} =1{1 prête} other{{count} prêtes}}",
+  "@kdsReadyCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kdsTickets": "Tickets",
+  "kdsSummary": "Cumul",
+  "kdsFullScreen": "Plein écran (mode cuisine)",
+  "kdsFlowHint": "Les commandes envoyées par la salle arrivent ici avec une sonnerie. Touchez un article pour le passer « en préparation » puis « prêt ». « Tout est prêt » prévient aussitôt les serveurs.",
+  "kdsReadyStrip": "Prêtes — la salle est prévenue (colonne « Prêtes à servir »), en attente de service",
+  "kdsStart": "Commencer",
+  "kdsWaitingService": "attend depuis {time}",
+  "@kdsWaitingService": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "kdsRecall": "Rappeler (pas encore prête)",
+  "serviceAndCustomers": "Service & clients",
+  "serviceSettingsTitle": "Service",
+  "targetPrepTime": "Temps de préparation visé",
+  "targetPrepTimeHint": "Au-delà, la commande passe en rouge (en retard).",
+  "payFirstTakeaway": "Vente à emporter : faire payer avant la préparation",
+  "payFirstTakeawayHint": "Le bouton « Encaisser puis envoyer » apparaît sur les commandes à emporter.",
+  "tableOccupied": "Occupée",
+  "tableReservedNow": "Réservée maintenant",
+  "tableReservedSoon": "Réservée bientôt",
+  "reservedAt": "Réservée à {time}",
+  "@reservedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "acceptWithDelay": "Accepter la commande",
+  "scheduledFor": "Demandée pour {time}",
+  "@scheduledFor": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "delayAnnounced": "Dans combien de temps sera-t-elle prête ? Le client est prévenu.",
+  "orderAccepted": "Commande acceptée : elle part en préparation.",
+  "rejectOrder": "Refuser la commande",
+  "rejectReasonHint": "Ex. : rupture de poisson, livreur indisponible",
+  "paymentDone": "Paiement enregistré.",
+  "partialPaymentDone": "Paiement partiel enregistré.",
+  "announcedDelay": "Délai annoncé au client",
+  "promisedFor": "Promise pour {time}",
+  "@promisedFor": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "heldShort": "à suivre",
+  "moreItems": "{count, plural, =1{+ 1 autre article} other{+ {count} autres articles}}",
+  "@moreItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paidShort": "Payée",
+  "partlyPaid": "Payée en partie",
+  "notPaid": "Non payée",
+  "reject": "Refuser",
+  "accept": "Accepter",
+  "sendShort": "Envoyer",
+  "fireNext": "Lancer la suite",
+  "collectShort": "Encaisser",
+  "columnInProgress": "En cours",
+  "columnReady": "Prêtes à servir",
+  "columnToValidateHint": "Les commandes passées par les clients (application, site, QR code des tables) arrivent ici avec une sonnerie. Acceptez-les en annonçant un délai.",
+  "columnInProgressHint": "Commandes prises et en préparation. « Envoyer » fait partir les articles en cuisine et au bar.",
+  "columnReadyHint": "Quand la cuisine appuie sur « Tout est prêt », la commande arrive ici (avec une sonnerie) : à servir à table, à remettre au client ou au livreur.",
+  "columnToPayHint": "Tout est servi : il reste à encaisser. Une fois payée, la commande se termine et la table se libère.",
+  "allOrders": "Toutes",
+  "searchOrderHint": "N°, client, table, téléphone",
+  "chooseTable": "Choisissez la table",
+  "tableHasOrder": "Cette table a déjà une commande en cours : elle va s'ouvrir.",
+  "tableReservationWarning": "Attention : réservée à {time} · {name} · {count} pers.",
+  "@tableReservationWarning": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "guestsLabel": "Nombre de personnes",
+  "receivedByPhone": "Commande reçue par téléphone",
+  "customerName": "Nom du client",
+  "customerNameOptional": "Nom du client (facultatif)",
+  "phoneOptional": "Téléphone (facultatif)",
+  "deliveryAddress": "Adresse de livraison",
+  "deliveryAddressHint": "Quartier, rue, repère (ex. : Bonamoussadi, près de la pharmacie)",
+  "deliveryInstructions": "Indications pour le livreur",
+  "deliveryInstructionsHint": "Ex. : immeuble jaune, 2e étage, appeler en arrivant",
+  "deliveryTime": "Heure de livraison",
+  "pickupTime": "Heure de retrait",
+  "asap": "Dès que possible",
+  "atFixedTime": "À une heure précise",
+  "atTime": "À {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "newOrder": "Nouvelle commande",
+  "orderTypeQuestion": "Quel type de commande ?",
+  "dineInHint": "Client installé à une table",
+  "takeawayHint": "Le client repart avec sa commande",
+  "deliveryHint": "Livrée à une adresse",
+  "orderNote": "Remarque sur la commande (facultatif)",
+  "orderNoteHint": "Ex. : anniversaire, client pressé, allergie aux arachides",
+  "continueToMenu": "Continuer : choisir les plats",
+  "moveTable": "Changer de table",
+  "noFreeTable": "Aucune table libre pour le moment.",
+  "print": "Imprimer",
+  "printKitchenTicket": "Bon de préparation (cuisine)",
+  "printBill": "Addition (client)",
+  "orderHistory": "Historique de la commande",
+  "searchDish": "Rechercher un plat, une boisson…",
+  "noResults": "Aucun résultat.",
+  "groupToSend": "À envoyer",
+  "groupHeld": "À suivre (envoyés plus tard)",
+  "groupCooking": "En préparation",
+  "groupReady": "Prêts à servir",
+  "groupServed": "Servis",
+  "groupCancelled": "Annulés",
+  "collectThenSend": "Encaisser {amount} puis envoyer",
+  "@collectThenSend": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "fireNextCount": "Lancer la suite ({count})",
+  "@fireNextCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "customerOrderToValidate": "Commande d'un client à valider",
+  "customerOrderToValidateHint": "Vérifiez les articles puis acceptez (avec un délai) ou refusez. Le client est prévenu.",
+  "payFirstHint": "Vente à emporter : paiement avant la préparation (réglage de l'établissement).",
+  "addedByCustomer": "ajouté par le client",
+  "sendWithOrder": "Envoyer avec le reste",
+  "holdForLater": "Mettre « à suivre » (envoyé plus tard)",
+  "openedAt": "ouverte à {time}",
+  "@openedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "fromReservation": "Clients installés (réservation)",
+  "editOrderDetails": "Modifier les informations",
+  "evOpened": "Commande ouverte",
+  "evItemAdded": "Ajout : {item}",
+  "@evItemAdded": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "evItemUpdated": "Article modifié",
+  "evItemRemoved": "Article retiré",
+  "evSent": "{count, plural, =1{Envoyé en cuisine (1 article)} other{Envoyé en cuisine ({count} articles)}}",
+  "@evSent": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "evItemCancelled": "Article annulé",
+  "evCancelled": "Commande annulée",
+  "evClosed": "Commande terminée",
+  "evPayment": "Paiement de {amount}",
+  "@evPayment": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "evRefund": "Remboursement",
+  "evDetailsUpdated": "Informations modifiées",
+  "itemsTotal": "Articles",
+  "removeDiscount": "Retirer la réduction",
+  "addDiscount": "Ajouter une réduction",
+  "applyPromotion": "Appliquer une promotion",
+  "promoCode": "Code promo",
+  "promoCodeHint": "Ex. : BIENVENUE10",
+  "manualDiscount": "Remise (geste commercial)",
+  "useLoyalty": "Utiliser les points de fidélité",
+  "noActivePromotion": "Aucune promotion en cours. Créez-en dans « Clients & fidélité ».",
+  "inPercent": "En %",
+  "inAmount": "En montant",
+  "percentValue": "Pourcentage",
+  "manualDiscountHint": "Ex. : attente trop longue, client fidèle",
+  "apply": "Appliquer",
+  "allAreas": "Toutes les zones",
+  "planView": "Plan",
+  "cardsView": "Cartes",
+  "editFloor": "Modifier la salle",
+  "done": "Terminé",
+  "floorEmptyTitle": "Créez votre salle",
+  "floorEmptyHint": "Ajoutez d'abord vos zones (Salle, Terrasse, VIP…), puis vos tables avec le nom que vous voulez (Table 1, VIP 1, Bar 2…). Vous verrez ensuite en direct quelles tables sont libres, occupées ou réservées.",
+  "editFloorHint": "Faites glisser les tables pour reproduire votre salle. Touchez une table pour la renommer, changer ses places ou sa forme.",
+  "noTablesInArea": "Aucune table dans cette zone : « Modifier la salle » puis « Nouvelle table ».",
+  "newOrderAtTable": "Nouvelle commande à cette table",
+  "openOrder": "Ouvrir la commande",
+  "reservationsToday": "Réservations du jour",
+  "reserveTable": "Réserver",
+  "noReservationToday": "Aucune réservation aujourd'hui pour cette table.",
+  "tableQrCode": "QR code de la table",
+  "tableQrHint": "À imprimer et poser sur la table : le client scanne, voit la carte avec les photos et commande. La commande arrive dans « À valider ».",
+  "areaNameHint": "Ex. : Salle, Terrasse, VIP, Étage",
+  "tableLabelHint": "Ex. : Table 1, VIP 1, Bar 2",
+  "tableShape": "Forme",
+  "shapeSquare": "Carrée",
+  "shapeRound": "Ronde",
+  "shapeRect": "Rectangulaire",
+  "resRequested": "Demandée",
+  "resConfirmed": "Confirmée",
+  "resSeated": "Installés",
+  "resCompleted": "Terminée",
+  "resNoShow": "Absents",
+  "resDeclined": "Refusée",
+  "resCancelled": "Annulée",
+  "reservationRequests": "{count, plural, =1{1 demande de réservation à traiter} other{{count} demandes de réservation à traiter}}",
+  "@reservationRequests": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reservationRequestsHint": "Demandes faites par les clients en ligne : confirmez en choisissant les tables, ou refusez avec un motif. Le client est prévenu.",
+  "declineReservation": "Refuser la réservation",
+  "confirmReservation": "Confirmer",
+  "reservationsCount": "{count, plural, =0{Aucune réservation} =1{1 réservation} other{{count} réservations}}",
+  "@reservationsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "coversCount": "{count, plural, =0{0 couvert} =1{1 couvert} other{{count} couverts}}",
+  "@coversCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noReservationsDay": "Aucune réservation ce jour-là.",
+  "today": "Aujourd'hui",
+  "timelineView": "Planning",
+  "listView": "Liste",
+  "newReservation": "Nouvelle réservation",
+  "nowLabel": "maintenant",
+  "seatGuests": "Installer les clients",
+  "changeTables": "Changer de tables",
+  "markNoShow": "Absents",
+  "cancelReservation": "Annuler la réservation",
+  "markCompleted": "Terminée",
+  "chooseTables": "Tables",
+  "seatsForParty": "{seats} places choisies pour {party} personnes",
+  "@seatsForParty": {
+    "placeholders": {
+      "seats": {
+        "type": "int"
+      },
+      "party": {
+        "type": "int"
+      }
+    }
+  },
+  "reservationNoteHint": "Ex. : anniversaire, chaise bébé, près de la fenêtre",
+  "noFreeTableSlot": "Aucune table libre sur ce créneau : changez l'heure ou la durée.",
+  "itemsCountLabel": "{count, plural, =0{aucun article} =1{1 article} other{{count} articles}}",
+  "@itemsCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "alertNewCustomerOrder": "Nouvelle commande d'un client à valider",
+  "alertOrderReady": "Une commande est prête à servir",
+  "view": "Voir",
+  "ordersToValidateBanner": "{count, plural, =1{1 commande client attend votre validation} other{{count} commandes clients attendent votre validation}}",
+  "@ordersToValidateBanner": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tabInProgress": "En cours",
+  "historyTab": "Historique",
+  "newShort": "Nouvelle",
+  "brandPoint1": "Commandes en salle, à emporter, en livraison et en ligne",
+  "brandPoint2": "Cuisine et bar en direct, salle et réservations",
+  "brandPoint3": "Caisse, stocks, achats et dépenses",
+  "brandPoint4": "Tableaux de bord et rapports professionnels",
+  "authWelcome": "Bienvenue",
+  "authWelcomeSub": "Connectez-vous pour retrouver votre restaurant",
+  "noAccountYet": "Pas encore de compte ?",
+  "alreadyAccount": "Déjà un compte ?",
+  "authSignUpSub": "Quelques secondes pour commencer, sans engagement",
+  "authForgotSub": "Recevez un code par e-mail pour choisir un nouveau mot de passe",
+  "authNewPasswordSub": "Au moins 8 caractères",
+  "navHome": "Accueil",
+  "greetingDay": "Bonjour",
+  "greetingEvening": "Bonsoir",
+  "moreModules": "Plus",
+  "freeTablesCount": "{free} tables libres sur {total}",
+  "@freeTablesCount": {
+    "placeholders": {
+      "free": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "suggestedTable": "Suggestion : {label} ({seats} places)",
+  "@suggestedTable": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "seats": {
+        "type": "int"
+      }
+    }
+  },
+  "slotFreeSoon": "Libre avant l'heure",
+  "slotReserved": "Réservée sur ce créneau",
+  "freeAround": "libre vers {time}",
+  "@freeAround": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timelineEmptyHint": "Aucune réservation ce jour-là. Touchez une heure sur la ligne d'une table pour la réserver.",
+  "myAccount": "Mon compte",
+  "brandTagline": "La gestion de restaurant, fluide et limpide.",
+  "addPaymentMethod": "Ajouter un mode",
+  "allMethods": "Tous les modes",
+  "availableInBranches": "Disponible dans",
+  "availableWorldwide": "Valables partout",
+  "blindCountHint": "Comptez le tiroir sans regarder l'attendu : l'écart s'affiche une fois le comptage enregistré.",
+  "cashDrawer": "Tiroir-caisse",
+  "cashMovementsTitle": "Entrées et sorties d'espèces",
+  "cashReportTitle": "Rapport de caisse",
+  "cashierLabel": "Caissier",
+  "choosePaymentMethod": "Choisissez le mode de paiement.",
+  "closingValidated": "Clôture validée : Z numéroté.",
+  "closingsTab": "Clôtures",
+  "coinsLabel": "Pièces",
+  "collectTab": "Encaisser",
+  "collectWithTip": "Encaisser {amount} + {tip}",
+  "@collectWithTip": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "tip": {
+        "type": "String"
+      }
+    }
+  },
+  "collectedByDay": "Encaissé par jour",
+  "collectedByHour": "Encaissé par heure",
+  "collectedTotal": "Encaissé",
+  "commonInCountry": "Courants dans votre pays ({country})",
+  "@commonInCountry": {
+    "placeholders": {
+      "country": {
+        "type": "String"
+      }
+    }
+  },
+  "countByDenomination": "Billet par billet",
+  "countConfirm": "Confirmer le comptage : {amount} ?",
+  "@countConfirm": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "countDetailTitle": "Détail du comptage",
+  "countRecorded": "Comptage enregistré",
+  "countedLabel": "Comptée",
+  "countedTotal": "Total compté",
+  "customMethod": "Mode personnalisé",
+  "customMethodHint": "Ex. : bon maison, carte fidélité, paiement par lien",
+  "dateLabel": "Date",
+  "differenceLabel": "Écart",
+  "differenceReasonHint": "Ex. : erreur de rendu de monnaie, billet abîmé",
+  "discountsTotal": "Réductions",
+  "displayOrder": "Ordre",
+  "enterAmount": "Saisir le montant",
+  "errorPaymentMethodUnavailable": "Ce mode de paiement n'est pas disponible ici.",
+  "errorReferenceRequired": "Saisissez le n° de transaction (référence du paiement).",
+  "exactAmount": "Montant exact",
+  "exportExcel": "Exporter (tableur)",
+  "exportPdf": "Exporter en PDF",
+  "feePercentLabel": "Commission prélevée",
+  "feeShort": "commission {percent} %",
+  "@feeShort": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "feesEstimate": "Commissions (estimation)",
+  "findTicket": "Retrouver un ticket",
+  "lastPayments": "Derniers paiements",
+  "legalNameLabel": "Raison sociale",
+  "managerMustValidate": "Un responsable doit valider la clôture.",
+  "methodKind": "Type",
+  "mySessionTab": "Ma caisse",
+  "newRegister": "Nouvelle caisse",
+  "noActiveRegister": "Aucune caisse active : créez-en une dans Réglages.",
+  "noClosings": "Aucune clôture pour l'instant.",
+  "noMovements": "Aucun mouvement.",
+  "noPaymentMethod": "Aucun mode de paiement actif : ajoutez-en dans Réglages.",
+  "noPaymentsYet": "Aucun paiement pour l'instant.",
+  "noRefunds": "Aucun remboursement ces 30 derniers jours.",
+  "noTip": "Aucun",
+  "notesLabel": "Billets",
+  "nothingToCollect": "Rien à encaisser pour le moment.",
+  "openRegisterHint": "Comptez le fond de caisse (la monnaie de départ) : il servira de base au comptage de fin de service.",
+  "openRegisterTitle": "Ouvrir {register}",
+  "@openRegisterTitle": {
+    "placeholders": {
+      "register": {
+        "type": "String"
+      }
+    }
+  },
+  "openedLabel": "Ouverture",
+  "orderDetails": "Détail de la commande",
+  "orderShort": "Commande",
+  "otherAmount": "Autre montant",
+  "otherCountries": "Autres pays",
+  "payKindAccount": "Compte client",
+  "payKindCheque": "Chèque",
+  "payKindInstant": "Paiement instantané",
+  "payKindVoucher": "Titre ou bon",
+  "payKindWallet": "Portefeuille mobile",
+  "paymentComplete": "Paiement terminé",
+  "paymentMethodLabel": "Mode de paiement",
+  "paymentMethodsHint": "Les modes proposés à l'encaissement. Adaptez-les à votre pays : nom, n° de transaction obligatoire, commission, établissements.",
+  "paymentMethodsTitle": "Modes de paiement",
+  "paymentsCountShort": "Paiements",
+  "periodYesterday": "Hier",
+  "printCountReport": "Imprimer le comptage",
+  "printReceipt": "Imprimer le ticket",
+  "reasonChangeFloat": "Apport de monnaie",
+  "reasonOtherIn": "Autre entrée",
+  "reasonOtherOut": "Autre sortie",
+  "reasonSafeDrop": "Dépôt au coffre",
+  "reasonSmallPurchase": "Petit achat",
+  "reasonTipsPaid": "Pourboires remis à l'équipe",
+  "receiptFooterHint": "Ex. : Merci et à bientôt ! Wi-Fi : RestoInvite",
+  "receiptFooterLabel": "Message en bas du ticket",
+  "receiptNumberLabel": "Ticket n° {number}",
+  "@receiptNumberLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "receiptSettingsHint": "Imprimés sur chaque ticket client et sur les Z de caisse.",
+  "receiptSettingsTitle": "Mentions du ticket",
+  "receiptShort": "Ticket",
+  "receiptTaxId": "N° fiscal : {id}",
+  "@receiptTaxId": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "recentRefunds": "Remboursements récents",
+  "recordCount": "Enregistrer le comptage",
+  "referenceRequiredShort": "n° de transaction obligatoire",
+  "refundAction": "Rembourser",
+  "refundDone": "Remboursement enregistré.",
+  "refundReasonHint": "Ex. : plat refusé, erreur de saisie",
+  "refundTitle": "Rembourser le client",
+  "refundableAmount": "remboursable : {amount}",
+  "@refundableAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "refundsTab": "Remboursements",
+  "registerClosedHint": "Ouvrez la caisse (fond compté) pour encaisser.",
+  "registerClosedTitle": "Caisse fermée",
+  "registerLabel": "Caisse",
+  "registerNameHint": "Ex. : Comptoir, Terrasse, Bar",
+  "registersTitle": "Caisses",
+  "reportsTab": "Rapports",
+  "requireReferenceHint": "Le caissier doit saisir le n° de transaction (rapprochement avec le relevé).",
+  "requireReferenceLabel": "N° de transaction obligatoire",
+  "salesByDay": "Par jour",
+  "salesByMethod": "Par mode de paiement",
+  "salesByRegister": "Par caisse",
+  "salesByStaff": "Par serveur",
+  "searchAction": "Rechercher",
+  "searchMethodOrCountry": "Nom du mode ou code pays (ex. BR)",
+  "sendWhatsApp": "Envoyer par WhatsApp",
+  "sessionAwaitingValidation": "Comptée — en attente de validation",
+  "settingsTab": "Réglages",
+  "shareReceipt": "Partager le ticket",
+  "signatureCashier": "Signature caissier",
+  "signatureManager": "Signature responsable",
+  "someBranchesOnly": "{count, plural, =1{1 établissement} other{{count} établissements}}",
+  "@someBranchesOnly": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "splitAll": "Tout",
+  "splitByItems": "Par articles",
+  "splitByParts": "Par parts",
+  "splitCustom": "Montant libre",
+  "staffLabel": "Serveur",
+  "statusLabel": "État",
+  "taxIdHint": "Numéro d'identification fiscale de votre pays",
+  "taxIdLabel": "N° d'identification fiscale",
+  "ticketOrOrderNumber": "N° de ticket ou de commande",
+  "tipLabel": "Pourboire",
+  "tipPresetsLabel": "Pourcentages proposés",
+  "tipsEnabledHint": "Proposé à l'encaissement, compté à part du chiffre d'affaires et attribué au serveur de la commande.",
+  "tipsEnabledLabel": "Proposer un pourboire",
+  "tipsTitle": "Pourboires",
+  "tipsTotal": "Pourboires",
+  "toCollectTotal": "À encaisser",
+  "transactionReferenceRequired": "N° de transaction (obligatoire)",
+  "transactionsTab": "Transactions",
+  "validateClosingConfirm": "Valider cette clôture ? Le Z de caisse sera numéroté et ne pourra plus être modifié.",
+  "validateNowHint": "Validez la clôture dans l'onglet Clôtures pour obtenir le Z numéroté.",
+  "validatedLabel": "Validée",
+  "voidedPayments": "Paiements annulés",
+  "xReading": "Lecture X",
+  "xReportTitle": "Lecture X (provisoire)",
+  "zHistory": "Historique des Z",
+  "zReportTitle": "Z de caisse n° {number}",
+  "@zReportTitle": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "zShort": "Z",
+  "expectedCashLabel": "Espèces attendues",
+  "countedAmountLabel": "Compté",
+  "refundsLabel": "Remboursements",
+  "addressOptional": "Adresse (facultatif)",
+  "billedTo": "Facturé à",
+  "cancelInvoiceHint": "Ex. : erreur de raison sociale, client erroné",
+  "chooseOrder": "Choisissez la commande",
+  "companyOptional": "Société (facultatif)",
+  "customerTaxIdOptional": "N° d'identification fiscale du client (facultatif)",
+  "documentsTitle": "Documents",
+  "emailOptional": "E-mail (facultatif)",
+  "errorCustomerNameRequired": "Le nom du client est obligatoire sur une facture.",
+  "invoiceATicket": "Facturer un ticket",
+  "invoiceCancelledMention": "FACTURE ANNULÉE",
+  "invoiceCancelledDone": "Facture annulée : vous pouvez en émettre une nouvelle.",
+  "invoiceDateLabel": "Date : {date}",
+  "@invoiceDateLabel": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "invoiceDesignation": "Désignation",
+  "invoiceEmailHint": "Pour l'envoyer à {email} : « Partager », puis choisissez votre messagerie.",
+  "@invoiceEmailHint": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "invoiceFooterHint": "Ex. : conditions de paiement, coordonnées bancaires, mentions légales de votre pays",
+  "invoiceFooterLabel": "Mentions en bas de facture",
+  "invoiceNumberLabel": "Facture n° {number}",
+  "@invoiceNumberLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "invoicePayments": "Paiements reçus",
+  "invoicePrefixHint": "Ex. : FA-2026-",
+  "invoicePrefixLabel": "Préfixe du numéro de facture",
+  "invoiceSettingsTitle": "Factures",
+  "invoiceTitle": "Facture",
+  "invoiceUnitPrice": "Prix unitaire",
+  "invoicedTotal": "Facturé",
+  "invoicesCount": "Factures",
+  "issueInvoice": "Établir une facture",
+  "issueInvoiceAction": "Émettre la facture",
+  "issueInvoiceHint": "Une facture émise est numérotée et ne se modifie plus (en cas d'erreur : annulation puis nouvelle facture).",
+  "noInvoices": "Aucune facture sur cette période. Une facture s'établit depuis une commande (bouton « Facture ») ou ici avec « Facturer un ticket ».",
+  "printInvoice": "Imprimer / télécharger",
+  "receiptDocument": "Ticket de caisse",
+  "searchInvoiceHint": "N°, client, société",
+  "shareInvoice": "Partager",
+  "totalExclTax": "Total hors taxes",
+  "totalInclTax": "Total toutes taxes comprises",
+  "receiptQrCaption": "Scannez pour nous retrouver en ligne",
+  "receiptQrLabel": "QR code en bas du ticket",
+  "receiptQrUrlLabel": "Lien du QR code",
+  "receiptQrUrlHint": "Vide = page du restaurant. Ex. : https://votre-site.com ou votre page d'avis",
+  "receiptQrUrlInvalid": "Le lien du QR code doit commencer par https:// (ou http://).",
+  "restaurantLogo": "Logo du restaurant",
+  "chooseLogo": "Choisir le logo",
+  "replaceLogo": "Remplacer",
+  "removeLogo": "Retirer",
+  "logoTooBig": "Ce fichier dépasse 1 Mo : choisissez une image plus légère.",
+  "receiptTendered": "Montant remis",
+  "receiptChange": "Monnaie rendue",
+  "restaurantLogoHint": "Imprimé en tête des tickets. PNG à fond transparent conseillé, 1 Mo au plus.",
+  "add": "Ajouter",
+  "delete": "Supprimer",
+  "branchLabel": "Établissement",
+  "kindDessert": "Dessert",
+  "kindMenu": "Formule",
+  "navAds": "Publicité",
+  "navSettings": "Paramètres",
+  "greetingShort": "Bonjour",
+  "homeWelcome": "Bienvenue, voici votre activité du jour",
+  "kpiSalesToday": "CA du jour",
+  "kpiOpenOrders": "Commandes en cours",
+  "kpiPendingCount": "{count} en attente",
+  "@kpiPendingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kpiOccupancy": "Taux d'occupation",
+  "kpiTablesBusy": "{busy} tables occupées sur {total}",
+  "@kpiTablesBusy": {
+    "placeholders": {
+      "busy": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "lowStockTitle": "Stock faible",
+  "saveChanges": "Enregistrer les modifications",
+  "settingsProfile": "Profil de l'établissement",
+  "settingsProfileHint": "Les informations de votre restaurant, visibles par vos clients.",
+  "settingsContact": "Contact & localisation",
+  "settingsContactHint": "Adresse, téléphones et position sur la carte.",
+  "settingsHours": "Horaires",
+  "settingsHoursHint": "Jours et heures d'ouverture, temps de préparation, fermeture temporaire.",
+  "settingsDelivery": "Livraison & commandes",
+  "settingsDeliveryHint": "Commandes en ligne, livraison, réservations et page publique.",
+  "settingsPayments": "Paiement & facturation",
+  "settingsPaymentsHint": "Modes de paiement, caisses, ticket, factures et pourboires.",
+  "settingsTeam": "Équipe & rôles",
+  "settingsTeamHint": "Membres, rôles et invitations.",
+  "settingsNotifications": "Notifications",
+  "settingsNotificationsHint": "Ce qui vous est signalé dans l'application.",
+  "settingsSecurity": "Sécurité",
+  "settingsSecurityHint": "Mot de passe et appareils connectés.",
+  "restaurantName": "Nom du restaurant",
+  "sloganLabel": "Slogan",
+  "sloganHint": "Ex. : Cuisine traditionnelle raffinée",
+  "registrationNumber": "N° d'immatriculation",
+  "registrationNumberHint": "Registre du commerce de votre pays",
+  "logoUpload": "Télécharger le logo",
+  "logoFormats": "PNG, JPG ou WebP — 1 Mo au plus. Idéal : 512 × 512.",
+  "logoWhere": "Le logo apparaît dans l'application, sur votre vitrine et sur les tickets de vos clients.",
+  "whatsappLabel": "Téléphone WhatsApp",
+  "gpsTitle": "Coordonnées GPS / carte",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "gpsMissing": "Position non renseignée",
+  "openInMaps": "Ouvrir dans Maps",
+  "deliveryZoneLabel": "Zone de livraison",
+  "deliveryZoneHint": "Ex. : quartiers desservis ou rayon de 5 km",
+  "vacationMode": "Mode vacances",
+  "vacationModeHint": "Fermer temporairement le restaurant : il apparaît comme fermé pour vos clients.",
+  "vacationMessage": "Message affiché aux clients",
+  "vacationMessageHint": "Ex. : Réouverture le 15 septembre",
+  "notifSoundNewOrder": "Son à chaque nouvelle commande",
+  "notifSoundReady": "Son quand une commande est prête",
+  "notifLate": "Alerte des commandes en retard",
+  "notifLowStock": "Alerte de stock faible",
+  "notifReservations": "Rappel des réservations de l'heure",
+  "notifCashGap": "Écart de caisse à la clôture",
+  "signedInAs": "Connecté en tant que",
+  "securityTip": "Utilisez un mot de passe unique d'au moins 8 caractères.",
+  "signOutOthers": "Déconnecter mes autres appareils",
+  "signOutOthersDone": "Vos autres appareils sont déconnectés.",
+  "signOutAll": "Se déconnecter partout",
+  "fileTooBig": "{name} est trop volumineux.",
+  "@fileTooBig": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adsCreate": "Créer une pub",
+  "adsEdit": "Modifier la pub",
+  "adsCampaigns": "Mes campagnes",
+  "adsLibrary": "Bibliothèque",
+  "adsStats": "Statistiques",
+  "adsCreateTitle": "Créer",
+  "adsCreateHint": "Choisissez le format de votre publicité.",
+  "adsContent": "Contenu",
+  "adsBudgetTargeting": "Budget & ciblage",
+  "adsPreview": "Aperçu",
+  "adsPreviewHint": "Prévisualisation sur mobile",
+  "adsPreviewSimulation": "Cet aperçu est une simulation.",
+  "adsFromLibrary": "Depuis la bibliothèque",
+  "adsUpload": "Ajouter des photos ou des vidéos",
+  "adsUploadHint": "JPG, PNG, WebP (5 Mo) · MP4, WebM, MOV (50 Mo) · vidéos de 15 à 30 secondes conseillées",
+  "adsLibraryEmpty": "La bibliothèque est vide.",
+  "adsDeleteFile": "Supprimer ce fichier de la bibliothèque ?",
+  "adsEmpty": "Aucune campagne pour le moment.",
+  "adsEmptyHint": "Créez votre première publicité : une vidéo, une story de 24 h ou un plat mis en avant.",
+  "adsActiveCampaigns": "Campagnes",
+  "adsCampaignCount": "{count, plural, =0{aucune active} =1{1 active} other{{count} actives}}",
+  "@adsCampaignCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adFormat": "Format",
+  "adFormatVideo": "Vidéo 15–30 s",
+  "adFormatVideoHint": "Vidéo courte pour capter l'attention",
+  "adFormatCarousel": "Photo carrousel",
+  "adFormatCarouselHint": "Plusieurs images à faire défiler",
+  "adFormatStory": "Story 24 h",
+  "adFormatStoryHint": "Format éphémère de 24 heures",
+  "adFormatSponsoredMenu": "Menu sponsorisé",
+  "adFormatSponsoredMenuHint": "Mettre vos plats en avant",
+  "adFormatPush": "Notification",
+  "adFormatPushHint": "Prévenir vos clients directement",
+  "adFormatClassified": "Petite annonce",
+  "adFormatClassifiedHint": "Annonce texte simple et efficace",
+  "adTitle": "Titre",
+  "adTitleHint": "Ex. : Croissant au beurre",
+  "adTitleRequired": "Donnez un titre à votre publicité.",
+  "adText": "Texte",
+  "adTextHint": "Ex. : Nouveau ! Croissant artisanal fait maison, -20 % ce soir uniquement",
+  "adMediaHelp": "Photos ou vidéos de la publicité (10 au plus).",
+  "adVideoHelp": "Ajoutez une vidéo courte (15 à 30 secondes).",
+  "adChooseItems": "Plats mis en avant",
+  "adCta": "Bouton",
+  "adCtaHint": "Ex. : Commander maintenant",
+  "adCtaDefault": "Commander maintenant",
+  "adLink": "Lien du bouton (facultatif)",
+  "adPushNote": "La notification sera envoyée aux clients de l'application qui ont accepté de recevoir vos offres.",
+  "adDailyBudget": "Budget journalier",
+  "adBudgetNote": "Budget prévu : la diffusion sponsorisée sera facturée par la plateforme.",
+  "adStart": "Début",
+  "adEnd": "Fin",
+  "adStory24h": "Visible 24 heures",
+  "adTargetAreas": "Ciblage par quartier",
+  "adAddArea": "Ajouter un quartier",
+  "adMoments": "Moment",
+  "momentMorning": "Matin",
+  "momentNoon": "Midi",
+  "momentAfternoon": "Après-midi",
+  "momentEvening": "Soir",
+  "momentNight": "Nuit",
+  "adBranches": "Établissements",
+  "adSaveDraft": "Enregistrer le brouillon",
+  "adPublish": "Publier",
+  "adPublished": "Publicité publiée.",
+  "adSponsored": "Sponsorisé",
+  "adStatusActive": "Active",
+  "adStatusScheduled": "Programmée",
+  "adStatusPaused": "En pause",
+  "adStatusEnded": "Terminée",
+  "adStatusDraft": "Brouillon",
+  "adRoi": "Chiffre d'affaires généré",
+  "adRoiDetail": "pour {amount} de budget engagé",
+  "@adRoiDetail": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "adViews": "{count, plural, =0{0 vue} =1{1 vue} other{{count} vues}}",
+  "@adViews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adOrders": "{count, plural, =0{0 commande} =1{1 commande} other{{count} commandes}}",
+  "@adOrders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adDetails": "Voir détails",
+  "adBoost": "Booster",
+  "adBoostTitle": "Prolonger la diffusion",
+  "adBoostDays": "{count, plural, =1{1 jour de plus} other{{count} jours de plus}}",
+  "@adBoostDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adBoosted": "Campagne prolongée.",
+  "adPause": "Mettre en pause",
+  "adResume": "Relancer",
+  "adEndNow": "Terminer maintenant",
+  "adDeleteConfirm": "Supprimer cette campagne et ses statistiques ?",
+  "adStatViews": "Vues",
+  "adStatClicks": "Clics",
+  "adStatClickRate": "Taux de clic",
+  "adStatOrders": "Commandes",
+  "adStatRevenue": "Chiffre d'affaires",
+  "adStatByCampaign": "Vues par campagne",
+  "activeLabel": "Actif",
+  "addPhotos": "Ajouter des photos",
+  "addProduct": "Ajouter un produit",
+  "allItems": "Tous",
+  "available": "Disponible",
+  "categories": "Catégories",
+  "copySuffix": "copie",
+  "customerSideView": "Aperçu côté client — apparence dans le menu du restaurant",
+  "duplicate": "Dupliquer",
+  "everyDay": "Tous les jours",
+  "filterKind": "Famille",
+  "itemDescriptionHint": "Ex. : Feuilles de ndolé aux arachides, crevettes et plantain",
+  "itemDuplicated": "Article dupliqué : la copie est masquée jusqu'à son enregistrement.",
+  "livePreview": "Aperçu en direct",
+  "mainPhoto": "Principale",
+  "makeMainPhoto": "Mettre en photo principale",
+  "markAvailable": "Remettre disponible",
+  "markSoldOut": "Marquer en rupture",
+  "menuProducts": "Produits du menu",
+  "noProductsFound": "Aucun produit ne correspond.",
+  "photosHint": "Jusqu'à {count} photos · JPG, PNG, WebP · 5 Mo max",
+  "@photosHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "play": "Lire",
+  "prepMinutesShort": "Préparation : {minutes} min",
+  "@prepMinutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "prepTime": "Temps de préparation",
+  "productInfo": "Informations du produit",
+  "productPhotos": "Photos du produit",
+  "productsCount": "{count, plural, =0{Aucun produit} =1{1 produit} other{{count} produits}}",
+  "@productsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "publish": "Publier",
+  "replace": "Remplacer",
+  "saleDays": "Jours de vente",
+  "saleDaysRequired": "Choisissez au moins un jour de vente.",
+  "searchProduct": "Rechercher un produit, un plat…",
+  "sizesLabel": "Tailles",
+  "sortBy": "Trier",
+  "sortMenuOrder": "Ordre du menu",
+  "sortName": "Nom",
+  "sortPriceAsc": "Prix croissant",
+  "sortPriceDesc": "Prix décroissant",
+  "stockAlertThreshold": "Alerte en dessous de",
+  "stockAndTime": "Stock & temps",
+  "stockLeft": "Stock : {count} restants",
+  "@stockLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stockLow": "Stock faible : {count} restants",
+  "@stockLow": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stockNotTracked": "Vide = non suivi",
+  "stockOfDay": "Stock du jour",
+  "stockOfDayHint": "Nombre de portions disponibles aujourd'hui. Il baisse à chaque commande ; à zéro, l'article passe en rupture. Laissez vide pour ne pas suivre.",
+  "stockQuantity": "Quantité en stock",
+  "supplementsLabel": "Suppléments",
+  "videoAdded": "Vidéo de présentation ajoutée",
+  "videoOptional": "Vidéo de présentation (facultatif, 30 s environ)",
+  "allChannels": "Tous les canaux",
+  "amountLabel": "Montant",
+  "averageTicketShort": "Panier moyen {amount}",
+  "customerLabel": "Client",
+  "financialResult": "Résultat financier",
+  "inKitchenCount": "en préparation",
+  "inProgressCount": "en cours",
+  "itemsLabel": "Articles :",
+  "lateCount": "en retard",
+  "noOrdersHere": "Aucune commande ici",
+  "noSalesYet": "Pas encore de ventes sur la période.",
+  "nothingToCollectHint": "Aucune opération en attente : les nouveaux encaissements apparaîtront ici.",
+  "orderLabel": "Commande",
+  "paymentLabel": "Paiement",
+  "periodLabel": "Période",
+  "recentTransactions": "Transactions récentes",
+  "salesOfPeriod": "CA de la période",
+  "salesSplit": "Répartition des ventes",
+  "timeLabel": "Heure",
+  "topDishes": "Top plats",
+  "viewDetails": "Voir détails",
+  "vsPrevious": "Période précédente : {amount}",
+  "@averageTicketShort": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "@vsPrevious": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "addAddress": "Ajouter une adresse",
+  "addedToCart": "Ajouté au panier.",
+  "addressLabel": "Nom de l'adresse",
+  "addressLabelHint": "Ex. : Maison, Bureau",
+  "addToCart": "Ajouter au panier",
+  "allCities": "Toutes les villes",
+  "allRestaurants": "Tous les restaurants",
+  "birthday": "Date d'anniversaire",
+  "cartEmpty": "Votre panier est vide.",
+  "cartItems": "{count, plural, =1{1 article} other{{count} articles}}",
+  "@cartItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "changeCity": "Modifier",
+  "chooseCity": "Choisir la ville",
+  "chooseOptionRequired": "Choisissez : {name}",
+  "@chooseOptionRequired": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "closedNow": "Fermé",
+  "customerFavorites": "Favoris",
+  "customerHome": "Accueil",
+  "customerOrders": "Commandes",
+  "customerProfile": "Profil",
+  "customerReviews": "Avis clients ({count})",
+  "@customerReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "customerSearch": "Recherche",
+  "customerSpaceLink": "Espace client · commander",
+  "deliveryDetailsRequired": "Indiquez l'adresse de livraison et un téléphone.",
+  "directions": "Itinéraire",
+  "discoverRestaurants": "Découvrir des restaurants",
+  "dishes": "Plats",
+  "favoritesSignIn": "Connectez-vous pour retrouver vos restaurants préférés.",
+  "fullName": "Nom et prénom",
+  "globalCatalog": "Catalogue global",
+  "healthAllergies": "Santé & allergies",
+  "howDoYouWant": "Comment souhaitez-vous être servi ?",
+  "loyaltyNextReward": "Prochaine récompense à {points} points : {amount}",
+  "@loyaltyNextReward": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "loyaltyPoints": "{count} points",
+  "@loyaltyPoints": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "loyaltyProgram": "Programme fidélité",
+  "mapCount": "{count, plural, =1{1 établissement sur la carte} other{{count} établissements sur la carte}}",
+  "@mapCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapView": "Carte",
+  "minimumOrderNotReached": "Commande minimum : {amount}",
+  "@minimumOrderNotReached": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "minutesRange": "{min}–{max} min",
+  "@minutesRange": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "myAddresses": "Mes adresses",
+  "myCart": "Mon panier",
+  "newRestaurant": "Nouveau",
+  "noAddresses": "Aucune adresse enregistrée.",
+  "noCustomerOrders": "Vous n'avez pas encore commandé.",
+  "noFavorites": "Aucun favori pour le moment.",
+  "noFavoritesHint": "Touchez le cœur d'un restaurant pour l'ajouter.",
+  "noLoyaltyYet": "Vos points apparaîtront après vos premières commandes.",
+  "noRestaurantsYet": "Aucun restaurant publié dans cette ville pour le moment.",
+  "noteForKitchen": "Précision pour la cuisine (facultatif)",
+  "noteForKitchenHint": "Ex. : sans piment, bien cuit",
+  "notifOrderUpdates": "Suivi de mes commandes",
+  "notifPromotions": "Promotions & offres",
+  "notifReservationReminders": "Rappels de réservation",
+  "onlineOrdersUnavailable": "Commande en ligne indisponible pour le moment",
+  "openFullMap": "Ouvrir la carte en plein écran",
+  "openNow": "Ouvert",
+  "orderDone": "Terminée",
+  "orderingAtTable": "Commande à la table {table}",
+  "@orderingAtTable": {
+    "placeholders": {
+      "table": {
+        "type": "String"
+      }
+    }
+  },
+  "orderInProgress": "En cours",
+  "orderNoteOptional": "Message pour le restaurant (facultatif)",
+  "orderRejected": "Refusée par le restaurant",
+  "orderSentToRestaurant": "Commande envoyée ! Le restaurant va la confirmer : suivez-la ici en direct.",
+  "ordersSignIn": "Connectez-vous pour suivre vos commandes.",
+  "orderSummary": "Récapitulatif",
+  "orderWaitingConfirmation": "En attente de confirmation",
+  "payMobileWallet": "Portefeuille mobile",
+  "personalProfile": "Profil personnel",
+  "personalProfileHint": "Vos informations personnelles et vos préférences.",
+  "placeOrder": "Commander",
+  "preferences": "Préférences",
+  "preferredPayment": "Paiement préféré",
+  "preferredPaymentHint": "Indicatif : aucun numéro de carte ni de compte n'est enregistré.",
+  "productDetails": "Détails du produit",
+  "profileSignIn": "Connectez-vous pour gérer votre profil, vos adresses et vos points.",
+  "rateOrder": "Noter ma commande",
+  "requiredLabel": "Obligatoire",
+  "restaurantOnVacation": "Le restaurant est fermé temporairement.",
+  "restaurants": "Restaurants",
+  "restaurantSpace": "Espace restaurant",
+  "restaurantUnavailable": "Ce restaurant n'est pas disponible.",
+  "reviewComment": "Votre avis (facultatif)",
+  "reviewsCount": "{count, plural, =0{aucun avis} =1{1 avis} other{{count} avis}}",
+  "@reviewsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchRestaurantsHint": "Rechercher restaurants, plats, cuisines…",
+  "seeAll": "Voir tout",
+  "send": "Envoyer",
+  "signInToContinue": "Connectez-vous pour continuer",
+  "spiceHot": "Fort",
+  "spiceLevel": "Piment",
+  "spiceMedium": "Moyen",
+  "spiceMild": "Doux",
+  "spiceNone": "Sans",
+  "sponsoredAds": "Publicités sponsorisées",
+  "stepAccepted": "Acceptée par le restaurant",
+  "stepDone": "Terminée",
+  "stepPreparing": "En préparation",
+  "stepReady": "Prête",
+  "stepSent": "Envoyée",
+  "storyLabel": "Histoire",
+  "thanksForReview": "Merci pour votre avis !",
+  "viewCart": "Voir le panier",
+  "watchVideo": "Vidéo",
+  "yourName": "Votre nom",
+  "gpsHint": "« Ouvrir dans Maps » enregistre automatiquement la position où vous vous trouvez : faites-le depuis l'établissement. Vous pouvez aussi saisir les coordonnées.",
+  "locationSaved": "Position de l'établissement enregistrée.",
+  "locationServiceDisabled": "La localisation de l'appareil est désactivée : activez-la puis réessayez.",
+  "locationDenied": "Accès à la position refusé : autorisez-le dans les réglages du navigateur ou du téléphone.",
+  "locationUnavailable": "Position introuvable pour le moment : réessayez à l'extérieur ou saisissez les coordonnées.",
+  "openMapAction": "Ouvrir la carte",
+  "customerReviewsTitle": "Avis clients",
+  "forYou": "Pour vous",
+  "fromAmount": "dès {amount}",
+  "@fromAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "helpfulCount": "{count, plural, =0{Utile} other{Utile ({count})}}",
+  "@helpfulCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hideReview": "Masquer l'avis",
+  "hideReviewReason": "Motif",
+  "locatedNearYou": "Restaurants classés selon votre position",
+  "locateMe": "Me localiser",
+  "locationRefusedChooseCity": "Position non disponible : choisissez votre ville.",
+  "nearYouHint": "Autorisez la localisation pour voir les restaurants et les plats les plus proches.",
+  "nearYouRestaurants": "Près de vous",
+  "nearYouTitle": "Les restaurants près de vous",
+  "newOnMenus": "Nouveautés",
+  "noReviewsYet": "Pas encore d'avis",
+  "openNowTitle": "Ouverts maintenant",
+  "orderAgain": "Commander à nouveau",
+  "orderAgainAction": "Recommander",
+  "ordersInProgressTitle": "Vos commandes en cours",
+  "popularDishes": "Plats populaires",
+  "popularNearYou": "Populaires autour de vous",
+  "promotionsTitle": "Promotions",
+  "publishReview": "Publier mon avis",
+  "rateDish": "Noter : {name}",
+  "@rateDish": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "rateShort": "Noter",
+  "refreshLocation": "Actualiser",
+  "reorderPartial": "Certains plats ne sont plus disponibles : le reste a été ajouté au panier.",
+  "reorderUnavailable": "Ces plats ne sont plus disponibles.",
+  "reportReason": "Pourquoi cet avis est-il abusif ?",
+  "reportReview": "Signaler",
+  "reportsCount": "{count, plural, =1{1 signalement} other{{count} signalements}}",
+  "@reportsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reportSent": "Merci, le signalement a été transmis.",
+  "republishReview": "Republier",
+  "reviewCommentHint": "Ex. : bien assaisonné, portion généreuse, livraison rapide",
+  "satisfiedPercent": "{percent} % de clients satisfaits",
+  "@satisfiedPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sortBestRated": "Meilleures notes",
+  "sortHelpful": "Plus utiles",
+  "sortRecent": "Plus récents",
+  "sortWorstRated": "Notes les plus basses",
+  "verifiedPurchase": "Achat vérifié",
+  "verifiedReviewNote": "Avis vérifié : seuls les clients ayant reçu ce plat peuvent le noter.",
+  "asSoonAsPossible": "Dès que possible",
+  "customerOrdersHere": "Ses commandes chez vous",
+  "customerPrivacyNote": "Vous ne voyez que la relation de ce client avec votre restaurant : jamais ses commandes chez d'autres restaurants.",
+  "customersCount": "clients",
+  "multiRestaurantNote": "{count} restaurants dans votre panier : chacun reçoit sa propre commande, avec son numéro et son suivi.",
+  "@multiRestaurantNote": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "navCustomers": "Clients",
+  "noCustomersYet": "Pas encore de clients en ligne.",
+  "noCustomersYetHint": "Chaque client qui commande depuis l'application apparaît ici automatiquement.",
+  "noDeliveryHere": "Ce restaurant ne livre pas : commande à emporter.",
+  "ordersSent": "Commandes envoyées",
+  "ordersSentHint": "{count} commandes envoyées, une par restaurant. Suivez chacune séparément.",
+  "@ordersSentHint": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "placeOrders": "Passer les {count} commandes",
+  "@placeOrders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "regularBadge": "Fidèle",
+  "regularCustomers": "fidèles (3 commandes ou plus)",
+  "restaurantsCount": "{count} restaurants",
+  "@restaurantsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleOrder": "Programmer",
+  "scheduleTooSoon": "Choisissez une heure au moins 15 minutes plus tard.",
+  "searchCustomer": "Nom ou téléphone",
+  "sortBiggestSpenders": "Plus grosses dépenses",
+  "sortMostOrders": "Plus de commandes",
+  "sortRecentVisit": "Venus récemment",
+  "teamNotes": "Notes de l'équipe",
+  "teamNotesExample": "Ex. : préfère la terrasse, aime la sauce piquante",
+  "teamNotesHint": "Visibles uniquement par votre équipe.",
+  "trackOrder": "Suivre",
+  "customerDiscover": "Découvrir",
+  "feedEmpty": "Rien à découvrir pour l'instant",
+  "feedEmptyHint": "Les vidéos, plats et offres des restaurants de votre ville apparaîtront ici.",
+  "feedOrder": "Commander",
+  "feedViewDish": "Voir le plat",
+  "feedViewRestaurant": "Voir le restaurant",
+  "feedLike": "J'aime",
+  "feedSave": "Enregistrer",
+  "feedShare": "Partager",
+  "feedSaved": "Enregistré dans vos contenus.",
+  "feedUnsaved": "Retiré de vos contenus enregistrés.",
+  "feedLinkCopied": "Lien copié : collez-le pour le partager.",
+  "commentsTitle": "Commentaires",
+  "noCommentsYet": "Aucun commentaire pour l'instant.",
+  "writeComment": "Écrire un commentaire…",
+  "adHideForever": "Ne plus afficher",
+  "reserveAt": "Réserver chez {name}",
+  "@reserveAt": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "reservationSentHint": "Demande envoyée : le restaurant vous confirmera la réservation.",
+  "reservationNoteLabel": "Remarque (facultatif)",
+  "errorInvalidComment": "Le commentaire doit contenir entre 1 et 500 caractères.",
+  "adStatReach": "Portée",
+  "adStatEngagement": "Engagement",
+  "adStatLikes": "J'aime",
+  "adStatSaves": "Enregistrements",
+  "adStatShares": "Partages",
+  "hideComment": "Masquer",
+  "moderationReasonExample": "Ex. : propos injurieux, hors sujet",
+  "hiddenBadge": "Masqué",
+  "hiddenBecause": "Masqué : {reason}",
+  "@hiddenBecause": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "allFilter": "Tous",
+  "publishedComments": "Publiés",
+  "hiddenComments": "Masqués",
+  "adCommentsHint": "Les commentaires des clients sur vos publicités apparaissent ici. Masquez ceux qui sont injurieux ou hors sujet.",
+  "happyBirthday": "Joyeux anniversaire !",
+  "birthdayGift": "{name} vous offre {points} points de fidélité.",
+  "@birthdayGift": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "thanksAction": "Merci !",
+  "notificationsTitle": "Notifications",
+  "noNotifications": "Aucune notification",
+  "noNotificationsHint": "Vous serez prévenu ici quand un restaurant accepte votre commande, quand elle est prête ou quand une réservation est confirmée.",
+  "notifOrderAcceptedTitle": "Commande acceptée",
+  "notifOrderAccepted": "{brand} a accepté votre commande n° {number}.",
+  "@notifOrderAccepted": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "notifOrderReadyTitle": "Commande prête",
+  "notifOrderReady": "Votre commande n° {number} est prête chez {brand} : vous pouvez la retirer.",
+  "@notifOrderReady": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "notifOrderOnTheWay": "Votre commande n° {number} de {brand} est prête et part en livraison.",
+  "@notifOrderOnTheWay": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "notifOrderRejectedTitle": "Commande refusée",
+  "notifOrderRejected": "{brand} n'a pas pu accepter votre commande n° {number} : {reason}",
+  "@notifOrderRejected": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "notifReservationConfirmedTitle": "Réservation confirmée",
+  "notifReservationConfirmed": "{brand} a confirmé votre réservation du {date}.",
+  "@notifReservationConfirmed": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifReservationDeclinedTitle": "Réservation refusée",
+  "notifReservationDeclined": "{brand} ne peut pas vous recevoir le {date} : {reason}",
+  "@notifReservationDeclined": {
+    "placeholders": {
+      "brand": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "notifGroupJoined": "{name} a rejoint votre commande groupée chez {brand}.",
+  "@notifGroupJoined": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "brand": {
+        "type": "String"
+      }
+    }
+  },
+  "notifGroupPlaced": "{host} a envoyé la commande groupée chez {brand} (n° {number}).",
+  "@notifGroupPlaced": {
+    "placeholders": {
+      "host": {
+        "type": "String"
+      },
+      "brand": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "groupOrderTitle": "Commande groupée",
+  "groupOrderAction": "Commande groupée",
+  "groupInviteTitle": "Invitez vos convives",
+  "groupInviteHint": "Partagez ce lien : chacun choisit ses plats sur son téléphone, puis vous envoyez une seule commande.",
+  "groupEmpty": "Aucun plat pour l'instant",
+  "groupEmptyHint": "Ajoutez vos plats et partagez le lien avec vos convives.",
+  "groupHostedBy": "Organisée par {name}",
+  "@groupHostedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "groupStatusOpen": "Ouverte jusqu'à {time}",
+  "@groupStatusOpen": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "groupStatusPlaced": "Envoyée au restaurant",
+  "groupStatusCancelled": "Annulée",
+  "groupStatusExpired": "Expirée",
+  "groupParticipants": "{count, plural, =1{1 convive} other{{count} convives}}",
+  "@groupParticipants": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "groupCheckoutTitle": "Envoyer pour tout le groupe",
+  "estimatedTotal": "Total estimé",
+  "groupPlaceOrder": "Envoyer la commande au restaurant",
+  "cancelGroupOrder": "Annuler la commande groupée",
+  "cancelGroupOrderConfirm": "Annuler cette commande groupée ? Les plats choisis par chacun seront perdus.",
+  "groupAddMyDishes": "Ajouter mes plats",
+  "groupPlacedInfo": "{name} a envoyé la commande au restaurant.",
+  "@groupPlacedInfo": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "groupClosedInfo": "Cette commande groupée est fermée.",
+  "groupOrderPlaced": "Commande groupée envoyée au restaurant.",
+  "addedToGroup": "Ajouté à la commande groupée.",
+  "addToGroup": "Ajouter au groupe",
+  "saveDishAction": "Enregistrer le plat",
+  "saveDishTitle": "Enregistrer « {name} »",
+  "@saveDishTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "favoriteDishes": "Plats favoris",
+  "myLists": "Mes listes",
+  "myCoupons": "Mes coupons",
+  "restaurantsSection": "Restaurants",
+  "unavailableNow": "Indisponible",
+  "removeAction": "Retirer",
+  "noFavoriteDishes": "Aucun plat favori",
+  "noFavoriteDishesHint": "Touchez le cœur sur la fiche d'un plat pour le retrouver ici.",
+  "newList": "Nouvelle liste",
+  "noLists": "Aucune liste",
+  "noListsHint": "Créez des listes comme « À tester » ou « Déjeuners du bureau ».",
+  "deleteListConfirm": "Supprimer la liste « {name} » ?",
+  "@deleteListConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "renameAction": "Renommer",
+  "dishesCount": "{count, plural, =0{Aucun plat} =1{1 plat} other{{count} plats}}",
+  "@dishesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "emptyListHint": "Liste vide : ajoutez des plats depuis leur fiche.",
+  "listName": "Nom de la liste",
+  "listNameExample": "Ex. : À tester",
+  "noCoupons": "Aucun coupon",
+  "noCouponsHint": "Enregistrez les offres des restaurants depuis l'accueil pour les retrouver ici.",
+  "couponsHowTo": "Saisissez le code dans le suivi de votre commande pour profiter de la remise.",
+  "validUntil": "jusqu'au {date}",
+  "@validUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "couponUsed": "Déjà utilisé",
+  "couponExpired": "Expiré",
+  "codeCopied": "Code copié.",
+  "couponSaved": "Coupon enregistré dans vos favoris.",
+  "saveCouponAction": "Enregistrer",
+  "errorLimitReached": "Limite atteinte : retirez des éléments avant d'en ajouter.",
+  "errorGroupClosed": "Cette commande groupée est fermée ou a expiré.",
+  "customersTab": "Clients",
+  "offersTab": "Offres",
+  "loyaltyTab": "Fidélité",
+  "activeOffers": "Offres en cours",
+  "publicCoupons": "Coupons publics",
+  "totalUses": "Utilisations",
+  "newOffer": "Nouvelle offre",
+  "editOffer": "Modifier l'offre",
+  "offersEmpty": "Aucune offre",
+  "offersEmptyHint": "Créez une remise, un code promo ou un coupon public pour attirer et fidéliser vos clients.",
+  "offerStatusOff": "Désactivée",
+  "offerStatusEnded": "Terminée",
+  "offerStatusScheduled": "Programmée",
+  "offerStatusActive": "En cours",
+  "publicCouponLabel": "Coupon public",
+  "publicCouponHint": "Visible dans l'application : les clients peuvent l'enregistrer dans leur portefeuille.",
+  "publicCouponNeedsCode": "Un coupon public doit avoir un code.",
+  "usesCount": "{count, plural, =0{Jamais utilisée} =1{1 utilisation} other{{count} utilisations}}",
+  "@usesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "offerName": "Nom de l'offre",
+  "offerNameExample": "Ex. : Bienvenue, Happy hour",
+  "discountPercent": "Pourcentage",
+  "discountAmount": "Montant",
+  "offerValue": "Remise",
+  "promoCodeLabel": "Code (facultatif)",
+  "offerCodeHint": "3 à 30 lettres ou chiffres, ex. BIENVENUE",
+  "minOrderLabel": "Commande minimum",
+  "maxUsesLabel": "Utilisations max.",
+  "perCustomerLabel": "Par client",
+  "startsLabel": "Début",
+  "endsLabel": "Fin",
+  "offerNow": "maintenant",
+  "noEndDate": "Sans fin",
+  "allBranchesLabel": "Tous les établissements",
+  "thisBranchOnly": "Cet établissement",
+  "offerActive": "Offre active",
+  "loyaltyMembers": "Membres",
+  "pointsInCirculation": "Points en circulation",
+  "loyaltyProgramTitle": "Programme de fidélité",
+  "loyaltyExample": "Exemple : une commande de {amount} rapporte {points} points.",
+  "@loyaltyExample": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "loyaltyActive": "Programme actif",
+  "amountPerPoint": "Montant pour 1 point",
+  "rewardPointsLabel": "Points pour une récompense",
+  "rewardValueLabel": "Valeur de la récompense",
+  "birthdayPointsLabel": "Points offerts à l'anniversaire",
+  "birthdayPointsHint": "Crédités automatiquement chaque année aux clients qui ont déjà commandé chez vous (0 = aucun).",
+  "stockDashboardTab": "Tableau de bord",
+  "stockArticlesTab": "Articles",
+  "stockOrdersTab": "Commandes",
+  "stockReportsTab": "Rapports",
+  "stockDashboardTitle": "Tableau de bord du stock",
+  "stockValueLabel": "Valeur du stock",
+  "belowThresholdLabel": "Sous le seuil",
+  "outOfStockLabel": "En rupture",
+  "expiringSoonLabel": "Dates limites proches",
+  "inventoryVarianceLabel": "Écarts d'inventaire",
+  "consumptionLabel": "Consommation",
+  "wasteLabel": "Pertes",
+  "receiptsLabel": "Réceptions",
+  "articlesCount": "{count, plural, =0{Aucun article} =1{1 article} other{{count} articles}}",
+  "@articlesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count, plural, =1{1 jour} other{{count} jours}}",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "consumptionByDay": "Consommation et pertes par jour",
+  "topConsumedTitle": "Les plus consommés",
+  "wasteByReason": "Pertes par motif",
+  "noMovementsPeriod": "Aucun mouvement sur cette période.",
+  "noWastePeriod": "Aucune perte sur cette période.",
+  "expiringLotsTitle": "Lots à surveiller (dates limites)",
+  "noExpiringLots": "Aucun lot n'arrive à sa date limite dans les 7 jours.",
+  "toReorderTitle": "À commander",
+  "noAlerts": "Aucun article sous le seuil.",
+  "prepareOrder": "Préparer la commande",
+  "expiredShort": "Périmé",
+  "daysLeftShort": "J-{count}",
+  "@daysLeftShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysLeftLong": "{count, plural, =0{épuisé aujourd'hui} =1{1 jour de stock} other{{count} jours de stock}}",
+  "@daysLeftLong": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "batchShort": "Lot {batch}",
+  "@batchShort": {
+    "placeholders": {
+      "batch": {
+        "type": "String"
+      }
+    }
+  },
+  "batchNumber": "N° de lot",
+  "expiryDate": "Date limite",
+  "stockEmptyHint": "Créez vos articles dans l'onglet Articles, puis enregistrez le stock de départ ou une réception.",
+  "searchArticle": "Rechercher un article",
+  "showInactive": "Afficher les inactifs",
+  "newArticle": "Nouvel article",
+  "editArticle": "Modifier l'article",
+  "articlesEmptyHint": "Ajoutez vos produits : légumes, viandes, boissons, emballages, préparations maison…",
+  "storageLabel": "Conservation",
+  "storageAmbient": "Ambiant",
+  "storageChilled": "Frais",
+  "storageFrozen": "Surgelé",
+  "purchaseUnitLabel": "Unité d'achat",
+  "purchaseUnitExample": "Ex. : Sac de 5 kg, Carton de 12",
+  "purchaseUnitQty": "Contenance",
+  "preferredSupplier": "Fournisseur habituel",
+  "noneLabel": "Aucun",
+  "shelfLifeDays": "Durée de conservation",
+  "daysShort": "jours",
+  "barcodeLabel": "Code-barres",
+  "thresholdThisBranch": "Seuil d'alerte de cet établissement",
+  "reorderTitle": "Commande suggérée",
+  "reorderHint": "De quoi tenir au-dessus du seuil, d'après la consommation des 28 derniers jours.",
+  "nothingToReorder": "Rien à commander",
+  "nothingToReorderHint": "Tous les articles suivis ont un stock suffisant pour la période choisie.",
+  "noSupplier": "Sans fournisseur habituel",
+  "noSupplierHint": "Choisissez un fournisseur habituel dans la fiche article pour créer un bon de commande.",
+  "orderFormPdf": "Bon de commande PDF",
+  "createPurchaseOrder": "Créer le bon de commande",
+  "purchaseOrderDraftCreated": "Bon de commande créé en brouillon dans Achats.",
+  "reorderNote": "Commande suggérée par le stock",
+  "inStockShort": "En stock : {qty}",
+  "@inStockShort": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      }
+    }
+  },
+  "entriesFilter": "Entrées",
+  "exitsLabel": "Sorties",
+  "transfersFilter": "Transferts",
+  "adjustmentsFilter": "Ajustements",
+  "movementsReportTitle": "Mouvements de stock",
+  "wasteReportTitle": "Pertes et casse",
+  "reportValuation": "État du stock valorisé",
+  "reportValuationHint": "Quantités, seuils, coût moyen et valeur de chaque article à l'instant.",
+  "reportMovementsHint": "Tous les mouvements de la période, avec les totaux par nature.",
+  "reportWasteHint": "Pertes de la période avec leur motif et leur valeur.",
+  "reportInventory": "Inventaire avec écarts",
+  "reportInventoryHint": "Théorique, compté, écarts valorisés, avec les signatures.",
+  "reportFoodCost": "Coût matière par plat",
+  "reportFoodCostHint": "Coût de revient, prix de vente, part du prix et marge de chaque plat.",
+  "reportExpiringHint": "Lots encore en stock dont la date limite tombe dans les 14 jours.",
+  "generatePdf": "Générer le PDF",
+  "noValidatedInventory": "Aucun inventaire validé pour l'instant.",
+  "chooseInventory": "Choisir l'inventaire",
+  "generatedOn": "Édité le {date}",
+  "@generatedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "articlesLabel": "Articles",
+  "articleLabel": "Article",
+  "avgCostShort": "Coût moyen",
+  "valueLabel": "Valeur",
+  "typeLabel": "Nature",
+  "inventoryGains": "Excédents",
+  "inventoryLosses": "Manquants",
+  "inventoryNet": "Écart net",
+  "theoreticalLabel": "Théorique",
+  "countedBySignature": "Compté par : ____________________",
+  "validatedBySignature": "Validé par : ____________________",
+  "targetFoodCost": "Objectif de coût matière",
+  "targetFoodCostHint": "Part maximale du prix de vente que doivent représenter les ingrédients d'un plat (souvent 25 à 35 %).",
+  "targetFoodCostValue": "Objectif coût matière : {percent} %",
+  "@targetFoodCostValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "dishesWithRecipe": "Plats avec fiche",
+  "aboveTarget": "Au-dessus de l'objectif",
+  "aboveTargetShort": "trop cher",
+  "withoutRecipe": "Sans fiche",
+  "recipeDefined": "Fiche définie",
+  "dishLabel": "Plat",
+  "costPriceShort": "Coût",
+  "sellingPriceShort": "Prix",
+  "foodCostShort": "coût matière",
+  "marginShort": "Marge",
+  "orderFormTitle": "Bon de commande",
+  "supplierLabelValue": "Fournisseur : {name}",
+  "@supplierLabelValue": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "packagingLabel": "Conditionnement",
+  "unitPriceShort": "Prix unitaire",
+  "orderFormFooter": "Merci de confirmer la disponibilité et le délai de livraison.",
+  "accountTypeQuestion": "Vous êtes :",
+  "accountTypeCustomer": "Client",
+  "accountTypeCustomerHint": "Découvrir les restaurants, commander, réserver",
+  "accountTypeBusiness": "Entreprise",
+  "accountTypeBusinessHint": "Gérer mon restaurant et mon équipe",
+  "accountTypeRequired": "Choisissez Client ou Entreprise.",
+  "accountTypeTitle": "Bienvenue sur Resto",
+  "accountTypeSub": "Comment allez-vous utiliser l'application ?",
+  "continueAction": "Continuer",
+  "adVideoTooBig": "{name} dépasse 50 Mo : choisissez une vidéo plus courte (30 secondes environ).",
+  "@adVideoTooBig": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adMediaAdded": "{count, plural, =1{1 fichier ajouté.} other{{count} fichiers ajoutés.}}",
+  "@adMediaAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adNeedVideo": "Ajoutez une vidéo avant de publier ce format.",
+  "adNeedMedia": "Ajoutez au moins une photo ou une vidéo avant de publier.",
+  "adNeedItems": "Choisissez au moins un plat à mettre en avant.",
+  "uploadingLabel": "Envoi…",
+  "errorInvalidMedia": "Fichier refusé : il doit venir de votre médiathèque.",
+  "errorFileTooLarge": "Fichier trop volumineux.",
+  "errorFileType": "Format de fichier non accepté (JPG, PNG, WebP, MP4, WebM, MOV).",
+  "adAddVideo": "Ajouter une vidéo",
+  "errorOutOfStock": "Ce plat est épuisé pour aujourd'hui.",
+  "errorInvalidRating": "La note doit être comprise entre 1 et 5.",
+  "errorInvalidAllergen": "Allergène inconnu.",
+  "bestSeller": "Best-seller",
+  "callAction": "Appeler",
+  "writeAction": "Écrire",
+  "categoriesLabel": "Catégories",
+  "filtersLabel": "Filtres",
+  "reviewsTab": "Avis",
+  "infosTab": "Infos",
+  "noDishMatches": "Aucun plat ne correspond à ces filtres.",
+  "soldCount": "{count, plural, =1{1 vendu} other{{count} vendus}}",
+  "@soldCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "yourCart": "Votre panier",
+  "coverPhoto": "Photo d'ambiance",
+  "coverPhotoHint": "Grande photo en haut de votre page restaurant (salle, terrasse, façade).",
+  "changePhoto": "Changer la photo",
+  "itemTagsLabel": "Étiquettes (filtres de votre carte)",
+  "itemTagsHint": "Créez vos propres étiquettes : vos clients pourront filtrer la carte avec. Ex. : Piment doux, Halal, Sans alcool, Fait maison.",
+  "addTagHint": "Nouvelle étiquette + Entrée",
+  "errorInvalidTag": "Une étiquette compte 30 caractères au plus.",
+  "itemFavorites": "{count, plural, =0{Aucun client ne l'a en favori} =1{1 client l'a en favori} other{{count} clients l'ont en favori}}",
+  "@itemFavorites": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "itemSold30": "Ventes des 30 derniers jours",
+  "receiptOrderNo": "Commande N°",
+  "receiptTicketNo": "Ticket N°",
+  "receiptChannel": "Canal",
+  "receiptQtyShort": "Qté",
+  "receiptTotalInclTax": "Total TTC",
+  "receiptTotalExclTax": "Total HT",
+  "receiptApproved": "Transaction approuvée",
+  "receiptRef": "Réf. : {ref}",
+  "@receiptRef": {
+    "placeholders": {
+      "ref": {
+        "type": "String"
+      }
+    }
+  },
+  "receiptSeeYou": "À très bientôt chez {name}",
+  "@receiptSeeYou": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "receiptRecycle": "Pour une planète plus verte, pensez à recycler ce ticket.",
+  "receiptLoyaltyTitle": "Votre fidélité vous récompense !",
+  "receiptLoyaltyCaption": "Scannez ce QR code pour accéder à votre espace fidélité et profiter de vos avantages.",
+  "receiptPaperLabel": "Imprimante de tickets de cet appareil",
+  "receiptPaper80": "Rouleau 80 mm",
+  "receiptPaper58": "Rouleau 58 mm",
+  "receiptPhotosLabel": "Photos des plats sur le ticket",
+  "receiptTestPrint": "Imprimer un ticket d'essai",
+  "receiptTestTitle": "Ticket d'essai",
+  "receiptHeaderSection": "En-tête du ticket",
+  "receiptFooterSection": "Bas du ticket",
+  "receiptTitleLabel": "Nom affiché",
+  "receiptTitleHint": "Par défaut : le nom de la marque",
+  "receiptSubtitleLabel": "Sous-titre",
+  "receiptSubtitleHint": "Ex. : Restaurant & Saveurs",
+  "receiptSloganLabel": "Slogan",
+  "receiptSloganHint": "Ex. : Une cuisine authentique, des saveurs du monde",
+  "websiteLabel": "Site web",
+  "websiteHint": "Ex. : www.monrestaurant.com",
+  "receiptQrTitleLabel": "Titre à côté du QR code",
+  "receiptQrCaptionLabel": "Texte à côté du QR code",
+  "receiptFarewellLabel": "Formule d'au revoir",
+  "receiptFarewellHint": "Ex. : À très bientôt chez nous",
+  "itemLikesTip": "{count, plural, =0{Aucun J'aime} =1{1 J'aime} other{{count} J'aime}}",
+  "@itemLikesTip": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "itemReviewAction": "Avis",
+  "itemHeartAction": "Cœur",
+  "itemCommentsTitle": "Avis des clients",
+  "itemVerifiedReviews": "Avis notés après une commande",
+  "notifStaffNewOrderTitle": "Nouvelle commande",
+  "notifStaffNewOrder": "Commande n° {number} {customer} — {branch}",
+  "@notifStaffNewOrder": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "customer": {
+        "type": "String"
+      },
+      "branch": {
+        "type": "String"
+      }
+    }
+  },
+  "notifStaffOrderReadyTitle": "Commande prête à servir",
+  "notifStaffOrderReady": "Commande n° {number} — {branch}",
+  "@notifStaffOrderReady": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "branch": {
+        "type": "String"
+      }
+    }
+  },
+  "notifStaffReservationTitle": "Nouvelle réservation",
+  "notifStaffReservation": "{name} · {count, plural, =1{1 personne} other{{count} personnes}} · {date}",
+  "@notifStaffReservation": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "notifStaffReviewTitle": "Nouvel avis",
+  "notifStaffReview": "{author} sur « {item} »",
+  "@notifStaffReview": {
+    "placeholders": {
+      "author": {
+        "type": "String"
+      },
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "pushNewOrder": "Notification sur le téléphone : nouvelle commande d'un client",
+  "pushOrderReady": "Notification sur le téléphone : commande prête à servir",
+  "pushReservations": "Notification sur le téléphone : nouvelle réservation",
+  "pushReviews": "Notification sur le téléphone : nouvel avis sur un plat",
+  "tablesTab": "Tables",
+  "tablesNow": "Maintenant",
+  "tablesLater": "Choisir un moment",
+  "tableLegendOccupied": "Occupée",
+  "tableLegendReserved": "Réservée",
+  "tableLegendChosen": "Votre choix",
+  "tableFreeUntil": "Libre jusqu'à {time}",
+  "@tableFreeUntil": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "tableOccupiedUntil": "Libre vers {time}",
+  "@tableOccupiedUntil": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "tableReservedSlot": "Réservée {from}–{to}",
+  "@tableReservedSlot": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "tablesSelectHint": "Touchez une ou plusieurs tables libres pour les réserver.",
+  "tablesSeatsChosen": "{seats, plural, =1{1 place choisie} other{{seats} places choisies}} pour {party, plural, =1{1 personne} other{{party} personnes}}",
+  "@tablesSeatsChosen": {
+    "placeholders": {
+      "seats": {
+        "type": "int"
+      },
+      "party": {
+        "type": "int"
+      }
+    }
+  },
+  "reserveTablesAction": "Réserver {tables}",
+  "@reserveTablesAction": {
+    "placeholders": {
+      "tables": {
+        "type": "String"
+      }
+    }
+  },
+  "tableLabelChip": "Table {label}",
+  "@tableLabelChip": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "tablesEmpty": "Ce restaurant n'a pas encore présenté ses tables."
+}
