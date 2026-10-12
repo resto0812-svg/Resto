@@ -11268,6 +11268,120 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Bon de commande PDF'**
   String get purchaseOrderPdf;
+
+  /// No description provided for @recurringGenerated.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucune dépense à générer.} =1{1 dépense récurrente enregistrée.} other{{count} dépenses récurrentes enregistrées.}}'**
+  String recurringGenerated(int count);
+
+  /// No description provided for @recurringDue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =1{1 dépense récurrente à enregistrer ce mois-ci ({amount})} other{{count} dépenses récurrentes à enregistrer ce mois-ci ({amount})}}'**
+  String recurringDue(int count, String amount);
+
+  /// No description provided for @generateNow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get generateNow;
+
+  /// No description provided for @expensesOfMonth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dépenses du mois'**
+  String get expensesOfMonth;
+
+  /// No description provided for @vsLastMonth.
+  ///
+  /// In fr, this message translates to:
+  /// **'{value} par rapport au mois dernier'**
+  String vsLastMonth(String value);
+
+  /// No description provided for @lastMonthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mois dernier'**
+  String get lastMonthLabel;
+
+  /// No description provided for @recurringTab.
+  ///
+  /// In fr, this message translates to:
+  /// **'Récurrentes'**
+  String get recurringTab;
+
+  /// No description provided for @budgetsExceeded.
+  ///
+  /// In fr, this message translates to:
+  /// **'Budgets dépassés'**
+  String get budgetsExceeded;
+
+  /// No description provided for @expensesSixMonths.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dépenses des six derniers mois'**
+  String get expensesSixMonths;
+
+  /// No description provided for @budgetsTab.
+  ///
+  /// In fr, this message translates to:
+  /// **'Budgets'**
+  String get budgetsTab;
+
+  /// No description provided for @noBudgetsYet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun budget défini. Fixez-en dans l\'onglet Budgets.'**
+  String get noBudgetsYet;
+
+  /// No description provided for @newRecurringExpense.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouvelle dépense récurrente'**
+  String get newRecurringExpense;
+
+  /// No description provided for @recurringHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Loyer, abonnements, salaires… : enregistrés chaque mois en un geste depuis la vue d\'ensemble.'**
+  String get recurringHint;
+
+  /// No description provided for @noRecurringYet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune dépense récurrente.'**
+  String get noRecurringYet;
+
+  /// No description provided for @everyMonthOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'chaque mois le {day}'**
+  String everyMonthOn(int day);
+
+  /// No description provided for @recurringExample.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. : Loyer du local'**
+  String get recurringExample;
+
+  /// No description provided for @expenseCategoryField.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catégorie'**
+  String get expenseCategoryField;
+
+  /// No description provided for @dayOfMonthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Jour du mois'**
+  String get dayOfMonthLabel;
+
+  /// No description provided for @budgetsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie.'**
+  String get budgetsHint;
 }
 
 class _AppLocalizationsDelegate

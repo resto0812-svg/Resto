@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
 
 import '../../app_state.dart';
 import '../../data/cash_api.dart';
@@ -9,9 +10,13 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/branch_scope.dart';
 import '../../ui/common.dart';
 import '../../ui/files.dart';
+import '../../ui/header_slot.dart';
+import '../../ui/kit.dart';
+import '../../pdf/expenses_pdf.dart';
 import '../cash/cash_labels.dart';
 import '../menus/menu_widgets.dart';
 import '../stock/stock_widgets.dart';
+import 'expenses_pro.dart';
 
 String expenseCategoryLabel(AppLocalizations t, String? code, String name) => switch (code) {
       'rent' => t.expRent,
@@ -51,6 +56,62 @@ class _ExpensesBody extends StatefulWidget {
 class _ExpensesBodyState extends State<_ExpensesBody> {
   DateTime _month = DateTime(DateTime.now().year, DateTime.now().month);
   Key _key = UniqueKey();
+  int _tab = 0;
+
+  /// Catégorie choisie comme filtre (null = toutes).
+  String? _cat;
+
+  @override
+  void dispose() {
+    HeaderSlot.clear(this);
+    super.dispose();
+  }
+
+  /// Rapport PDF des dépenses du mois (par catégorie, détail).
+  Future<void> _pdf(List<Expense> list, Map<String, ExpenseCategory> cats) async {
+    final t = context.t;
+    final s = widget.scope;
+    try {
+      final bytes = await expensesPdf(
+        t: t,
+        locale: Localizations.localeOf(context).toString(),
+        money: (v) => s.money(context, v),
+        branch: s.branch,
+        month: _month,
+        expenses: list,
+        categoryName: (id) => expenseCategoryLabel(t, cats[id]?.code, cats[id]?.name ?? ''),
+      );
+      await Printing.sharePdf(bytes: bytes, filename: 'depenses-${DateFormat('yyyy-MM').format(_month)}.pdf');
+    } catch (e) {
+      if (mounted) showError(context, e);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    HeaderSlot.show(
+      this,
+      'expenses',
+      PillBar<int>(
+        dense: true,
+        items: [
+          PillItem(0, t.dashTabOverview, icon: Icons.space_dashboard_outlined),
+          PillItem(1, t.navExpenses, icon: Icons.receipt_long_outlined),
+          PillItem(2, t.recurringTab, icon: Icons.autorenew_rounded),
+          PillItem(3, t.budgetsTab, icon: Icons.savings_outlined),
+        ],
+        selected: _tab,
+        onSelected: (i) => setState(() => _tab = i),
+      ),
+    );
+    return switch (_tab) {
+      0 => ExpensesOverview(key: _key, scope: widget.scope, month: _month, onGenerated: _reload),
+      2 => ExpenseTemplatesTab(scope: widget.scope),
+      3 => ExpenseBudgetsTab(scope: widget.scope),
+      _ => _listTab(context),
+    };
+  }
 
   void _reload() => setState(() => _key = UniqueKey());
 
@@ -101,8 +162,7 @@ class _ExpensesBodyState extends State<_ExpensesBody> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _listTab(BuildContext context) {
     final t = context.t;
     final s = widget.scope;
     final month = DateFormat.yMMMM(Localizations.localeOf(context).toString());
@@ -114,7 +174,8 @@ class _ExpensesBodyState extends State<_ExpensesBody> {
       builder: (context, data, _) {
         final (list, cats, suppliers) = data;
         final catOf = {for (final c in cats) c.id: c};
-        final recorded = list.where((e) => e.status == 'recorded');
+        final shown = _cat == null ? list : list.where((e) => e.categoryId == _cat).toList();
+        final recorded = shown.where((e) => e.status == 'recorded');
         final total = recorded.fold<int>(0, (a, e) => a + e.amountMinor);
         final tax = recorded.fold<int>(0, (a, e) => a + e.taxMinor);
         return Scaffold(
@@ -151,8 +212,27 @@ class _ExpensesBodyState extends State<_ExpensesBody> {
                 ]),
               ]),
             ),
-            if (list.isEmpty) FormWidth(maxWidth: 900, child: Padding(padding: const EdgeInsets.only(top: 24), child: Text(t.noExpenses))),
-            for (final e in list)
+            FormWidth(
+              maxWidth: 900,
+              child: Row(children: [
+                Expanded(
+                  child: PillBar<String?>(
+                    dense: true,
+                    items: [
+                      PillItem(null, t.allItems, count: list.length),
+                      for (final c in cats.where((c) => list.any((e) => e.categoryId == c.id)))
+                        PillItem(c.id, expenseCategoryLabel(t, c.code, c.name), count: list.where((e) => e.categoryId == c.id).length),
+                    ],
+                    selected: _cat,
+                    onSelected: (v) => setState(() => _cat = v),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                RoundIconButton(icon: Icons.picture_as_pdf_outlined, tooltip: t.dashPdf, onTap: () => _pdf(shown, catOf)),
+              ]),
+            ),
+            if (shown.isEmpty) FormWidth(maxWidth: 900, child: Padding(padding: const EdgeInsets.only(top: 24), child: Text(t.noExpenses))),
+            for (final e in shown)
               FormWidth(
                 maxWidth: 900,
                 child: ListTile(

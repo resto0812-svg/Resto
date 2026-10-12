@@ -6545,4 +6545,84 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get purchaseOrderPdf => 'Purchase order PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count recurring expenses recorded.',
+      one: '1 recurring expense recorded.',
+      zero: 'No expense to record.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count recurring expenses to record this month ($amount)',
+      one: '1 recurring expense to record this month ($amount)',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => 'Record';
+
+  @override
+  String get expensesOfMonth => 'Expenses this month';
+
+  @override
+  String vsLastMonth(String value) {
+    return '$value vs last month';
+  }
+
+  @override
+  String get lastMonthLabel => 'Last month';
+
+  @override
+  String get recurringTab => 'Recurring';
+
+  @override
+  String get budgetsExceeded => 'Budgets exceeded';
+
+  @override
+  String get expensesSixMonths => 'Expenses over the last six months';
+
+  @override
+  String get budgetsTab => 'Budgets';
+
+  @override
+  String get noBudgetsYet => 'No budget set. Add some in the Budgets tab.';
+
+  @override
+  String get newRecurringExpense => 'New recurring expense';
+
+  @override
+  String get recurringHint =>
+      'Rent, subscriptions, salaries…: recorded every month in one tap from the overview.';
+
+  @override
+  String get noRecurringYet => 'No recurring expense.';
+
+  @override
+  String everyMonthOn(int day) {
+    return 'every month on the $day';
+  }
+
+  @override
+  String get recurringExample => 'E.g. Premises rent';
+
+  @override
+  String get expenseCategoryField => 'Category';
+
+  @override
+  String get dayOfMonthLabel => 'Day of the month';
+
+  @override
+  String get budgetsHint =>
+      'Amount not to exceed each month, per category. Leave empty to skip a category.';
 }

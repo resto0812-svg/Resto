@@ -6598,4 +6598,85 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get purchaseOrderPdf => 'Bestellschein als PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count wiederkehrende Ausgaben gebucht.',
+      one: '1 wiederkehrende Ausgabe gebucht.',
+      zero: 'Keine Ausgabe zu buchen.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count wiederkehrende Ausgaben diesen Monat zu buchen ($amount)',
+      one: '1 wiederkehrende Ausgabe diesen Monat zu buchen ($amount)',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => 'Buchen';
+
+  @override
+  String get expensesOfMonth => 'Ausgaben des Monats';
+
+  @override
+  String vsLastMonth(String value) {
+    return '$value zum Vormonat';
+  }
+
+  @override
+  String get lastMonthLabel => 'Vormonat';
+
+  @override
+  String get recurringTab => 'Wiederkehrend';
+
+  @override
+  String get budgetsExceeded => 'Überschrittene Budgets';
+
+  @override
+  String get expensesSixMonths => 'Ausgaben der letzten sechs Monate';
+
+  @override
+  String get budgetsTab => 'Budgets';
+
+  @override
+  String get noBudgetsYet =>
+      'Kein Budget festgelegt. Legen Sie welche im Reiter Budgets an.';
+
+  @override
+  String get newRecurringExpense => 'Neue wiederkehrende Ausgabe';
+
+  @override
+  String get recurringHint =>
+      'Miete, Abos, Gehälter…: jeden Monat mit einem Tipp in der Übersicht gebucht.';
+
+  @override
+  String get noRecurringYet => 'Keine wiederkehrende Ausgabe.';
+
+  @override
+  String everyMonthOn(int day) {
+    return 'jeden Monat am $day.';
+  }
+
+  @override
+  String get recurringExample => 'z. B. Miete der Räume';
+
+  @override
+  String get expenseCategoryField => 'Kategorie';
+
+  @override
+  String get dayOfMonthLabel => 'Tag des Monats';
+
+  @override
+  String get budgetsHint =>
+      'Monatlicher Höchstbetrag je Kategorie. Leer lassen, um eine Kategorie nicht zu verfolgen.';
 }

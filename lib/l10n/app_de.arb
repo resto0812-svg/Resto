@@ -2310,5 +2310,55 @@
   "topSuppliers": "Wichtigste Lieferanten (90 Tage)",
   "noPurchasesYet": "Noch keine Einkäufe.",
   "totalPurchased": "Gesamt eingekauft",
-  "purchaseOrderPdf": "Bestellschein als PDF"
+  "purchaseOrderPdf": "Bestellschein als PDF",
+  "recurringGenerated": "{count, plural, =0{Keine Ausgabe zu buchen.} =1{1 wiederkehrende Ausgabe gebucht.} other{{count} wiederkehrende Ausgaben gebucht.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{1 wiederkehrende Ausgabe diesen Monat zu buchen ({amount})} other{{count} wiederkehrende Ausgaben diesen Monat zu buchen ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "Buchen",
+  "expensesOfMonth": "Ausgaben des Monats",
+  "vsLastMonth": "{value} zum Vormonat",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "Vormonat",
+  "recurringTab": "Wiederkehrend",
+  "budgetsExceeded": "Überschrittene Budgets",
+  "expensesSixMonths": "Ausgaben der letzten sechs Monate",
+  "budgetsTab": "Budgets",
+  "noBudgetsYet": "Kein Budget festgelegt. Legen Sie welche im Reiter Budgets an.",
+  "newRecurringExpense": "Neue wiederkehrende Ausgabe",
+  "recurringHint": "Miete, Abos, Gehälter…: jeden Monat mit einem Tipp in der Übersicht gebucht.",
+  "noRecurringYet": "Keine wiederkehrende Ausgabe.",
+  "everyMonthOn": "jeden Monat am {day}.",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "z. B. Miete der Räume",
+  "expenseCategoryField": "Kategorie",
+  "dayOfMonthLabel": "Tag des Monats",
+  "budgetsHint": "Monatlicher Höchstbetrag je Kategorie. Leer lassen, um eine Kategorie nicht zu verfolgen."
 }

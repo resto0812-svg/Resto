@@ -2310,5 +2310,55 @@
   "topSuppliers": "Principales proveedores (90 días)",
   "noPurchasesYet": "Aún no hay compras.",
   "totalPurchased": "Total comprado",
-  "purchaseOrderPdf": "Orden de compra PDF"
+  "purchaseOrderPdf": "Orden de compra PDF",
+  "recurringGenerated": "{count, plural, =0{Ningún gasto que registrar.} =1{1 gasto recurrente registrado.} other{{count} gastos recurrentes registrados.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{1 gasto recurrente por registrar este mes ({amount})} other{{count} gastos recurrentes por registrar este mes ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "Registrar",
+  "expensesOfMonth": "Gastos del mes",
+  "vsLastMonth": "{value} respecto al mes pasado",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "Mes pasado",
+  "recurringTab": "Recurrentes",
+  "budgetsExceeded": "Presupuestos superados",
+  "expensesSixMonths": "Gastos de los últimos seis meses",
+  "budgetsTab": "Presupuestos",
+  "noBudgetsYet": "Ningún presupuesto definido. Añádalos en la pestaña Presupuestos.",
+  "newRecurringExpense": "Nuevo gasto recurrente",
+  "recurringHint": "Alquiler, suscripciones, salarios…: se registran cada mes con un gesto desde el resumen.",
+  "noRecurringYet": "Ningún gasto recurrente.",
+  "everyMonthOn": "cada mes el día {day}",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "Ej.: Alquiler del local",
+  "expenseCategoryField": "Categoría",
+  "dayOfMonthLabel": "Día del mes",
+  "budgetsHint": "Importe que no debe superarse cada mes, por categoría. Déjelo vacío para no seguir una categoría."
 }

@@ -2310,5 +2310,55 @@
   "topSuppliers": "أهم الموردين (90 يومًا)",
   "noPurchasesYet": "لا مشتريات بعد.",
   "totalPurchased": "إجمالي المشتريات",
-  "purchaseOrderPdf": "أمر شراء PDF"
+  "purchaseOrderPdf": "أمر شراء PDF",
+  "recurringGenerated": "{count, plural, =0{لا مصاريف للتسجيل.} =1{تم تسجيل مصروف متكرر واحد.} other{تم تسجيل {count} مصاريف متكررة.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{مصروف متكرر واحد للتسجيل هذا الشهر ({amount})} other{{count} مصاريف متكررة للتسجيل هذا الشهر ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "تسجيل",
+  "expensesOfMonth": "مصاريف الشهر",
+  "vsLastMonth": "{value} مقارنة بالشهر الماضي",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "الشهر الماضي",
+  "recurringTab": "متكررة",
+  "budgetsExceeded": "ميزانيات متجاوزة",
+  "expensesSixMonths": "مصاريف الأشهر الستة الأخيرة",
+  "budgetsTab": "الميزانيات",
+  "noBudgetsYet": "لا ميزانية محددة. أضفها في تبويب الميزانيات.",
+  "newRecurringExpense": "مصروف متكرر جديد",
+  "recurringHint": "الإيجار، الاشتراكات، الرواتب…: تُسجل كل شهر بلمسة من النظرة العامة.",
+  "noRecurringYet": "لا مصاريف متكررة.",
+  "everyMonthOn": "كل شهر في اليوم {day}",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "مثال: إيجار المحل",
+  "expenseCategoryField": "الفئة",
+  "dayOfMonthLabel": "يوم الشهر",
+  "budgetsHint": "مبلغ لا يُتجاوز كل شهر لكل فئة. اتركه فارغًا لعدم متابعة الفئة."
 }

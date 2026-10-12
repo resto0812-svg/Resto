@@ -6578,4 +6578,85 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get purchaseOrderPdf => 'Nota de encomenda PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count despesas recorrentes registadas.',
+      one: '1 despesa recorrente registada.',
+      zero: 'Nenhuma despesa a registar.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count despesas recorrentes a registar este mês ($amount)',
+      one: '1 despesa recorrente a registar este mês ($amount)',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => 'Registar';
+
+  @override
+  String get expensesOfMonth => 'Despesas do mês';
+
+  @override
+  String vsLastMonth(String value) {
+    return '$value face ao mês passado';
+  }
+
+  @override
+  String get lastMonthLabel => 'Mês passado';
+
+  @override
+  String get recurringTab => 'Recorrentes';
+
+  @override
+  String get budgetsExceeded => 'Orçamentos ultrapassados';
+
+  @override
+  String get expensesSixMonths => 'Despesas dos últimos seis meses';
+
+  @override
+  String get budgetsTab => 'Orçamentos';
+
+  @override
+  String get noBudgetsYet =>
+      'Nenhum orçamento definido. Adicione-os no separador Orçamentos.';
+
+  @override
+  String get newRecurringExpense => 'Nova despesa recorrente';
+
+  @override
+  String get recurringHint =>
+      'Renda, assinaturas, salários…: registados todos os meses com um gesto a partir da visão geral.';
+
+  @override
+  String get noRecurringYet => 'Nenhuma despesa recorrente.';
+
+  @override
+  String everyMonthOn(int day) {
+    return 'todos os meses no dia $day';
+  }
+
+  @override
+  String get recurringExample => 'Ex.: Renda do espaço';
+
+  @override
+  String get expenseCategoryField => 'Categoria';
+
+  @override
+  String get dayOfMonthLabel => 'Dia do mês';
+
+  @override
+  String get budgetsHint =>
+      'Montante a não ultrapassar por mês, por categoria. Deixe vazio para não acompanhar uma categoria.';
 }

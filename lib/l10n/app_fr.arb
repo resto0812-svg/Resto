@@ -3366,5 +3366,55 @@
   "topSuppliers": "Principaux fournisseurs (90 jours)",
   "noPurchasesYet": "Aucun achat pour le moment.",
   "totalPurchased": "Total acheté",
-  "purchaseOrderPdf": "Bon de commande PDF"
+  "purchaseOrderPdf": "Bon de commande PDF",
+  "recurringGenerated": "{count, plural, =0{Aucune dépense à générer.} =1{1 dépense récurrente enregistrée.} other{{count} dépenses récurrentes enregistrées.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{1 dépense récurrente à enregistrer ce mois-ci ({amount})} other{{count} dépenses récurrentes à enregistrer ce mois-ci ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "Enregistrer",
+  "expensesOfMonth": "Dépenses du mois",
+  "vsLastMonth": "{value} par rapport au mois dernier",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "Mois dernier",
+  "recurringTab": "Récurrentes",
+  "budgetsExceeded": "Budgets dépassés",
+  "expensesSixMonths": "Dépenses des six derniers mois",
+  "budgetsTab": "Budgets",
+  "noBudgetsYet": "Aucun budget défini. Fixez-en dans l'onglet Budgets.",
+  "newRecurringExpense": "Nouvelle dépense récurrente",
+  "recurringHint": "Loyer, abonnements, salaires… : enregistrés chaque mois en un geste depuis la vue d'ensemble.",
+  "noRecurringYet": "Aucune dépense récurrente.",
+  "everyMonthOn": "chaque mois le {day}",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "Ex. : Loyer du local",
+  "expenseCategoryField": "Catégorie",
+  "dayOfMonthLabel": "Jour du mois",
+  "budgetsHint": "Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie."
 }

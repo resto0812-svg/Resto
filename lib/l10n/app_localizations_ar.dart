@@ -6568,4 +6568,84 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get purchaseOrderPdf => 'أمر شراء PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'تم تسجيل $count مصاريف متكررة.',
+      one: 'تم تسجيل مصروف متكرر واحد.',
+      zero: 'لا مصاريف للتسجيل.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مصاريف متكررة للتسجيل هذا الشهر ($amount)',
+      one: 'مصروف متكرر واحد للتسجيل هذا الشهر ($amount)',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => 'تسجيل';
+
+  @override
+  String get expensesOfMonth => 'مصاريف الشهر';
+
+  @override
+  String vsLastMonth(String value) {
+    return '$value مقارنة بالشهر الماضي';
+  }
+
+  @override
+  String get lastMonthLabel => 'الشهر الماضي';
+
+  @override
+  String get recurringTab => 'متكررة';
+
+  @override
+  String get budgetsExceeded => 'ميزانيات متجاوزة';
+
+  @override
+  String get expensesSixMonths => 'مصاريف الأشهر الستة الأخيرة';
+
+  @override
+  String get budgetsTab => 'الميزانيات';
+
+  @override
+  String get noBudgetsYet => 'لا ميزانية محددة. أضفها في تبويب الميزانيات.';
+
+  @override
+  String get newRecurringExpense => 'مصروف متكرر جديد';
+
+  @override
+  String get recurringHint =>
+      'الإيجار، الاشتراكات، الرواتب…: تُسجل كل شهر بلمسة من النظرة العامة.';
+
+  @override
+  String get noRecurringYet => 'لا مصاريف متكررة.';
+
+  @override
+  String everyMonthOn(int day) {
+    return 'كل شهر في اليوم $day';
+  }
+
+  @override
+  String get recurringExample => 'مثال: إيجار المحل';
+
+  @override
+  String get expenseCategoryField => 'الفئة';
+
+  @override
+  String get dayOfMonthLabel => 'يوم الشهر';
+
+  @override
+  String get budgetsHint =>
+      'مبلغ لا يُتجاوز كل شهر لكل فئة. اتركه فارغًا لعدم متابعة الفئة.';
 }

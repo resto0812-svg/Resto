@@ -2310,5 +2310,55 @@
   "topSuppliers": "主要供應商（90 天）",
   "noPurchasesYet": "尚無採購。",
   "totalPurchased": "採購總額",
-  "purchaseOrderPdf": "採購單 PDF"
+  "purchaseOrderPdf": "採購單 PDF",
+  "recurringGenerated": "{count, plural, =0{沒有需要登記的支出。} other{已登記 {count} 筆定期支出。}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, other{本月有 {count} 筆定期支出待登記（{amount}）}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "登記",
+  "expensesOfMonth": "本月支出",
+  "vsLastMonth": "較上月 {value}",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "上月",
+  "recurringTab": "定期支出",
+  "budgetsExceeded": "超出預算",
+  "expensesSixMonths": "近六個月支出",
+  "budgetsTab": "預算",
+  "noBudgetsYet": "尚未設定預算。請在「預算」分頁中新增。",
+  "newRecurringExpense": "新的定期支出",
+  "recurringHint": "房租、訂閱、薪資……：每月在概覽中一鍵登記。",
+  "noRecurringYet": "沒有定期支出。",
+  "everyMonthOn": "每月 {day} 日",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "例如：店面租金",
+  "expenseCategoryField": "類別",
+  "dayOfMonthLabel": "每月日期",
+  "budgetsHint": "每個類別每月不超過的金額。留空則不追蹤該類別。"
 }

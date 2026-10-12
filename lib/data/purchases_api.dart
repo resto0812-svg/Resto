@@ -149,6 +149,38 @@ class Expense {
   final String? cancelReason;
 }
 
+/// Dépense récurrente (loyer, abonnement…) générée chaque mois.
+class ExpenseTemplate {
+  ExpenseTemplate.fromJson(Map<String, dynamic> j)
+      : id = j['id'] as String,
+        categoryId = j['category_id'] as String,
+        supplierId = j['supplier_id'] as String?,
+        description = j['description'] as String,
+        amountMinor = (j['amount_minor'] as num).toInt(),
+        taxMinor = (j['tax_minor'] as num? ?? 0).toInt(),
+        method = j['method'] as String? ?? 'transfer',
+        dayOfMonth = (j['day_of_month'] as num? ?? 1).toInt(),
+        active = j['active'] as bool? ?? true,
+        lastMonth = j['last_month'] == null ? null : DateTime.parse(j['last_month'] as String);
+  final String id;
+  final String categoryId;
+  final String? supplierId;
+  final String description;
+  final int amountMinor;
+  final int taxMinor;
+  final String method;
+  final int dayOfMonth;
+  final bool active;
+  final DateTime? lastMonth;
+
+  /// Pas encore générée pour le mois en cours.
+  bool get dueThisMonth {
+    final now = DateTime.now();
+    final month = DateTime(now.year, now.month);
+    return active && (lastMonth == null || lastMonth!.isBefore(month));
+  }
+}
+
 class FinanceSummary {
   FinanceSummary.fromJson(Map<String, dynamic> j)
       : salesTtc = (j['sales_ttc'] as num).toInt(),
@@ -357,6 +389,44 @@ class PurchasesApi {
         'p_attachment': attachmentPath,
         'p_client_id': clientId,
       });
+
+  // --- Dépenses récurrentes et budgets
+
+  Future<List<ExpenseTemplate>> expenseTemplates(String branchId) async {
+    try {
+      final rows = await _db.from('expense_templates').select().eq('branch_id', branchId).order('day_of_month');
+      return [for (final r in rows) ExpenseTemplate.fromJson(r)];
+    } on PostgrestException {
+      return const [];
+    }
+  }
+
+  Future<void> saveExpenseTemplate(String orgId, String branchId, String? id, Map<String, dynamic> values) => id == null
+      ? _db.from('expense_templates').insert({...values, 'organization_id': orgId, 'branch_id': branchId})
+      : _db.from('expense_templates').update(values).eq('id', id);
+
+  Future<void> deleteExpenseTemplate(String id) => _db.from('expense_templates').delete().eq('id', id);
+
+  /// Catégorie → budget mensuel.
+  Future<Map<String, int>> expenseBudgets(String branchId) async {
+    try {
+      final rows = await _db.from('expense_budgets').select('category_id, monthly_minor').eq('branch_id', branchId);
+      return {for (final r in rows) r['category_id'] as String: (r['monthly_minor'] as num).toInt()};
+    } on PostgrestException {
+      return const {};
+    }
+  }
+
+  Future<void> setExpenseBudget(String orgId, String branchId, String categoryId, int? monthlyMinor) => monthlyMinor == null
+      ? _db.from('expense_budgets').delete().eq('branch_id', branchId).eq('category_id', categoryId)
+      : _db.from('expense_budgets').upsert(
+          {'organization_id': orgId, 'branch_id': branchId, 'category_id': categoryId, 'monthly_minor': monthlyMinor},
+          onConflict: 'branch_id,category_id',
+        );
+
+  /// Génère les dépenses récurrentes du mois ; renvoie leur nombre.
+  Future<int> generateRecurringExpenses(String branchId) async =>
+      ((await _db.rpc('generate_recurring_expenses', params: {'p_branch': branchId})) as num).toInt();
 
   Future<void> cancelExpense(String id, String reason) =>
       _db.rpc('cancel_expense', params: {'p_expense': id, 'p_reason': reason});

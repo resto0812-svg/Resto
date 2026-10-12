@@ -2310,5 +2310,55 @@
   "topSuppliers": "Top suppliers (90 days)",
   "noPurchasesYet": "No purchases yet.",
   "totalPurchased": "Total purchased",
-  "purchaseOrderPdf": "Purchase order PDF"
+  "purchaseOrderPdf": "Purchase order PDF",
+  "recurringGenerated": "{count, plural, =0{No expense to record.} =1{1 recurring expense recorded.} other{{count} recurring expenses recorded.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{1 recurring expense to record this month ({amount})} other{{count} recurring expenses to record this month ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "Record",
+  "expensesOfMonth": "Expenses this month",
+  "vsLastMonth": "{value} vs last month",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "Last month",
+  "recurringTab": "Recurring",
+  "budgetsExceeded": "Budgets exceeded",
+  "expensesSixMonths": "Expenses over the last six months",
+  "budgetsTab": "Budgets",
+  "noBudgetsYet": "No budget set. Add some in the Budgets tab.",
+  "newRecurringExpense": "New recurring expense",
+  "recurringHint": "Rent, subscriptions, salaries…: recorded every month in one tap from the overview.",
+  "noRecurringYet": "No recurring expense.",
+  "everyMonthOn": "every month on the {day}",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "E.g. Premises rent",
+  "expenseCategoryField": "Category",
+  "dayOfMonthLabel": "Day of the month",
+  "budgetsHint": "Amount not to exceed each month, per category. Leave empty to skip a category."
 }

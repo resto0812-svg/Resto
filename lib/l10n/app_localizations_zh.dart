@@ -6305,6 +6305,82 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get purchaseOrderPdf => '采购单 PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已登记 $count 笔定期支出。',
+      zero: '没有需要登记的支出。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '本月有 $count 笔定期支出待登记（$amount）',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => '登记';
+
+  @override
+  String get expensesOfMonth => '本月支出';
+
+  @override
+  String vsLastMonth(String value) {
+    return '较上月 $value';
+  }
+
+  @override
+  String get lastMonthLabel => '上月';
+
+  @override
+  String get recurringTab => '定期支出';
+
+  @override
+  String get budgetsExceeded => '超出预算';
+
+  @override
+  String get expensesSixMonths => '近六个月支出';
+
+  @override
+  String get budgetsTab => '预算';
+
+  @override
+  String get noBudgetsYet => '尚未设置预算。请在“预算”标签中添加。';
+
+  @override
+  String get newRecurringExpense => '新的定期支出';
+
+  @override
+  String get recurringHint => '房租、订阅、工资……：每月在概览中一键登记。';
+
+  @override
+  String get noRecurringYet => '没有定期支出。';
+
+  @override
+  String everyMonthOn(int day) {
+    return '每月 $day 日';
+  }
+
+  @override
+  String get recurringExample => '例如：店面租金';
+
+  @override
+  String get expenseCategoryField => '类别';
+
+  @override
+  String get dayOfMonthLabel => '每月日期';
+
+  @override
+  String get budgetsHint => '每个类别每月不超过的金额。留空则不跟踪该类别。';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -12608,4 +12684,80 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get purchaseOrderPdf => '採購單 PDF';
+
+  @override
+  String recurringGenerated(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '已登記 $count 筆定期支出。',
+      zero: '沒有需要登記的支出。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String recurringDue(int count, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '本月有 $count 筆定期支出待登記（$amount）',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get generateNow => '登記';
+
+  @override
+  String get expensesOfMonth => '本月支出';
+
+  @override
+  String vsLastMonth(String value) {
+    return '較上月 $value';
+  }
+
+  @override
+  String get lastMonthLabel => '上月';
+
+  @override
+  String get recurringTab => '定期支出';
+
+  @override
+  String get budgetsExceeded => '超出預算';
+
+  @override
+  String get expensesSixMonths => '近六個月支出';
+
+  @override
+  String get budgetsTab => '預算';
+
+  @override
+  String get noBudgetsYet => '尚未設定預算。請在「預算」分頁中新增。';
+
+  @override
+  String get newRecurringExpense => '新的定期支出';
+
+  @override
+  String get recurringHint => '房租、訂閱、薪資……：每月在概覽中一鍵登記。';
+
+  @override
+  String get noRecurringYet => '沒有定期支出。';
+
+  @override
+  String everyMonthOn(int day) {
+    return '每月 $day 日';
+  }
+
+  @override
+  String get recurringExample => '例如：店面租金';
+
+  @override
+  String get expenseCategoryField => '類別';
+
+  @override
+  String get dayOfMonthLabel => '每月日期';
+
+  @override
+  String get budgetsHint => '每個類別每月不超過的金額。留空則不追蹤該類別。';
 }

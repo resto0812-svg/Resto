@@ -2310,5 +2310,55 @@
   "topSuppliers": "Principais fornecedores (90 dias)",
   "noPurchasesYet": "Ainda não há compras.",
   "totalPurchased": "Total comprado",
-  "purchaseOrderPdf": "Nota de encomenda PDF"
+  "purchaseOrderPdf": "Nota de encomenda PDF",
+  "recurringGenerated": "{count, plural, =0{Nenhuma despesa a registar.} =1{1 despesa recorrente registada.} other{{count} despesas recorrentes registadas.}}",
+  "@recurringGenerated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringDue": "{count, plural, =1{1 despesa recorrente a registar este mês ({amount})} other{{count} despesas recorrentes a registar este mês ({amount})}}",
+  "@recurringDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "generateNow": "Registar",
+  "expensesOfMonth": "Despesas do mês",
+  "vsLastMonth": "{value} face ao mês passado",
+  "@vsLastMonth": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "lastMonthLabel": "Mês passado",
+  "recurringTab": "Recorrentes",
+  "budgetsExceeded": "Orçamentos ultrapassados",
+  "expensesSixMonths": "Despesas dos últimos seis meses",
+  "budgetsTab": "Orçamentos",
+  "noBudgetsYet": "Nenhum orçamento definido. Adicione-os no separador Orçamentos.",
+  "newRecurringExpense": "Nova despesa recorrente",
+  "recurringHint": "Renda, assinaturas, salários…: registados todos os meses com um gesto a partir da visão geral.",
+  "noRecurringYet": "Nenhuma despesa recorrente.",
+  "everyMonthOn": "todos os meses no dia {day}",
+  "@everyMonthOn": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "recurringExample": "Ex.: Renda do espaço",
+  "expenseCategoryField": "Categoria",
+  "dayOfMonthLabel": "Dia do mês",
+  "budgetsHint": "Montante a não ultrapassar por mês, por categoria. Deixe vazio para não acompanhar uma categoria."
 }
