@@ -183,6 +183,10 @@ class _TicketFonts {
       icons = null;
     }
     try {
+      final f = await Future.wait([bundledFont('PlayfairDisplay-Bold.ttf'), bundledFont('PlayfairDisplay-BoldItalic.ttf')]);
+      return _cache = _TicketFonts(base, f[0], f[1], icons);
+    } catch (_) {}
+    try {
       final f = await Future.wait([PdfGoogleFonts.playfairDisplayBold(), PdfGoogleFonts.playfairDisplayBoldItalic()]);
       return _cache = _TicketFonts(base, f[0], f[1], icons);
     } catch (_) {

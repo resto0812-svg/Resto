@@ -6353,4 +6353,229 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get tablesEmpty =>
       'Este restaurante ainda não apresentou as suas mesas.';
+
+  @override
+  String appVersion(String version, String build) {
+    return 'Resto · versão $version ($build)';
+  }
+
+  @override
+  String get dashTabOverview => 'Visão geral';
+
+  @override
+  String get dashTabDishes => 'Pratos';
+
+  @override
+  String get dashTabTeam => 'Equipa e serviço';
+
+  @override
+  String get dashTabFinance => 'Finanças';
+
+  @override
+  String get coversLabel => 'Talheres';
+
+  @override
+  String perCoverLabel(String amount) {
+    return '$amount por talher';
+  }
+
+  @override
+  String get occupancyLabel => 'Mesas ocupadas';
+
+  @override
+  String get paymentsByMethod => 'Recebimentos por meio de pagamento';
+
+  @override
+  String get busyHours => 'Afluência por dia e hora';
+
+  @override
+  String get menuEngineering => 'Engenharia de menu';
+
+  @override
+  String get menuEngineeringHint =>
+      'Vendas × margem de cada prato, segundo as fichas técnicas.';
+
+  @override
+  String get engStars => 'Estrelas';
+
+  @override
+  String get engStarsHint =>
+      'Muito vendidos e rentáveis: mantenha-os em destaque.';
+
+  @override
+  String get engPlowhorses => 'Populares, pouco rentáveis';
+
+  @override
+  String get engPlowhorsesHint => 'Reveja o preço ou o custo.';
+
+  @override
+  String get engPuzzles => 'Rentáveis, pouco vendidos';
+
+  @override
+  String get engPuzzlesHint =>
+      'Destaque-os: foto, publicidade, sugestão da equipa.';
+
+  @override
+  String get engDogs => 'A rever';
+
+  @override
+  String get engDogsHint =>
+      'Pouco vendidos e pouco rentáveis: refazer ou retirar.';
+
+  @override
+  String engNoRecipe(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pratos sem ficha técnica não estão classificados.',
+      one: '1 prato sem ficha técnica não está classificado.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get slowSellers => 'Pratos que vendem pouco';
+
+  @override
+  String get teamPerformance => 'Desempenho da equipa';
+
+  @override
+  String get memberLabel => 'Membro';
+
+  @override
+  String get staffOrders => 'Pedidos';
+
+  @override
+  String get staffSales => 'Vendas';
+
+  @override
+  String get staffTips => 'Gorjetas';
+
+  @override
+  String get serviceTimes => 'Tempos de serviço';
+
+  @override
+  String get serveTime => 'Chegada à mesa';
+
+  @override
+  String get tableTime => 'Tempo à mesa';
+
+  @override
+  String minutesValue(int count) {
+    return '$count min';
+  }
+
+  @override
+  String targetMinutes(int count) {
+    return 'Objetivo: $count min';
+  }
+
+  @override
+  String get cancellationsTitle => 'Anulações';
+
+  @override
+  String cancelledOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pedidos anulados',
+      one: '1 pedido anulado',
+      zero: 'Nenhum pedido anulado',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String cancelledItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count artigos anulados após envio',
+      one: '1 artigo anulado após envio',
+      zero: 'Nenhum artigo anulado após envio',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cancelReasonsTitle => 'Motivos mais frequentes';
+
+  @override
+  String get dashPdf => 'Relatório PDF';
+
+  @override
+  String get insightsUnavailable =>
+      'Os indicadores detalhados aparecerão após a atualização da base (migração 034).';
+
+  @override
+  String get salesByDayTitle => 'Vendas por dia';
+
+  @override
+  String get ordersCountLabel => 'Pedidos';
+
+  @override
+  String get financeItemLabel => 'Rubrica';
+
+  @override
+  String get supplierLabel => 'Fornecedor';
+
+  @override
+  String get purchaseOrderTitle => 'Nota de encomenda';
+
+  @override
+  String get supplierStatementTitle => 'Extrato de conta do fornecedor';
+
+  @override
+  String get dueDateLabel => 'Vencimento';
+
+  @override
+  String get balanceDue => 'Saldo em dívida';
+
+  @override
+  String get purchasesThisMonth => 'Compras do mês';
+
+  @override
+  String openInvoicesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count faturas a pagar',
+      one: '1 fatura a pagar',
+      zero: 'Nenhuma fatura a pagar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get overdueInvoices => 'Faturas em atraso';
+
+  @override
+  String get dueWithinWeek => 'A pagar em 7 dias';
+
+  @override
+  String get pendingPurchaseOrders => 'Encomendas em curso';
+
+  @override
+  String get paymentSchedule => 'Calendário de pagamentos';
+
+  @override
+  String get nothingToPay => 'Nenhuma fatura a pagar.';
+
+  @override
+  String get noDueDate => 'Sem vencimento';
+
+  @override
+  String get purchasesByMonth => 'Compras por mês';
+
+  @override
+  String get topSuppliers => 'Principais fornecedores (90 dias)';
+
+  @override
+  String get noPurchasesYet => 'Ainda não há compras.';
+
+  @override
+  String get totalPurchased => 'Total comprado';
+
+  @override
+  String get purchaseOrderPdf => 'Nota de encomenda PDF';
 }

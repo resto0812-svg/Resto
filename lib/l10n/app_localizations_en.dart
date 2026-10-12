@@ -6321,4 +6321,228 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tablesEmpty => 'This restaurant has not shown its tables yet.';
+
+  @override
+  String appVersion(String version, String build) {
+    return 'Resto · version $version ($build)';
+  }
+
+  @override
+  String get dashTabOverview => 'Overview';
+
+  @override
+  String get dashTabDishes => 'Dishes';
+
+  @override
+  String get dashTabTeam => 'Team and service';
+
+  @override
+  String get dashTabFinance => 'Finances';
+
+  @override
+  String get coversLabel => 'Covers';
+
+  @override
+  String perCoverLabel(String amount) {
+    return '$amount per cover';
+  }
+
+  @override
+  String get occupancyLabel => 'Tables occupied';
+
+  @override
+  String get paymentsByMethod => 'Payments by method';
+
+  @override
+  String get busyHours => 'Busy times by day and hour';
+
+  @override
+  String get menuEngineering => 'Menu engineering';
+
+  @override
+  String get menuEngineeringHint =>
+      'Sales × margin of each dish, based on recipe cards.';
+
+  @override
+  String get engStars => 'Stars';
+
+  @override
+  String get engStarsHint =>
+      'Popular and profitable: keep them in the spotlight.';
+
+  @override
+  String get engPlowhorses => 'Popular, low margin';
+
+  @override
+  String get engPlowhorsesHint => 'Review the price or the food cost.';
+
+  @override
+  String get engPuzzles => 'Profitable, rarely sold';
+
+  @override
+  String get engPuzzlesHint =>
+      'Promote them: photo, advertising, staff suggestions.';
+
+  @override
+  String get engDogs => 'To review';
+
+  @override
+  String get engDogsHint => 'Rarely sold and low margin: rework or remove.';
+
+  @override
+  String engNoRecipe(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dishes without a recipe card are not ranked.',
+      one: '1 dish without a recipe card is not ranked.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get slowSellers => 'Slow-selling dishes';
+
+  @override
+  String get teamPerformance => 'Team performance';
+
+  @override
+  String get memberLabel => 'Member';
+
+  @override
+  String get staffOrders => 'Orders';
+
+  @override
+  String get staffSales => 'Sales';
+
+  @override
+  String get staffTips => 'Tips';
+
+  @override
+  String get serviceTimes => 'Service times';
+
+  @override
+  String get serveTime => 'Time to table';
+
+  @override
+  String get tableTime => 'Time at table';
+
+  @override
+  String minutesValue(int count) {
+    return '$count min';
+  }
+
+  @override
+  String targetMinutes(int count) {
+    return 'Target: $count min';
+  }
+
+  @override
+  String get cancellationsTitle => 'Cancellations';
+
+  @override
+  String cancelledOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count cancelled orders',
+      one: '1 cancelled order',
+      zero: 'No cancelled order',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String cancelledItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items cancelled after sending',
+      one: '1 item cancelled after sending',
+      zero: 'No item cancelled after sending',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cancelReasonsTitle => 'Most common reasons';
+
+  @override
+  String get dashPdf => 'PDF report';
+
+  @override
+  String get insightsUnavailable =>
+      'Detailed indicators will appear after the database update (migration 034).';
+
+  @override
+  String get salesByDayTitle => 'Sales by day';
+
+  @override
+  String get ordersCountLabel => 'Orders';
+
+  @override
+  String get financeItemLabel => 'Item';
+
+  @override
+  String get supplierLabel => 'Supplier';
+
+  @override
+  String get purchaseOrderTitle => 'Purchase order';
+
+  @override
+  String get supplierStatementTitle => 'Supplier statement';
+
+  @override
+  String get dueDateLabel => 'Due date';
+
+  @override
+  String get balanceDue => 'Balance due';
+
+  @override
+  String get purchasesThisMonth => 'Purchases this month';
+
+  @override
+  String openInvoicesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count invoices to pay',
+      one: '1 invoice to pay',
+      zero: 'No invoice to pay',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get overdueInvoices => 'Overdue invoices';
+
+  @override
+  String get dueWithinWeek => 'Due within 7 days';
+
+  @override
+  String get pendingPurchaseOrders => 'Orders in progress';
+
+  @override
+  String get paymentSchedule => 'Payment schedule';
+
+  @override
+  String get nothingToPay => 'No invoice to pay.';
+
+  @override
+  String get noDueDate => 'No due date';
+
+  @override
+  String get purchasesByMonth => 'Purchases by month';
+
+  @override
+  String get topSuppliers => 'Top suppliers (90 days)';
+
+  @override
+  String get noPurchasesYet => 'No purchases yet.';
+
+  @override
+  String get totalPurchased => 'Total purchased';
+
+  @override
+  String get purchaseOrderPdf => 'Purchase order PDF';
 }

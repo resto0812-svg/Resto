@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "Este restaurante ainda não apresentou as suas mesas."
+  "tablesEmpty": "Este restaurante ainda não apresentou as suas mesas.",
+  "appVersion": "Resto · versão {version} ({build})",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "Visão geral",
+  "dashTabDishes": "Pratos",
+  "dashTabTeam": "Equipa e serviço",
+  "dashTabFinance": "Finanças",
+  "coversLabel": "Talheres",
+  "perCoverLabel": "{amount} por talher",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "Mesas ocupadas",
+  "paymentsByMethod": "Recebimentos por meio de pagamento",
+  "busyHours": "Afluência por dia e hora",
+  "menuEngineering": "Engenharia de menu",
+  "menuEngineeringHint": "Vendas × margem de cada prato, segundo as fichas técnicas.",
+  "engStars": "Estrelas",
+  "engStarsHint": "Muito vendidos e rentáveis: mantenha-os em destaque.",
+  "engPlowhorses": "Populares, pouco rentáveis",
+  "engPlowhorsesHint": "Reveja o preço ou o custo.",
+  "engPuzzles": "Rentáveis, pouco vendidos",
+  "engPuzzlesHint": "Destaque-os: foto, publicidade, sugestão da equipa.",
+  "engDogs": "A rever",
+  "engDogsHint": "Pouco vendidos e pouco rentáveis: refazer ou retirar.",
+  "engNoRecipe": "{count, plural, =1{1 prato sem ficha técnica não está classificado.} other{{count} pratos sem ficha técnica não estão classificados.}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "Pratos que vendem pouco",
+  "teamPerformance": "Desempenho da equipa",
+  "memberLabel": "Membro",
+  "staffOrders": "Pedidos",
+  "staffSales": "Vendas",
+  "staffTips": "Gorjetas",
+  "serviceTimes": "Tempos de serviço",
+  "serveTime": "Chegada à mesa",
+  "tableTime": "Tempo à mesa",
+  "minutesValue": "{count} min",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "Objetivo: {count} min",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "Anulações",
+  "cancelledOrdersCount": "{count, plural, =0{Nenhum pedido anulado} =1{1 pedido anulado} other{{count} pedidos anulados}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{Nenhum artigo anulado após envio} =1{1 artigo anulado após envio} other{{count} artigos anulados após envio}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "Motivos mais frequentes",
+  "dashPdf": "Relatório PDF",
+  "insightsUnavailable": "Os indicadores detalhados aparecerão após a atualização da base (migração 034).",
+  "salesByDayTitle": "Vendas por dia",
+  "ordersCountLabel": "Pedidos",
+  "financeItemLabel": "Rubrica",
+  "supplierLabel": "Fornecedor",
+  "purchaseOrderTitle": "Nota de encomenda",
+  "supplierStatementTitle": "Extrato de conta do fornecedor",
+  "dueDateLabel": "Vencimento",
+  "balanceDue": "Saldo em dívida",
+  "purchasesThisMonth": "Compras do mês",
+  "openInvoicesCount": "{count, plural, =0{Nenhuma fatura a pagar} =1{1 fatura a pagar} other{{count} faturas a pagar}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "Faturas em atraso",
+  "dueWithinWeek": "A pagar em 7 dias",
+  "pendingPurchaseOrders": "Encomendas em curso",
+  "paymentSchedule": "Calendário de pagamentos",
+  "nothingToPay": "Nenhuma fatura a pagar.",
+  "noDueDate": "Sem vencimento",
+  "purchasesByMonth": "Compras por mês",
+  "topSuppliers": "Principais fornecedores (90 dias)",
+  "noPurchasesYet": "Ainda não há compras.",
+  "totalPurchased": "Total comprado",
+  "purchaseOrderPdf": "Nota de encomenda PDF"
 }

@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "该餐厅尚未展示其餐桌。"
+  "tablesEmpty": "该餐厅尚未展示其餐桌。",
+  "appVersion": "Resto · 版本 {version}（{build}）",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "概览",
+  "dashTabDishes": "菜品",
+  "dashTabTeam": "团队与服务",
+  "dashTabFinance": "财务",
+  "coversLabel": "用餐人数",
+  "perCoverLabel": "人均 {amount}",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "已占用餐桌",
+  "paymentsByMethod": "按支付方式收款",
+  "busyHours": "按日期与时段的客流",
+  "menuEngineering": "菜单工程",
+  "menuEngineeringHint": "根据配方卡计算每道菜的销量 × 毛利。",
+  "engStars": "明星菜",
+  "engStarsHint": "畅销且盈利：继续重点推荐。",
+  "engPlowhorses": "畅销但利润低",
+  "engPlowhorsesHint": "调整价格或成本。",
+  "engPuzzles": "利润高但销量少",
+  "engPuzzlesHint": "加强推广：照片、广告、服务员推荐。",
+  "engDogs": "需改进",
+  "engDogsHint": "销量少且利润低：改良或下架。",
+  "engNoRecipe": "{count, plural, other{{count} 道没有配方卡的菜未分类。}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "滞销菜品",
+  "teamPerformance": "团队表现",
+  "memberLabel": "成员",
+  "staffOrders": "订单",
+  "staffSales": "销售额",
+  "staffTips": "小费",
+  "serviceTimes": "服务时间",
+  "serveTime": "上桌时间",
+  "tableTime": "用餐时长",
+  "minutesValue": "{count} 分钟",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "目标：{count} 分钟",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "取消",
+  "cancelledOrdersCount": "{count, plural, =0{没有取消的订单} other{{count} 个订单已取消}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{没有送出后取消的菜品} other{{count} 道菜送出后取消}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "最常见原因",
+  "dashPdf": "PDF 报告",
+  "insightsUnavailable": "数据库更新（迁移 034）后将显示详细指标。",
+  "salesByDayTitle": "每日销售额",
+  "ordersCountLabel": "订单",
+  "financeItemLabel": "项目",
+  "supplierLabel": "供应商",
+  "purchaseOrderTitle": "采购单",
+  "supplierStatementTitle": "供应商对账单",
+  "dueDateLabel": "到期日",
+  "balanceDue": "应付余额",
+  "purchasesThisMonth": "本月采购",
+  "openInvoicesCount": "{count, plural, =0{没有待付发票} other{{count} 张待付发票}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "逾期发票",
+  "dueWithinWeek": "7 天内到期",
+  "pendingPurchaseOrders": "进行中的采购单",
+  "paymentSchedule": "付款计划",
+  "nothingToPay": "没有待付发票。",
+  "noDueDate": "无到期日",
+  "purchasesByMonth": "每月采购",
+  "topSuppliers": "主要供应商（90 天）",
+  "noPurchasesYet": "暂无采购。",
+  "totalPurchased": "采购总额",
+  "purchaseOrderPdf": "采购单 PDF"
 }

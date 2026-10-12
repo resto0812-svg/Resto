@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "This restaurant has not shown its tables yet."
+  "tablesEmpty": "This restaurant has not shown its tables yet.",
+  "appVersion": "Resto · version {version} ({build})",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "Overview",
+  "dashTabDishes": "Dishes",
+  "dashTabTeam": "Team and service",
+  "dashTabFinance": "Finances",
+  "coversLabel": "Covers",
+  "perCoverLabel": "{amount} per cover",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "Tables occupied",
+  "paymentsByMethod": "Payments by method",
+  "busyHours": "Busy times by day and hour",
+  "menuEngineering": "Menu engineering",
+  "menuEngineeringHint": "Sales × margin of each dish, based on recipe cards.",
+  "engStars": "Stars",
+  "engStarsHint": "Popular and profitable: keep them in the spotlight.",
+  "engPlowhorses": "Popular, low margin",
+  "engPlowhorsesHint": "Review the price or the food cost.",
+  "engPuzzles": "Profitable, rarely sold",
+  "engPuzzlesHint": "Promote them: photo, advertising, staff suggestions.",
+  "engDogs": "To review",
+  "engDogsHint": "Rarely sold and low margin: rework or remove.",
+  "engNoRecipe": "{count, plural, =1{1 dish without a recipe card is not ranked.} other{{count} dishes without a recipe card are not ranked.}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "Slow-selling dishes",
+  "teamPerformance": "Team performance",
+  "memberLabel": "Member",
+  "staffOrders": "Orders",
+  "staffSales": "Sales",
+  "staffTips": "Tips",
+  "serviceTimes": "Service times",
+  "serveTime": "Time to table",
+  "tableTime": "Time at table",
+  "minutesValue": "{count} min",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "Target: {count} min",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "Cancellations",
+  "cancelledOrdersCount": "{count, plural, =0{No cancelled order} =1{1 cancelled order} other{{count} cancelled orders}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{No item cancelled after sending} =1{1 item cancelled after sending} other{{count} items cancelled after sending}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "Most common reasons",
+  "dashPdf": "PDF report",
+  "insightsUnavailable": "Detailed indicators will appear after the database update (migration 034).",
+  "salesByDayTitle": "Sales by day",
+  "ordersCountLabel": "Orders",
+  "financeItemLabel": "Item",
+  "supplierLabel": "Supplier",
+  "purchaseOrderTitle": "Purchase order",
+  "supplierStatementTitle": "Supplier statement",
+  "dueDateLabel": "Due date",
+  "balanceDue": "Balance due",
+  "purchasesThisMonth": "Purchases this month",
+  "openInvoicesCount": "{count, plural, =0{No invoice to pay} =1{1 invoice to pay} other{{count} invoices to pay}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "Overdue invoices",
+  "dueWithinWeek": "Due within 7 days",
+  "pendingPurchaseOrders": "Orders in progress",
+  "paymentSchedule": "Payment schedule",
+  "nothingToPay": "No invoice to pay.",
+  "noDueDate": "No due date",
+  "purchasesByMonth": "Purchases by month",
+  "topSuppliers": "Top suppliers (90 days)",
+  "noPurchasesYet": "No purchases yet.",
+  "totalPurchased": "Total purchased",
+  "purchaseOrderPdf": "Purchase order PDF"
 }

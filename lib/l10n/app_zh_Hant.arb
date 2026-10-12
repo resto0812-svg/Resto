@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "這家餐廳尚未展示其餐桌。"
+  "tablesEmpty": "這家餐廳尚未展示其餐桌。",
+  "appVersion": "Resto · 版本 {version}（{build}）",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "概覽",
+  "dashTabDishes": "餐點",
+  "dashTabTeam": "團隊與服務",
+  "dashTabFinance": "財務",
+  "coversLabel": "用餐人數",
+  "perCoverLabel": "人均 {amount}",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "已佔用餐桌",
+  "paymentsByMethod": "依付款方式收款",
+  "busyHours": "依日期與時段的客流",
+  "menuEngineering": "菜單工程",
+  "menuEngineeringHint": "根據配方卡計算每道餐點的銷量 × 毛利。",
+  "engStars": "明星餐點",
+  "engStarsHint": "暢銷且獲利：持續重點推薦。",
+  "engPlowhorses": "暢銷但利潤低",
+  "engPlowhorsesHint": "調整價格或成本。",
+  "engPuzzles": "利潤高但銷量少",
+  "engPuzzlesHint": "加強推廣：照片、廣告、服務人員推薦。",
+  "engDogs": "需改進",
+  "engDogsHint": "銷量少且利潤低：改良或下架。",
+  "engNoRecipe": "{count, plural, other{{count} 道沒有配方卡的餐點未分類。}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "滯銷餐點",
+  "teamPerformance": "團隊表現",
+  "memberLabel": "成員",
+  "staffOrders": "訂單",
+  "staffSales": "銷售額",
+  "staffTips": "小費",
+  "serviceTimes": "服務時間",
+  "serveTime": "上桌時間",
+  "tableTime": "用餐時長",
+  "minutesValue": "{count} 分鐘",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "目標：{count} 分鐘",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "取消",
+  "cancelledOrdersCount": "{count, plural, =0{沒有取消的訂單} other{{count} 筆訂單已取消}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{沒有送出後取消的餐點} other{{count} 道餐點送出後取消}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "最常見原因",
+  "dashPdf": "PDF 報告",
+  "insightsUnavailable": "資料庫更新（遷移 034）後將顯示詳細指標。",
+  "salesByDayTitle": "每日銷售額",
+  "ordersCountLabel": "訂單",
+  "financeItemLabel": "項目",
+  "supplierLabel": "供應商",
+  "purchaseOrderTitle": "採購單",
+  "supplierStatementTitle": "供應商對帳單",
+  "dueDateLabel": "到期日",
+  "balanceDue": "應付餘額",
+  "purchasesThisMonth": "本月採購",
+  "openInvoicesCount": "{count, plural, =0{沒有待付發票} other{{count} 張待付發票}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "逾期發票",
+  "dueWithinWeek": "7 天內到期",
+  "pendingPurchaseOrders": "進行中的採購單",
+  "paymentSchedule": "付款計畫",
+  "nothingToPay": "沒有待付發票。",
+  "noDueDate": "無到期日",
+  "purchasesByMonth": "每月採購",
+  "topSuppliers": "主要供應商（90 天）",
+  "noPurchasesYet": "尚無採購。",
+  "totalPurchased": "採購總額",
+  "purchaseOrderPdf": "採購單 PDF"
 }

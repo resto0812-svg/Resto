@@ -6346,4 +6346,226 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tablesEmpty => 'لم يعرض هذا المطعم طاولاته بعد.';
+
+  @override
+  String appVersion(String version, String build) {
+    return 'Resto · الإصدار $version ($build)';
+  }
+
+  @override
+  String get dashTabOverview => 'نظرة عامة';
+
+  @override
+  String get dashTabDishes => 'الأطباق';
+
+  @override
+  String get dashTabTeam => 'الفريق والخدمة';
+
+  @override
+  String get dashTabFinance => 'المالية';
+
+  @override
+  String get coversLabel => 'الأشخاص';
+
+  @override
+  String perCoverLabel(String amount) {
+    return '$amount للشخص';
+  }
+
+  @override
+  String get occupancyLabel => 'الطاولات المشغولة';
+
+  @override
+  String get paymentsByMethod => 'التحصيل حسب وسيلة الدفع';
+
+  @override
+  String get busyHours => 'الإقبال حسب اليوم والساعة';
+
+  @override
+  String get menuEngineering => 'هندسة القائمة';
+
+  @override
+  String get menuEngineeringHint =>
+      'المبيعات × هامش كل طبق، حسب البطاقات الفنية.';
+
+  @override
+  String get engStars => 'النجوم';
+
+  @override
+  String get engStarsHint => 'مطلوبة ومربحة: أبقها في الواجهة.';
+
+  @override
+  String get engPlowhorses => 'مطلوبة، قليلة الربح';
+
+  @override
+  String get engPlowhorsesHint => 'راجع السعر أو التكلفة.';
+
+  @override
+  String get engPuzzles => 'مربحة، قليلة المبيع';
+
+  @override
+  String get engPuzzlesHint => 'أبرزها: صورة، إعلان، توصية الفريق.';
+
+  @override
+  String get engDogs => 'للمراجعة';
+
+  @override
+  String get engDogsHint => 'قليلة المبيع والربح: أعد العمل عليها أو أزلها.';
+
+  @override
+  String engNoRecipe(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count أطباق بلا بطاقة فنية غير مصنفة.',
+      one: 'طبق واحد بلا بطاقة فنية غير مصنف.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get slowSellers => 'أطباق قليلة المبيع';
+
+  @override
+  String get teamPerformance => 'أداء الفريق';
+
+  @override
+  String get memberLabel => 'العضو';
+
+  @override
+  String get staffOrders => 'الطلبات';
+
+  @override
+  String get staffSales => 'المبيعات';
+
+  @override
+  String get staffTips => 'الإكراميات';
+
+  @override
+  String get serviceTimes => 'أوقات الخدمة';
+
+  @override
+  String get serveTime => 'الوصول إلى الطاولة';
+
+  @override
+  String get tableTime => 'المدة على الطاولة';
+
+  @override
+  String minutesValue(int count) {
+    return '$count د';
+  }
+
+  @override
+  String targetMinutes(int count) {
+    return 'الهدف: $count د';
+  }
+
+  @override
+  String get cancellationsTitle => 'الإلغاءات';
+
+  @override
+  String cancelledOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count طلبات ملغاة',
+      one: 'طلب واحد ملغى',
+      zero: 'لا طلبات ملغاة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String cancelledItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count أصناف ملغاة بعد الإرسال',
+      one: 'صنف واحد ملغى بعد الإرسال',
+      zero: 'لا أصناف ملغاة بعد الإرسال',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cancelReasonsTitle => 'الأسباب الأكثر تكرارًا';
+
+  @override
+  String get dashPdf => 'تقرير PDF';
+
+  @override
+  String get insightsUnavailable =>
+      'ستظهر المؤشرات التفصيلية بعد تحديث قاعدة البيانات (الترحيل 034).';
+
+  @override
+  String get salesByDayTitle => 'المبيعات حسب اليوم';
+
+  @override
+  String get ordersCountLabel => 'الطلبات';
+
+  @override
+  String get financeItemLabel => 'البند';
+
+  @override
+  String get supplierLabel => 'المورد';
+
+  @override
+  String get purchaseOrderTitle => 'أمر شراء';
+
+  @override
+  String get supplierStatementTitle => 'كشف حساب المورد';
+
+  @override
+  String get dueDateLabel => 'تاريخ الاستحقاق';
+
+  @override
+  String get balanceDue => 'الرصيد المستحق';
+
+  @override
+  String get purchasesThisMonth => 'مشتريات الشهر';
+
+  @override
+  String openInvoicesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count فواتير للدفع',
+      one: 'فاتورة واحدة للدفع',
+      zero: 'لا فواتير للدفع',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get overdueInvoices => 'فواتير متأخرة';
+
+  @override
+  String get dueWithinWeek => 'تستحق خلال 7 أيام';
+
+  @override
+  String get pendingPurchaseOrders => 'طلبات جارية';
+
+  @override
+  String get paymentSchedule => 'جدول الدفعات';
+
+  @override
+  String get nothingToPay => 'لا فواتير للدفع.';
+
+  @override
+  String get noDueDate => 'بدون تاريخ استحقاق';
+
+  @override
+  String get purchasesByMonth => 'المشتريات حسب الشهر';
+
+  @override
+  String get topSuppliers => 'أهم الموردين (90 يومًا)';
+
+  @override
+  String get noPurchasesYet => 'لا مشتريات بعد.';
+
+  @override
+  String get totalPurchased => 'إجمالي المشتريات';
+
+  @override
+  String get purchaseOrderPdf => 'أمر شراء PDF';
 }

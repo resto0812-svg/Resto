@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart' show LicenseEntryWithLineBreaks, LicenseRegistry;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +8,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'app_state.dart';
 import 'config/env.dart';
+import 'core/crash_reporting.dart';
 import 'core/push_service.dart';
 import 'data/api.dart';
 import 'data/supabase_setup.dart';
@@ -20,6 +22,10 @@ import 'ui/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Licence des polices intégrées (SIL Open Font License), visible dans « Licences ».
+  LicenseRegistry.addLicense(() async* {
+    yield LicenseEntryWithLineBreaks(['google_fonts'], await rootBundle.loadString('assets/google_fonts/OFL.txt'));
+  });
   // Barres du système sur fond ivoire : icônes foncées.
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -28,6 +34,7 @@ Future<void> main() async {
     systemNavigationBarColor: RestoColors.base,
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
+  await initCrashReporting();
   Api? api;
   if (Env.configured) {
     await initSupabase();

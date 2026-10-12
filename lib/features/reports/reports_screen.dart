@@ -3,20 +3,25 @@ import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
 
 import '../../app_state.dart';
 import '../../data/dashboard_api.dart';
 import '../../data/models.dart';
 import '../../data/purchases_api.dart';
 import '../../data/stock_api.dart';
+import '../../core/errors.dart';
+import '../../pdf/dashboard_pdf.dart';
 import '../../ui/branch_scope.dart';
 import '../../ui/common.dart';
 import '../../ui/files.dart';
+import '../../ui/header_slot.dart';
 import '../../ui/kit.dart';
 import '../../ui/theme.dart';
 import '../cash/cash_labels.dart';
 import '../expenses/expenses_screen.dart';
 import '../menus/menu_widgets.dart' show channelLabel;
+import 'insights_widgets.dart';
 
 /// Rapport financier d'une période : chiffre d'affaires, encaissements, coût
 /// des ventes, marge, pertes, dépenses, résultat estimé, dettes ; exports.
@@ -109,111 +114,272 @@ class _ReportsBodyState extends State<_ReportsBody> {
     return v.toStringAsFixed(widget.scope.minorUnit);
   }
 
+  int _tab = 0;
+  late _Data _data = _load();
+
+  _Data _load() {
+    final api = AppScope.read(context).api!;
+    final s = widget.scope;
+    final r = _range;
+    return _Data(
+      api.dashboard.load(s.branchId, r.start, r.end),
+      api.dashboard.insights(s.branchId, r.start, r.end),
+      api.purchases.finance(s.branchId, r.start, r.end),
+      api.stock.recipeCosts(s.branchId).catchError((_) => <RecipeCost>[]),
+    );
+  }
+
   @override
-  Widget build(BuildContext context) {
+  void dispose() {
+    HeaderSlot.clear(this);
+    super.dispose();
+  }
+
+  /// Rapport PDF de la période (chiffres clés, plats, paiements, équipe, résultat).
+  Future<void> _pdf() async {
     final t = context.t;
     final s = widget.scope;
-    final api = AppScope.of(context).api!;
-    final range = _range;
-    final fmt = DateFormat.yMMMd(Localizations.localeOf(context).toString());
-    final side = MediaQuery.sizeOf(context).width < 600 ? 16.0 : 22.0;
-    return ListView(padding: EdgeInsets.fromLTRB(side, 6, side, 32), children: [
-      SoftCard(
-        color: const Color(0xFFF3EADB),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        child: Row(children: [
-          Text('${t.periodLabel} :', style: const TextStyle(fontWeight: FontWeight.w600)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: PillBar<_Period>(
-              dense: true,
-              items: [
-                PillItem(_Period.today, t.periodToday),
-                PillItem(_Period.last7, t.periodLast7),
-                PillItem(_Period.month, t.periodMonth),
-                PillItem(_Period.lastMonth, t.periodLastMonth),
-                PillItem(_Period.custom, _period == _Period.custom ? '${fmt.format(range.start)} – ${fmt.format(range.end)}' : t.periodCustom),
-              ],
-              selected: _period,
-              onSelected: (p) async {
-                if (p == _Period.custom) {
-                  final r = await showDateRangePicker(
-                    context: context,
-                    firstDate: DateTime(2020),
-                    lastDate: DateTime.now(),
-                    initialDateRange: _custom,
-                  );
-                  if (r == null) return;
-                  _custom = r;
-                }
-                setState(() => _period = p);
-              },
-            ),
-          ),
-        ]),
-      ),
-      const SizedBox(height: 16),
-      Loader<Dashboard>(
-        key: ValueKey('d${range.start}|${range.end}|${s.branchId}'),
-        load: () => api.dashboard.load(s.branchId, range.start, range.end),
-        builder: (context, d, _) => _DashboardCards(scope: s, d: d, singleDay: range.start == range.end),
-      ),
-      const SizedBox(height: 24),
+    final r = _range;
+    final locale = Localizations.localeOf(context).toString();
+    try {
+      final d = await _data.dashboard;
+      final i = await _data.insights;
+      final f = await _data.finance;
+      if (!mounted) return;
+      final bytes = await dashboardPdf(
+        DashboardPdfContext(t: t, locale: locale, money: (v) => s.money(context, v), branch: s.branch, from: r.start, to: r.end),
+        d,
+        i,
+        f,
+      );
+      final day = DateFormat('yyyy-MM-dd');
+      await Printing.sharePdf(bytes: bytes, filename: 'tableau-de-bord-${day.format(r.start)}-${day.format(r.end)}.pdf');
+    } catch (e) {
+      if (mounted) showError(context, e);
+    }
+  }
+
+  /// Contenu asynchrone : attente, erreur lisible, puis [builder].
+  Widget _async<T>(Future<T> future, Widget Function(T value) builder) => FutureBuilder<T>(
+        future: future,
+        builder: (context, snap) {
+          if (snap.hasError) {
+            return Padding(
+              padding: const EdgeInsets.all(24),
+              child: Text(errorText(context.t, snap.error!), style: const TextStyle(color: RestoColors.muted)),
+            );
+          }
+          if (!snap.hasData && null is! T) {
+            return const Padding(padding: EdgeInsets.all(40), child: Center(child: CircularProgressIndicator()));
+          }
+          if (snap.connectionState != ConnectionState.done) {
+            return const Padding(padding: EdgeInsets.all(40), child: Center(child: CircularProgressIndicator()));
+          }
+          return builder(snap.data as T);
+        },
+      );
+
+  Widget _unavailable(BuildContext context) => SoftCard(
+        child: Text(context.t.insightsUnavailable, style: const TextStyle(color: RestoColors.muted)),
+      );
+
+  Widget _grid(List<Widget> cards, {double minWidth = 420}) => LayoutBuilder(builder: (context, box) {
+        final cols = max(1, min(cards.length, (box.maxWidth / minWidth).floor()));
+        final w = (box.maxWidth - (cols - 1) * 14) / cols;
+        return Wrap(spacing: 14, runSpacing: 14, children: [for (final c in cards) SizedBox(width: w, child: c)]);
+      });
+
+  Widget _overview(BuildContext context, DateTimeRange range) {
+    final t = context.t;
+    final s = widget.scope;
+    String money(int v) => s.money(context, v);
+    return _async<Dashboard>(_data.dashboard, (d) {
+      return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        _DashboardCards(scope: s, d: d, singleDay: range.start == range.end),
+        const SizedBox(height: 14),
+        _async<Insights?>(_data.insights, (i) {
+          if (i == null) return _unavailable(context);
+          return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            _grid([
+              StatTile(icon: Icons.groups_2_outlined, label: t.coversLabel, value: '${i.covers}', sub: t.perCoverLabel(money(i.perCover))),
+              StatTile(icon: Icons.table_restaurant_outlined, label: t.occupancyLabel, value: '${d.occupancy} %'),
+              StatTile(
+                icon: Icons.block_rounded,
+                label: t.cancellationsTitle,
+                value: '${i.cancelledOrders + i.cancelledItems}',
+                sub: money(i.cancelledOrdersAmount + i.cancelledItemsAmount),
+              ),
+            ], minWidth: 240),
+            const SizedBox(height: 14),
+            _grid([PaymentsByMethodCard(insights: i, money: money), HeatmapCard(insights: i)]),
+          ]);
+        }),
+      ]);
+    });
+  }
+
+  Widget _dishes(BuildContext context) {
+    final s = widget.scope;
+    String money(int v) => s.money(context, v);
+    return _async<Insights?>(_data.insights, (i) {
+      if (i == null) return _unavailable(context);
+      return _async<List<RecipeCost>>(_data.costs, (costs) {
+        return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          _grid([
+            SoldItemsCard(items: i.items, money: money),
+            SoldItemsCard(items: i.items, money: money, slow: true),
+          ]),
+          const SizedBox(height: 14),
+          MenuEngineeringCard(items: i.items, costs: costs, money: money),
+          const SizedBox(height: 14),
+          SoftCard(child: _Margins(scope: s)),
+        ]);
+      });
+    });
+  }
+
+  Widget _team(BuildContext context) {
+    final s = widget.scope;
+    String money(int v) => s.money(context, v);
+    return _async<Insights?>(_data.insights, (i) {
+      if (i == null) return _unavailable(context);
+      return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        ServiceTimesCard(insights: i, targetPrep: s.branch.targetPrepMinutes),
+        const SizedBox(height: 14),
+        _grid([StaffCard(insights: i, money: money), CancellationsCard(insights: i, money: money)]),
+      ]);
+    });
+  }
+
+  Widget _finance(BuildContext context) {
+    final t = context.t;
+    final s = widget.scope;
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       Text(t.financialResult, style: serifTitle(context, size: 26)),
       const SizedBox(height: 10),
-      Loader<FinanceSummary>(
-        key: ValueKey('${range.start}|${range.end}|${s.branchId}'),
-        load: () => api.purchases.finance(s.branchId, range.start, range.end),
-        builder: (context, f, _) => Align(
-          alignment: AlignmentDirectional.topStart,
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Wrap(spacing: 12, runSpacing: 12, children: [
-              _Kpi(t.salesInclTax, s.money(context, f.salesTtc), t.ruleSales, sub: t.ordersCountShort(f.ordersClosed)),
-              _Kpi(t.salesExclTax, s.money(context, f.salesHt), t.ruleSalesHt, sub: t.includingTax(s.money(context, f.salesTax))),
-              _Kpi(t.collected, s.money(context, f.collected), t.ruleCollected),
-              _Kpi(t.costOfSales, s.money(context, f.cogs), t.ruleCogs),
-              _Kpi(
-                t.grossMargin,
-                s.money(context, f.grossMargin),
-                t.ruleGrossMargin,
-                sub: f.salesHt > 0 ? t.marginPercent((f.grossMargin * 100 / f.salesHt).round()) : null,
-              ),
-              _Kpi(t.lossesValue, s.money(context, f.losses), t.ruleLosses),
-              _Kpi(t.expensesExclTax, s.money(context, f.expensesHt), t.ruleExpenses),
-              _Kpi(t.estimatedResult, s.money(context, f.estimatedResult), t.ruleResult, highlight: true, negative: f.estimatedResult < 0),
-              _Kpi(t.purchasesValue, s.money(context, f.purchases), t.rulePurchases),
-              _Kpi(t.supplierDebtShort, s.money(context, f.supplierDebt), t.ruleDebt),
-            ]),
-            if (f.expensesByCategory.isNotEmpty) ...[
-              const SizedBox(height: 20),
-              Text(t.expensesByCategory, style: Theme.of(context).textTheme.titleMedium),
-              for (final (code, name, total) in f.expensesByCategory)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 2),
-                  child: Row(children: [Expanded(child: Text(expenseCategoryLabel(t, code, name))), Text(s.money(context, total))]),
-                ),
-            ],
-            const SizedBox(height: 12),
-            Text(t.resultDisclaimer, style: Theme.of(context).textTheme.bodySmall),
+      _async<FinanceSummary>(_data.finance, (f) {
+        return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Wrap(spacing: 12, runSpacing: 12, children: [
+            _Kpi(t.salesInclTax, s.money(context, f.salesTtc), t.ruleSales, sub: t.ordersCountShort(f.ordersClosed)),
+            _Kpi(t.salesExclTax, s.money(context, f.salesHt), t.ruleSalesHt, sub: t.includingTax(s.money(context, f.salesTax))),
+            _Kpi(t.collected, s.money(context, f.collected), t.ruleCollected),
+            _Kpi(t.costOfSales, s.money(context, f.cogs), t.ruleCogs),
+            _Kpi(
+              t.grossMargin,
+              s.money(context, f.grossMargin),
+              t.ruleGrossMargin,
+              sub: f.salesHt > 0 ? t.marginPercent((f.grossMargin * 100 / f.salesHt).round()) : null,
+            ),
+            _Kpi(t.lossesValue, s.money(context, f.losses), t.ruleLosses),
+            _Kpi(t.expensesExclTax, s.money(context, f.expensesHt), t.ruleExpenses),
+            _Kpi(t.estimatedResult, s.money(context, f.estimatedResult), t.ruleResult, highlight: true, negative: f.estimatedResult < 0),
+            _Kpi(t.purchasesValue, s.money(context, f.purchases), t.rulePurchases),
+            _Kpi(t.supplierDebtShort, s.money(context, f.supplierDebt), t.ruleDebt),
           ]),
-        ),
-      ),
+          if (f.expensesByCategory.isNotEmpty) ...[
+            const SizedBox(height: 20),
+            Text(t.expensesByCategory, style: Theme.of(context).textTheme.titleMedium),
+            for (final (code, name, total) in f.expensesByCategory)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 2),
+                child: Row(children: [Expanded(child: Text(expenseCategoryLabel(t, code, name))), Text(s.money(context, total))]),
+              ),
+          ],
+          const SizedBox(height: 12),
+          Text(t.resultDisclaimer, style: Theme.of(context).textTheme.bodySmall),
+        ]);
+      }),
       const SizedBox(height: 24),
       SoftCard(
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           SectionHeading(title: t.exportsTitle, icon: Icons.download_rounded),
           const SizedBox(height: 12),
           Wrap(spacing: 8, runSpacing: 8, children: [
+            OutlinedButton.icon(onPressed: _pdf, icon: const Icon(Icons.picture_as_pdf_outlined), label: Text(t.dashPdf)),
             OutlinedButton.icon(onPressed: () => _export('orders'), icon: const Icon(Icons.download), label: Text(t.exportOrders)),
             OutlinedButton.icon(onPressed: () => _export('payments'), icon: Icon(paymentMethodIcon('card')), label: Text(t.exportPayments)),
             OutlinedButton.icon(onPressed: () => _export('expenses'), icon: const Icon(Icons.receipt_outlined), label: Text(t.exportExpenses)),
           ]),
         ]),
       ),
-      const SizedBox(height: 16),
-      SoftCard(child: _Margins(scope: s)),
     ]);
   }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    final range = _range;
+    final fmt = DateFormat.yMMMd(Localizations.localeOf(context).toString());
+    final side = MediaQuery.sizeOf(context).width < 600 ? 16.0 : 22.0;
+    // Onglets dans l'en-tête, à côté du titre (comme les autres modules).
+    HeaderSlot.show(
+      this,
+      'reports',
+      PillBar<int>(
+        dense: true,
+        items: [
+          PillItem(0, t.dashTabOverview, icon: Icons.space_dashboard_outlined),
+          PillItem(1, t.dashTabDishes, icon: Icons.restaurant_menu_rounded),
+          PillItem(2, t.dashTabTeam, icon: Icons.groups_2_outlined),
+          PillItem(3, t.dashTabFinance, icon: Icons.account_balance_wallet_outlined),
+        ],
+        selected: _tab,
+        onSelected: (i) => setState(() => _tab = i),
+      ),
+    );
+    final body = switch (_tab) {
+      1 => _dishes(context),
+      2 => _team(context),
+      3 => _finance(context),
+      _ => _overview(context, range),
+    };
+    return ListView(padding: EdgeInsets.fromLTRB(side, 6, side, 32), children: [
+      Row(children: [
+        Expanded(
+          child: PillBar<_Period>(
+            dense: true,
+            items: [
+              PillItem(_Period.today, t.periodToday),
+              PillItem(_Period.last7, t.periodLast7),
+              PillItem(_Period.month, t.periodMonth),
+              PillItem(_Period.lastMonth, t.periodLastMonth),
+              PillItem(_Period.custom, _period == _Period.custom ? '${fmt.format(range.start)} – ${fmt.format(range.end)}' : t.periodCustom),
+            ],
+            selected: _period,
+            onSelected: (p) async {
+              if (p == _Period.custom) {
+                final r = await showDateRangePicker(
+                  context: context,
+                  firstDate: DateTime(2020),
+                  lastDate: DateTime.now(),
+                  initialDateRange: _custom,
+                );
+                if (r == null) return;
+                _custom = r;
+              }
+              setState(() {
+                _period = p;
+                _data = _load();
+              });
+            },
+          ),
+        ),
+        const SizedBox(width: 8),
+        RoundIconButton(icon: Icons.picture_as_pdf_outlined, tooltip: t.dashPdf, onTap: _pdf),
+      ]),
+      const SizedBox(height: 16),
+      body,
+    ]);
+  }
+}
+
+/// Données d'une période (chargées une fois, partagées par les onglets).
+class _Data {
+  _Data(this.dashboard, this.insights, this.finance, this.costs);
+  final Future<Dashboard> dashboard;
+  final Future<Insights?> insights;
+  final Future<FinanceSummary> finance;
+  final Future<List<RecipeCost>> costs;
 }
 
 /// Cartes du tableau de bord : chiffre d'affaires (courbe, tendance),

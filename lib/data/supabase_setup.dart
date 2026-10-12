@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
@@ -110,4 +112,21 @@ Future<void> writeTicketPrefs(int paperMm, bool photos) async {
     await _storage.write(key: _paperKey, value: '$paperMm');
     await _storage.write(key: _photosKey, value: photos ? '1' : '0');
   } catch (_) {}
+}
+
+/// Identifiant anonyme de cet appareil pour les vues sans compte (aléatoire,
+/// créé une fois, sans lien avec la personne).
+const _viewerKeyName = 'resto.viewer';
+
+Future<String> readViewerKey() async {
+  try {
+    final saved = await _storage.read(key: _viewerKeyName);
+    if (saved != null && saved.length >= 8) return saved;
+  } catch (_) {}
+  final r = Random.secure();
+  final key = 'v-${List.generate(24, (_) => r.nextInt(36).toRadixString(36)).join()}';
+  try {
+    await _storage.write(key: _viewerKeyName, value: key);
+  } catch (_) {}
+  return key;
 }

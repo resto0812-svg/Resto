@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../ui/app_version.dart';
+
 import '../../app_state.dart';
 import '../../core/locales.dart';
 import '../../ui/common.dart';
@@ -101,6 +103,7 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
         ]),
       ),
+      const AppVersionLabel(),
     ]);
   }
 }

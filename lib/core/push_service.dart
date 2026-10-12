@@ -45,11 +45,20 @@ class PushService {
         authDomain: kIsWeb && Env.firebaseAuthDomain.isNotEmpty ? Env.firebaseAuthDomain : null,
       );
 
+  /// Firebase est configuré pour cette plateforme.
+  static bool get firebaseConfigured =>
+      Env.pushConfigured && (kIsWeb ? Env.firebaseWebAppId.isNotEmpty : Env.firebaseAndroidAppId.isNotEmpty);
+
+  /// Initialise Firebase une seule fois (notifications, suivi des plantages).
+  static Future<void> ensureFirebase() async {
+    if (Firebase.apps.isEmpty) await Firebase.initializeApp(options: _options);
+  }
+
   Future<bool> _init() async {
     if (_ready) return true;
-    if (!Env.pushConfigured || (kIsWeb ? Env.firebaseWebAppId.isEmpty : Env.firebaseAndroidAppId.isEmpty)) return false;
+    if (!firebaseConfigured) return false;
     try {
-      await Firebase.initializeApp(options: _options);
+      await ensureFirebase();
       if (!kIsWeb) {
         await _local.initialize(
           const InitializationSettings(android: AndroidInitializationSettings('@mipmap/ic_launcher')),

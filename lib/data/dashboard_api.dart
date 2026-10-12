@@ -94,12 +94,95 @@ class RecentPayment {
   final String orderStatus;
 }
 
+/// Indicateurs détaillés d'une période (droit « finance.read ») : commandes
+/// par jour, couverts, moyens de paiement, annulations, plats vendus, équipe,
+/// temps de service, affluence.
+class Insights {
+  Insights.fromJson(Map<String, dynamic> j)
+      : ordersByDay = [
+          for (final d in (j['orders_by_day'] as List? ?? const []))
+            (DateTime.parse((d as Map)['day'] as String), _int(d['count']), _int(d['total'])),
+        ],
+        covers = _int(j['covers']),
+        dineInSales = _int(j['dine_in_sales']),
+        payments = [
+          for (final p in (j['payments_by_method'] as List? ?? const []))
+            ((p as Map)['name'] as String? ?? '', p['kind'] as String? ?? 'other', _int(p['total']), _int(p['count']), _int(p['tips'])),
+        ],
+        cancelledOrders = _int((j['cancellations'] as Map?)?['orders']),
+        cancelledOrdersAmount = _int((j['cancellations'] as Map?)?['orders_amount']),
+        cancelledItems = _int((j['cancellations'] as Map?)?['items']),
+        cancelledItemsAmount = _int((j['cancellations'] as Map?)?['items_amount']),
+        cancelReasons = [
+          for (final r in ((j['cancellations'] as Map?)?['reasons'] as List? ?? const []))
+            ((r as Map)['reason'] as String? ?? '', _int(r['count'])),
+        ],
+        items = [
+          for (final i in (j['items'] as List? ?? const []))
+            SoldItem((i as Map)['item_id'] as String, i['name'] as String? ?? '', _int(i['quantity']), _int(i['total'])),
+        ],
+        staff = [
+          for (final s in (j['staff'] as List? ?? const []))
+            ((s as Map)['name'] as String? ?? '—', _int(s['orders']), _int(s['sales']), _int(s['tips'])),
+        ],
+        prepMinutes = ((j['service'] as Map?)?['prep_minutes'] as num?)?.toDouble(),
+        serveMinutes = ((j['service'] as Map?)?['serve_minutes'] as num?)?.toDouble(),
+        tableMinutes = ((j['service'] as Map?)?['table_minutes'] as num?)?.toDouble(),
+        heatmap = {
+          for (final h in (j['heatmap'] as List? ?? const [])) ((_int((h as Map)['dow'])), _int(h['hour'])): _int(h['count']),
+        };
+
+  /// (jour, commandes, chiffre d'affaires).
+  final List<(DateTime, int, int)> ordersByDay;
+  final int covers;
+  final int dineInSales;
+
+  /// (moyen, type, montant, nombre, pourboires).
+  final List<(String, String, int, int, int)> payments;
+  final int cancelledOrders;
+  final int cancelledOrdersAmount;
+  final int cancelledItems;
+  final int cancelledItemsAmount;
+  final List<(String, int)> cancelReasons;
+  final List<SoldItem> items;
+
+  /// (nom, commandes, ventes, pourboires).
+  final List<(String, int, int, int)> staff;
+  final double? prepMinutes;
+  final double? serveMinutes;
+  final double? tableMinutes;
+
+  /// (jour ISO 1 = lundi … 7, heure) → commandes.
+  final Map<(int, int), int> heatmap;
+
+  int get perCover => covers == 0 ? 0 : (dineInSales / covers).round();
+}
+
+class SoldItem {
+  const SoldItem(this.itemId, this.name, this.quantity, this.total);
+  final String itemId;
+  final String name;
+  final int quantity;
+  final int total;
+}
+
 class DashboardApi {
   DashboardApi(this._db);
   final SupabaseClient _db;
 
   static String _day(DateTime d) =>
       '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+
+  /// Indicateurs détaillés ; null tant que la base ne les expose pas encore.
+  Future<Insights?> insights(String branchId, DateTime from, DateTime to) async {
+    try {
+      final r = await _db.rpc('branch_insights', params: {'p_branch': branchId, 'p_from': _day(from), 'p_to': _day(to)});
+      return Insights.fromJson((r as Map).cast<String, dynamic>());
+    } on PostgrestException catch (e) {
+      if (e.code == 'PGRST202' || e.code == '42883') return null;
+      rethrow;
+    }
+  }
 
   Future<Dashboard> load(String branchId, DateTime from, DateTime to) async => Dashboard.fromJson(
         ((await _db.rpc('branch_dashboard', params: {'p_branch': branchId, 'p_from': _day(from), 'p_to': _day(to)})) as Map)

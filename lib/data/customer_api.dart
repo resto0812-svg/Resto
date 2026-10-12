@@ -1,7 +1,8 @@
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+import 'supabase_setup.dart' show readViewerKey;
 
 /// Espace client : catalogue public (sans compte), commandes en ligne,
 /// suivi, avis, favoris, adresses, réservations, fidélité.
@@ -1008,8 +1009,12 @@ class CustomerApi {
 
   // --- Fil « Découvrir »
 
-  /// Identifiant anonyme de l'appareil pour cette session (vues dédoublonnées sans compte).
-  static final String _viewerKey = 'v-${DateTime.now().microsecondsSinceEpoch}-${Random.secure().nextInt(1 << 30)}';
+  /// Identifiant anonyme de l'appareil, gardé d'une ouverture à l'autre (vues
+  /// dédoublonnées sans compte) ; aucune donnée personnelle.
+  static Future<String>? _viewerKey;
+
+  Future<String?> _viewer() async =>
+      _db.auth.currentUser != null ? null : await (_viewerKey ??= readViewerKey());
 
   Future<List<FeedPost>> feed({String? city, int offset = 0, int limit = 12}) async {
     final rows = await _db.rpc('public_feed', params: {'p_city': city, 'p_limit': limit, 'p_offset': offset}) as List;
@@ -1017,9 +1022,11 @@ class CustomerApi {
   }
 
   /// Vue comptée une fois par jour et par visiteur.
-  Future<void> recordFeedView(String campaignId) => _db
-      .rpc('record_ad_view', params: {'p_campaign': campaignId, 'p_viewer': _db.auth.currentUser == null ? _viewerKey : null})
-      .catchError((_) => null);
+  Future<void> recordFeedView(String campaignId) async {
+    try {
+      await _db.rpc('record_ad_view', params: {'p_campaign': campaignId, 'p_viewer': await _viewer()});
+    } catch (_) {}
+  }
 
   Future<(bool, int)> toggleFeedLike(String campaignId) async {
     final r = (await _db.rpc('toggle_ad_like', params: {'p_campaign': campaignId}) as Map).cast<String, dynamic>();
@@ -1057,7 +1064,7 @@ class CustomerApi {
     try {
       await _db.rpc('record_item_views', params: {
         'p_items': itemIds.take(100).toList(),
-        'p_viewer': _db.auth.currentUser == null ? _viewerKey : null,
+        'p_viewer': await _viewer(),
       });
     } catch (_) {}
   }

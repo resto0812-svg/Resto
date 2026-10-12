@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "Dieses Restaurant hat seine Tische noch nicht vorgestellt."
+  "tablesEmpty": "Dieses Restaurant hat seine Tische noch nicht vorgestellt.",
+  "appVersion": "Resto · Version {version} ({build})",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "Überblick",
+  "dashTabDishes": "Gerichte",
+  "dashTabTeam": "Team und Service",
+  "dashTabFinance": "Finanzen",
+  "coversLabel": "Gedecke",
+  "perCoverLabel": "{amount} pro Gedeck",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "Belegte Tische",
+  "paymentsByMethod": "Einnahmen nach Zahlungsart",
+  "busyHours": "Andrang nach Tag und Uhrzeit",
+  "menuEngineering": "Menü-Engineering",
+  "menuEngineeringHint": "Verkäufe × Marge je Gericht, laut Rezepturen.",
+  "engStars": "Stars",
+  "engStarsHint": "Beliebt und rentabel: weiter hervorheben.",
+  "engPlowhorses": "Beliebt, wenig rentabel",
+  "engPlowhorsesHint": "Preis oder Wareneinsatz prüfen.",
+  "engPuzzles": "Rentabel, selten verkauft",
+  "engPuzzlesHint": "Hervorheben: Foto, Werbung, Empfehlung des Personals.",
+  "engDogs": "Zu überprüfen",
+  "engDogsHint": "Selten verkauft und wenig rentabel: überarbeiten oder streichen.",
+  "engNoRecipe": "{count, plural, =1{1 Gericht ohne Rezeptur ist nicht eingeordnet.} other{{count} Gerichte ohne Rezeptur sind nicht eingeordnet.}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "Selten verkaufte Gerichte",
+  "teamPerformance": "Leistung des Teams",
+  "memberLabel": "Mitglied",
+  "staffOrders": "Bestellungen",
+  "staffSales": "Umsatz",
+  "staffTips": "Trinkgeld",
+  "serviceTimes": "Servicezeiten",
+  "serveTime": "Bis zum Tisch",
+  "tableTime": "Zeit am Tisch",
+  "minutesValue": "{count} Min.",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "Ziel: {count} Min.",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "Stornierungen",
+  "cancelledOrdersCount": "{count, plural, =0{Keine stornierte Bestellung} =1{1 stornierte Bestellung} other{{count} stornierte Bestellungen}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{Kein Artikel nach dem Senden storniert} =1{1 Artikel nach dem Senden storniert} other{{count} Artikel nach dem Senden storniert}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "Häufigste Gründe",
+  "dashPdf": "PDF-Bericht",
+  "insightsUnavailable": "Die detaillierten Kennzahlen erscheinen nach dem Datenbank-Update (Migration 034).",
+  "salesByDayTitle": "Umsatz pro Tag",
+  "ordersCountLabel": "Bestellungen",
+  "financeItemLabel": "Posten",
+  "supplierLabel": "Lieferant",
+  "purchaseOrderTitle": "Bestellschein",
+  "supplierStatementTitle": "Kontoauszug des Lieferanten",
+  "dueDateLabel": "Fälligkeit",
+  "balanceDue": "Offener Betrag",
+  "purchasesThisMonth": "Einkäufe des Monats",
+  "openInvoicesCount": "{count, plural, =0{Keine offene Rechnung} =1{1 offene Rechnung} other{{count} offene Rechnungen}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "Überfällige Rechnungen",
+  "dueWithinWeek": "Fällig in 7 Tagen",
+  "pendingPurchaseOrders": "Laufende Bestellungen",
+  "paymentSchedule": "Zahlungsplan",
+  "nothingToPay": "Keine offene Rechnung.",
+  "noDueDate": "Ohne Fälligkeit",
+  "purchasesByMonth": "Einkäufe pro Monat",
+  "topSuppliers": "Wichtigste Lieferanten (90 Tage)",
+  "noPurchasesYet": "Noch keine Einkäufe.",
+  "totalPurchased": "Gesamt eingekauft",
+  "purchaseOrderPdf": "Bestellschein als PDF"
 }

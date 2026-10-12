@@ -10914,6 +10914,360 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Ce restaurant n\'a pas encore présenté ses tables.'**
   String get tablesEmpty;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Resto · version {version} ({build})'**
+  String appVersion(String version, String build);
+
+  /// No description provided for @dashTabOverview.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vue d\'ensemble'**
+  String get dashTabOverview;
+
+  /// No description provided for @dashTabDishes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plats'**
+  String get dashTabDishes;
+
+  /// No description provided for @dashTabTeam.
+  ///
+  /// In fr, this message translates to:
+  /// **'Équipe et service'**
+  String get dashTabTeam;
+
+  /// No description provided for @dashTabFinance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Finances'**
+  String get dashTabFinance;
+
+  /// No description provided for @coversLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couverts'**
+  String get coversLabel;
+
+  /// No description provided for @perCoverLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'{amount} par couvert'**
+  String perCoverLabel(String amount);
+
+  /// No description provided for @occupancyLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tables occupées'**
+  String get occupancyLabel;
+
+  /// No description provided for @paymentsByMethod.
+  ///
+  /// In fr, this message translates to:
+  /// **'Encaissements par moyen de paiement'**
+  String get paymentsByMethod;
+
+  /// No description provided for @busyHours.
+  ///
+  /// In fr, this message translates to:
+  /// **'Affluence par jour et par heure'**
+  String get busyHours;
+
+  /// No description provided for @menuEngineering.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ingénierie de menu'**
+  String get menuEngineering;
+
+  /// No description provided for @menuEngineeringHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ventes × marge de chaque plat, d\'après les fiches techniques.'**
+  String get menuEngineeringHint;
+
+  /// No description provided for @engStars.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vedettes'**
+  String get engStars;
+
+  /// No description provided for @engStarsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Très vendus et rentables : gardez-les en avant.'**
+  String get engStarsHint;
+
+  /// No description provided for @engPlowhorses.
+  ///
+  /// In fr, this message translates to:
+  /// **'Populaires, peu rentables'**
+  String get engPlowhorses;
+
+  /// No description provided for @engPlowhorsesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Revoyez le prix ou le coût de revient.'**
+  String get engPlowhorsesHint;
+
+  /// No description provided for @engPuzzles.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rentables, peu vendus'**
+  String get engPuzzles;
+
+  /// No description provided for @engPuzzlesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mettez-les en avant : photo, publicité, conseil des serveurs.'**
+  String get engPuzzlesHint;
+
+  /// No description provided for @engDogs.
+  ///
+  /// In fr, this message translates to:
+  /// **'À revoir'**
+  String get engDogs;
+
+  /// No description provided for @engDogsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Peu vendus et peu rentables : à retravailler ou à retirer.'**
+  String get engDogsHint;
+
+  /// No description provided for @engNoRecipe.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =1{1 plat sans fiche technique n\'est pas classé.} other{{count} plats sans fiche technique ne sont pas classés.}}'**
+  String engNoRecipe(int count);
+
+  /// No description provided for @slowSellers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plats qui se vendent peu'**
+  String get slowSellers;
+
+  /// No description provided for @teamPerformance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Performance de l\'équipe'**
+  String get teamPerformance;
+
+  /// No description provided for @memberLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Membre'**
+  String get memberLabel;
+
+  /// No description provided for @staffOrders.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commandes'**
+  String get staffOrders;
+
+  /// No description provided for @staffSales.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ventes'**
+  String get staffSales;
+
+  /// No description provided for @staffTips.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pourboires'**
+  String get staffTips;
+
+  /// No description provided for @serviceTimes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Temps de service'**
+  String get serviceTimes;
+
+  /// No description provided for @serveTime.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mise sur table'**
+  String get serveTime;
+
+  /// No description provided for @tableTime.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée à table'**
+  String get tableTime;
+
+  /// No description provided for @minutesValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} min'**
+  String minutesValue(int count);
+
+  /// No description provided for @targetMinutes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Objectif : {count} min'**
+  String targetMinutes(int count);
+
+  /// No description provided for @cancellationsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annulations'**
+  String get cancellationsTitle;
+
+  /// No description provided for @cancelledOrdersCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucune commande annulée} =1{1 commande annulée} other{{count} commandes annulées}}'**
+  String cancelledOrdersCount(int count);
+
+  /// No description provided for @cancelledItemsCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucun article annulé après envoi} =1{1 article annulé après envoi} other{{count} articles annulés après envoi}}'**
+  String cancelledItemsCount(int count);
+
+  /// No description provided for @cancelReasonsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Motifs les plus fréquents'**
+  String get cancelReasonsTitle;
+
+  /// No description provided for @dashPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rapport PDF'**
+  String get dashPdf;
+
+  /// No description provided for @insightsUnavailable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les indicateurs détaillés apparaîtront après la mise à jour de la base (migration 034).'**
+  String get insightsUnavailable;
+
+  /// No description provided for @salesByDayTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ventes par jour'**
+  String get salesByDayTitle;
+
+  /// No description provided for @ordersCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commandes'**
+  String get ordersCountLabel;
+
+  /// No description provided for @financeItemLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rubrique'**
+  String get financeItemLabel;
+
+  /// No description provided for @supplierLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fournisseur'**
+  String get supplierLabel;
+
+  /// No description provided for @purchaseOrderTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon de commande'**
+  String get purchaseOrderTitle;
+
+  /// No description provided for @supplierStatementTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Relevé de compte fournisseur'**
+  String get supplierStatementTitle;
+
+  /// No description provided for @dueDateLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échéance'**
+  String get dueDateLabel;
+
+  /// No description provided for @balanceDue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Solde dû'**
+  String get balanceDue;
+
+  /// No description provided for @purchasesThisMonth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Achats du mois'**
+  String get purchasesThisMonth;
+
+  /// No description provided for @openInvoicesCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucune facture à payer} =1{1 facture à payer} other{{count} factures à payer}}'**
+  String openInvoicesCount(int count);
+
+  /// No description provided for @overdueInvoices.
+  ///
+  /// In fr, this message translates to:
+  /// **'Factures en retard'**
+  String get overdueInvoices;
+
+  /// No description provided for @dueWithinWeek.
+  ///
+  /// In fr, this message translates to:
+  /// **'À payer sous 7 jours'**
+  String get dueWithinWeek;
+
+  /// No description provided for @pendingPurchaseOrders.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commandes en cours'**
+  String get pendingPurchaseOrders;
+
+  /// No description provided for @paymentSchedule.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échéancier'**
+  String get paymentSchedule;
+
+  /// No description provided for @nothingToPay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune facture à payer.'**
+  String get nothingToPay;
+
+  /// No description provided for @noDueDate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sans échéance'**
+  String get noDueDate;
+
+  /// No description provided for @purchasesByMonth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Achats par mois'**
+  String get purchasesByMonth;
+
+  /// No description provided for @topSuppliers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Principaux fournisseurs (90 jours)'**
+  String get topSuppliers;
+
+  /// No description provided for @noPurchasesYet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun achat pour le moment.'**
+  String get noPurchasesYet;
+
+  /// No description provided for @totalPurchased.
+  ///
+  /// In fr, this message translates to:
+  /// **'Total acheté'**
+  String get totalPurchased;
+
+  /// No description provided for @purchaseOrderPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon de commande PDF'**
+  String get purchaseOrderPdf;
 }
 
 class _AppLocalizationsDelegate

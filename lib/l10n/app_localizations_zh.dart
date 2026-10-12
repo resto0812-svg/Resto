@@ -6089,6 +6089,222 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get tablesEmpty => '该餐厅尚未展示其餐桌。';
+
+  @override
+  String appVersion(String version, String build) {
+    return 'Resto · 版本 $version（$build）';
+  }
+
+  @override
+  String get dashTabOverview => '概览';
+
+  @override
+  String get dashTabDishes => '菜品';
+
+  @override
+  String get dashTabTeam => '团队与服务';
+
+  @override
+  String get dashTabFinance => '财务';
+
+  @override
+  String get coversLabel => '用餐人数';
+
+  @override
+  String perCoverLabel(String amount) {
+    return '人均 $amount';
+  }
+
+  @override
+  String get occupancyLabel => '已占用餐桌';
+
+  @override
+  String get paymentsByMethod => '按支付方式收款';
+
+  @override
+  String get busyHours => '按日期与时段的客流';
+
+  @override
+  String get menuEngineering => '菜单工程';
+
+  @override
+  String get menuEngineeringHint => '根据配方卡计算每道菜的销量 × 毛利。';
+
+  @override
+  String get engStars => '明星菜';
+
+  @override
+  String get engStarsHint => '畅销且盈利：继续重点推荐。';
+
+  @override
+  String get engPlowhorses => '畅销但利润低';
+
+  @override
+  String get engPlowhorsesHint => '调整价格或成本。';
+
+  @override
+  String get engPuzzles => '利润高但销量少';
+
+  @override
+  String get engPuzzlesHint => '加强推广：照片、广告、服务员推荐。';
+
+  @override
+  String get engDogs => '需改进';
+
+  @override
+  String get engDogsHint => '销量少且利润低：改良或下架。';
+
+  @override
+  String engNoRecipe(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 道没有配方卡的菜未分类。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get slowSellers => '滞销菜品';
+
+  @override
+  String get teamPerformance => '团队表现';
+
+  @override
+  String get memberLabel => '成员';
+
+  @override
+  String get staffOrders => '订单';
+
+  @override
+  String get staffSales => '销售额';
+
+  @override
+  String get staffTips => '小费';
+
+  @override
+  String get serviceTimes => '服务时间';
+
+  @override
+  String get serveTime => '上桌时间';
+
+  @override
+  String get tableTime => '用餐时长';
+
+  @override
+  String minutesValue(int count) {
+    return '$count 分钟';
+  }
+
+  @override
+  String targetMinutes(int count) {
+    return '目标：$count 分钟';
+  }
+
+  @override
+  String get cancellationsTitle => '取消';
+
+  @override
+  String cancelledOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个订单已取消',
+      zero: '没有取消的订单',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String cancelledItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 道菜送出后取消',
+      zero: '没有送出后取消的菜品',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cancelReasonsTitle => '最常见原因';
+
+  @override
+  String get dashPdf => 'PDF 报告';
+
+  @override
+  String get insightsUnavailable => '数据库更新（迁移 034）后将显示详细指标。';
+
+  @override
+  String get salesByDayTitle => '每日销售额';
+
+  @override
+  String get ordersCountLabel => '订单';
+
+  @override
+  String get financeItemLabel => '项目';
+
+  @override
+  String get supplierLabel => '供应商';
+
+  @override
+  String get purchaseOrderTitle => '采购单';
+
+  @override
+  String get supplierStatementTitle => '供应商对账单';
+
+  @override
+  String get dueDateLabel => '到期日';
+
+  @override
+  String get balanceDue => '应付余额';
+
+  @override
+  String get purchasesThisMonth => '本月采购';
+
+  @override
+  String openInvoicesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 张待付发票',
+      zero: '没有待付发票',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get overdueInvoices => '逾期发票';
+
+  @override
+  String get dueWithinWeek => '7 天内到期';
+
+  @override
+  String get pendingPurchaseOrders => '进行中的采购单';
+
+  @override
+  String get paymentSchedule => '付款计划';
+
+  @override
+  String get nothingToPay => '没有待付发票。';
+
+  @override
+  String get noDueDate => '无到期日';
+
+  @override
+  String get purchasesByMonth => '每月采购';
+
+  @override
+  String get topSuppliers => '主要供应商（90 天）';
+
+  @override
+  String get noPurchasesYet => '暂无采购。';
+
+  @override
+  String get totalPurchased => '采购总额';
+
+  @override
+  String get purchaseOrderPdf => '采购单 PDF';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -12176,4 +12392,220 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get tablesEmpty => '這家餐廳尚未展示其餐桌。';
+
+  @override
+  String appVersion(String version, String build) {
+    return 'Resto · 版本 $version（$build）';
+  }
+
+  @override
+  String get dashTabOverview => '概覽';
+
+  @override
+  String get dashTabDishes => '餐點';
+
+  @override
+  String get dashTabTeam => '團隊與服務';
+
+  @override
+  String get dashTabFinance => '財務';
+
+  @override
+  String get coversLabel => '用餐人數';
+
+  @override
+  String perCoverLabel(String amount) {
+    return '人均 $amount';
+  }
+
+  @override
+  String get occupancyLabel => '已佔用餐桌';
+
+  @override
+  String get paymentsByMethod => '依付款方式收款';
+
+  @override
+  String get busyHours => '依日期與時段的客流';
+
+  @override
+  String get menuEngineering => '菜單工程';
+
+  @override
+  String get menuEngineeringHint => '根據配方卡計算每道餐點的銷量 × 毛利。';
+
+  @override
+  String get engStars => '明星餐點';
+
+  @override
+  String get engStarsHint => '暢銷且獲利：持續重點推薦。';
+
+  @override
+  String get engPlowhorses => '暢銷但利潤低';
+
+  @override
+  String get engPlowhorsesHint => '調整價格或成本。';
+
+  @override
+  String get engPuzzles => '利潤高但銷量少';
+
+  @override
+  String get engPuzzlesHint => '加強推廣：照片、廣告、服務人員推薦。';
+
+  @override
+  String get engDogs => '需改進';
+
+  @override
+  String get engDogsHint => '銷量少且利潤低：改良或下架。';
+
+  @override
+  String engNoRecipe(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 道沒有配方卡的餐點未分類。',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get slowSellers => '滯銷餐點';
+
+  @override
+  String get teamPerformance => '團隊表現';
+
+  @override
+  String get memberLabel => '成員';
+
+  @override
+  String get staffOrders => '訂單';
+
+  @override
+  String get staffSales => '銷售額';
+
+  @override
+  String get staffTips => '小費';
+
+  @override
+  String get serviceTimes => '服務時間';
+
+  @override
+  String get serveTime => '上桌時間';
+
+  @override
+  String get tableTime => '用餐時長';
+
+  @override
+  String minutesValue(int count) {
+    return '$count 分鐘';
+  }
+
+  @override
+  String targetMinutes(int count) {
+    return '目標：$count 分鐘';
+  }
+
+  @override
+  String get cancellationsTitle => '取消';
+
+  @override
+  String cancelledOrdersCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 筆訂單已取消',
+      zero: '沒有取消的訂單',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String cancelledItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 道餐點送出後取消',
+      zero: '沒有送出後取消的餐點',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get cancelReasonsTitle => '最常見原因';
+
+  @override
+  String get dashPdf => 'PDF 報告';
+
+  @override
+  String get insightsUnavailable => '資料庫更新（遷移 034）後將顯示詳細指標。';
+
+  @override
+  String get salesByDayTitle => '每日銷售額';
+
+  @override
+  String get ordersCountLabel => '訂單';
+
+  @override
+  String get financeItemLabel => '項目';
+
+  @override
+  String get supplierLabel => '供應商';
+
+  @override
+  String get purchaseOrderTitle => '採購單';
+
+  @override
+  String get supplierStatementTitle => '供應商對帳單';
+
+  @override
+  String get dueDateLabel => '到期日';
+
+  @override
+  String get balanceDue => '應付餘額';
+
+  @override
+  String get purchasesThisMonth => '本月採購';
+
+  @override
+  String openInvoicesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 張待付發票',
+      zero: '沒有待付發票',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get overdueInvoices => '逾期發票';
+
+  @override
+  String get dueWithinWeek => '7 天內到期';
+
+  @override
+  String get pendingPurchaseOrders => '進行中的採購單';
+
+  @override
+  String get paymentSchedule => '付款計畫';
+
+  @override
+  String get nothingToPay => '沒有待付發票。';
+
+  @override
+  String get noDueDate => '無到期日';
+
+  @override
+  String get purchasesByMonth => '每月採購';
+
+  @override
+  String get topSuppliers => '主要供應商（90 天）';
+
+  @override
+  String get noPurchasesYet => '尚無採購。';
+
+  @override
+  String get totalPurchased => '採購總額';
+
+  @override
+  String get purchaseOrderPdf => '採購單 PDF';
 }

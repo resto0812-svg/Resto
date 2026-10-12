@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "Este restaurante aún no ha presentado sus mesas."
+  "tablesEmpty": "Este restaurante aún no ha presentado sus mesas.",
+  "appVersion": "Resto · versión {version} ({build})",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "Resumen",
+  "dashTabDishes": "Platos",
+  "dashTabTeam": "Equipo y servicio",
+  "dashTabFinance": "Finanzas",
+  "coversLabel": "Cubiertos",
+  "perCoverLabel": "{amount} por cubierto",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "Mesas ocupadas",
+  "paymentsByMethod": "Cobros por medio de pago",
+  "busyHours": "Afluencia por día y hora",
+  "menuEngineering": "Ingeniería de menú",
+  "menuEngineeringHint": "Ventas × margen de cada plato, según las fichas técnicas.",
+  "engStars": "Estrellas",
+  "engStarsHint": "Muy vendidos y rentables: manténgalos destacados.",
+  "engPlowhorses": "Populares, poco rentables",
+  "engPlowhorsesHint": "Revise el precio o el coste.",
+  "engPuzzles": "Rentables, poco vendidos",
+  "engPuzzlesHint": "Destáquelos: foto, publicidad, recomendación del personal.",
+  "engDogs": "A revisar",
+  "engDogsHint": "Poco vendidos y poco rentables: rehacer o retirar.",
+  "engNoRecipe": "{count, plural, =1{1 plato sin ficha técnica no está clasificado.} other{{count} platos sin ficha técnica no están clasificados.}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "Platos que se venden poco",
+  "teamPerformance": "Rendimiento del equipo",
+  "memberLabel": "Miembro",
+  "staffOrders": "Pedidos",
+  "staffSales": "Ventas",
+  "staffTips": "Propinas",
+  "serviceTimes": "Tiempos de servicio",
+  "serveTime": "Llegada a la mesa",
+  "tableTime": "Tiempo en la mesa",
+  "minutesValue": "{count} min",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "Objetivo: {count} min",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "Anulaciones",
+  "cancelledOrdersCount": "{count, plural, =0{Ningún pedido anulado} =1{1 pedido anulado} other{{count} pedidos anulados}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{Ningún artículo anulado tras el envío} =1{1 artículo anulado tras el envío} other{{count} artículos anulados tras el envío}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "Motivos más frecuentes",
+  "dashPdf": "Informe PDF",
+  "insightsUnavailable": "Los indicadores detallados aparecerán tras la actualización de la base (migración 034).",
+  "salesByDayTitle": "Ventas por día",
+  "ordersCountLabel": "Pedidos",
+  "financeItemLabel": "Concepto",
+  "supplierLabel": "Proveedor",
+  "purchaseOrderTitle": "Orden de compra",
+  "supplierStatementTitle": "Estado de cuenta del proveedor",
+  "dueDateLabel": "Vencimiento",
+  "balanceDue": "Saldo pendiente",
+  "purchasesThisMonth": "Compras del mes",
+  "openInvoicesCount": "{count, plural, =0{Ninguna factura por pagar} =1{1 factura por pagar} other{{count} facturas por pagar}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "Facturas vencidas",
+  "dueWithinWeek": "A pagar en 7 días",
+  "pendingPurchaseOrders": "Pedidos en curso",
+  "paymentSchedule": "Calendario de pagos",
+  "nothingToPay": "Ninguna factura por pagar.",
+  "noDueDate": "Sin vencimiento",
+  "purchasesByMonth": "Compras por mes",
+  "topSuppliers": "Principales proveedores (90 días)",
+  "noPurchasesYet": "Aún no hay compras.",
+  "totalPurchased": "Total comprado",
+  "purchaseOrderPdf": "Orden de compra PDF"
 }

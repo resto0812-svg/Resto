@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:printing/printing.dart';
 
 import '../../app_state.dart';
 import '../../data/cash_api.dart';
 import '../../data/models.dart';
 import '../../data/purchases_api.dart';
 import '../../data/stock_api.dart';
+import '../../pdf/purchase_pdf.dart';
 import '../../ui/branch_scope.dart';
 import '../../ui/common.dart';
 import '../../ui/files.dart';
+import '../../ui/header_slot.dart';
+import '../../ui/kit.dart';
 import '../cash/cash_labels.dart';
 import '../menus/menu_widgets.dart';
 import '../stock/stock_widgets.dart';
 import 'purchase_widgets.dart';
+import 'purchases_overview.dart';
+import 'supplier_sheet.dart';
 
 /// Achats : fournisseurs, bons de commande, réceptions (entrées en stock),
 /// factures fournisseurs et leurs paiements.
@@ -59,64 +65,96 @@ class _PurchasesBodyState extends State<_PurchasesBody> {
     return _Shared(r[0] as List<Supplier>, r[1] as List<Ingredient>, r[2] as List<Unit>, r[3] as List<StockLocation>);
   }
 
+  int _tab = 0;
+
+  @override
+  void dispose() {
+    HeaderSlot.clear(this);
+    super.dispose();
+  }
+
+  Future<void> _openInvoice(_Shared d, SupplierInvoice inv) async {
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (_) => _InvoiceSheet(scope: s, shared: d, invoice: inv),
+    );
+    _reload();
+  }
+
+  Future<void> _editSupplier([Supplier? sup]) async {
+    final values = await showDialog<Map<String, dynamic>>(context: context, builder: (_) => _SupplierDialog(supplier: sup));
+    if (values == null || !mounted) return;
+    try {
+      await AppScope.read(context).api!.purchases.saveSupplier(s.orgId, sup?.id, values);
+      _reload();
+    } catch (e) {
+      if (mounted) showError(context, e);
+    }
+  }
+
+  void _openSupplier(_Shared d, Supplier sup) => showSupplierSheet(
+        context,
+        scope: s,
+        supplier: sup,
+        onEdit: () => _editSupplier(sup),
+        onOpenInvoice: (inv) => _openInvoice(d, inv),
+      );
+
   @override
   Widget build(BuildContext context) {
     final t = context.t;
+    // Onglets dans l'en-tête, à côté du titre (comme les autres modules).
+    HeaderSlot.show(
+      this,
+      'purchases',
+      PillBar<int>(
+        dense: true,
+        items: [
+          PillItem(0, t.dashTabOverview, icon: Icons.space_dashboard_outlined),
+          PillItem(1, t.purchaseOrdersTab, icon: Icons.assignment_outlined),
+          PillItem(2, t.receiptsTab, icon: Icons.move_to_inbox_outlined),
+          PillItem(3, t.invoicesTab, icon: Icons.description_outlined),
+          PillItem(4, t.suppliersTab, icon: Icons.local_shipping_outlined),
+        ],
+        selected: _tab,
+        onSelected: (i) => setState(() => _tab = i),
+      ),
+    );
     return Loader<_Shared>(
       key: _key,
       load: _load,
-      builder: (context, d, _) => DefaultTabController(
-        length: 4,
-        child: Column(children: [
-          Material(
-            color: Theme.of(context).colorScheme.surfaceContainer,
-            child: TabBar(
-              isScrollable: true,
-              labelColor: Theme.of(context).colorScheme.primary,
-              unselectedLabelColor: Theme.of(context).colorScheme.onSurfaceVariant,
-              tabs: [Tab(text: t.invoicesTab), Tab(text: t.purchaseOrdersTab), Tab(text: t.receiptsTab), Tab(text: t.suppliersTab)],
-            ),
-          ),
-          Expanded(
-            child: TabBarView(children: [
-              _InvoicesTab(scope: s, shared: d),
-              _OrdersTab(scope: s, shared: d),
-              _ReceiptsTab(scope: s, shared: d),
-              _SuppliersTab(scope: s, shared: d, onChanged: _reload),
-            ]),
-          ),
-        ]),
-      ),
+      builder: (context, d, _) => IndexedStack(index: _tab, children: [
+        PurchasesOverview(
+          scope: s,
+          suppliers: d.suppliers,
+          onOpenInvoice: (inv) => _openInvoice(d, inv),
+          onOpenSupplier: (sup) => _openSupplier(d, sup),
+        ),
+        _OrdersTab(scope: s, shared: d),
+        _ReceiptsTab(scope: s, shared: d),
+        _InvoicesTab(scope: s, shared: d),
+        _SuppliersTab(scope: s, shared: d, onNew: () => _editSupplier(), onOpen: (sup) => _openSupplier(d, sup)),
+      ]),
     );
   }
 }
-
 // =============================================================================
 // Fournisseurs
 // =============================================================================
 class _SuppliersTab extends StatelessWidget {
-  const _SuppliersTab({required this.scope, required this.shared, required this.onChanged});
+  const _SuppliersTab({required this.scope, required this.shared, required this.onNew, required this.onOpen});
   final BranchContext scope;
   final _Shared shared;
-  final VoidCallback onChanged;
-
-  Future<void> _edit(BuildContext context, [Supplier? sup]) async {
-    final values = await showDialog<Map<String, dynamic>>(context: context, builder: (_) => _SupplierDialog(supplier: sup));
-    if (values == null || !context.mounted) return;
-    try {
-      await AppScope.read(context).api!.purchases.saveSupplier(scope.orgId, sup?.id, values);
-      onChanged();
-    } catch (e) {
-      if (context.mounted) showError(context, e);
-    }
-  }
+  final VoidCallback onNew;
+  final ValueChanged<Supplier> onOpen;
 
   @override
   Widget build(BuildContext context) {
     final t = context.t;
     return Scaffold(
       floatingActionButton:
-          FloatingActionButton.extended(onPressed: () => _edit(context), icon: const Icon(Icons.add), label: Text(t.newSupplier)),
+          FloatingActionButton.extended(onPressed: onNew, icon: const Icon(Icons.add), label: Text(t.newSupplier)),
       body: shared.suppliers.isEmpty
           ? Center(child: Padding(padding: const EdgeInsets.all(24), child: Text(t.noSuppliersYet, textAlign: TextAlign.center)))
           : ListView(padding: const EdgeInsets.fromLTRB(16, 12, 16, 96), children: [
@@ -127,7 +165,8 @@ class _SuppliersTab extends StatelessWidget {
                     leading: const Icon(Icons.local_shipping_outlined),
                     title: Text(sup.active ? sup.name : '${sup.name} · ${t.inactive}'),
                     subtitle: Text([?sup.contactName, ?sup.phone, if (sup.paymentTermsDays > 0) t.paymentTerms(sup.paymentTermsDays)].join(' · ')),
-                    onTap: () => _edit(context, sup),
+                    trailing: const Icon(Icons.chevron_right_rounded),
+                    onTap: () => onOpen(sup),
                   ),
                 ),
             ]),
@@ -240,6 +279,30 @@ class _OrdersTabState extends State<_OrdersTab> {
     if (changed == true) _reload();
   }
 
+  /// Bon de commande en PDF, à envoyer au fournisseur (WhatsApp, e-mail…).
+  Future<void> _pdf(PurchaseOrder po) async {
+    final t = context.t;
+    final sup = widget.shared.suppliers.where((x) => x.id == po.supplierId).firstOrNull;
+    if (sup == null) return;
+    try {
+      final bytes = await purchaseOrderPdf(
+        PurchaseDocContext(
+          t: t,
+          locale: Localizations.localeOf(context).toString(),
+          money: (v) => widget.scope.money(context, v),
+          branch: widget.scope.branch,
+        ),
+        po: po,
+        supplier: sup,
+        itemName: (id) => widget.shared.ingredients.where((i) => i.id == id).firstOrNull?.name ?? '',
+        unitName: (code) => unitLabel(t, code),
+      );
+      await Printing.sharePdf(bytes: bytes, filename: 'bon-de-commande-${po.number}.pdf');
+    } catch (e) {
+      if (mounted) showError(context, e);
+    }
+  }
+
   Future<void> _status(PurchaseOrder po, String status) async {
     final t = context.t;
     if (status == 'cancelled' && !await confirm(context, t.cancelPoConfirm, action: t.poCancel)) return;
@@ -280,12 +343,14 @@ class _OrdersTabState extends State<_OrdersTab> {
                         ].join(' · ')),
                         trailing: PopupMenuButton<String>(
                           onSelected: (a) => switch (a) {
+                            'pdf' => _pdf(po),
                             'edit' => _open(po: po),
                             'send' => _status(po, 'sent'),
                             'receive' => _open(po: po, receive: true),
                             _ => _status(po, 'cancelled'),
                           },
                           itemBuilder: (_) => [
+                            PopupMenuItem(value: 'pdf', child: Text(t.purchaseOrderPdf)),
                             if (po.status == 'draft') PopupMenuItem(value: 'edit', child: Text(t.edit)),
                             if (po.status == 'draft') PopupMenuItem(value: 'send', child: Text(t.poMarkSent)),
                             if (const ['draft', 'sent', 'partially_received'].contains(po.status))

@@ -10,6 +10,7 @@ import '../../core/money.dart';
 import '../../data/customer_api.dart';
 import '../../data/menu_models.dart' show allergenCodes;
 import '../../l10n/app_localizations.dart';
+import '../../ui/app_version.dart';
 import '../../ui/common.dart';
 import '../../ui/kit.dart';
 import '../../ui/theme.dart';
@@ -814,6 +815,7 @@ class _CustomerProfilePageState extends State<CustomerProfilePage> {
                   label: Text(t.restaurantSpace),
                 ),
               ),
+            const AppVersionLabel(),
           ],
         );
       },

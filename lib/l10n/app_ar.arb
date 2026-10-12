@@ -2192,5 +2192,123 @@
       }
     }
   },
-  "tablesEmpty": "لم يعرض هذا المطعم طاولاته بعد."
+  "tablesEmpty": "لم يعرض هذا المطعم طاولاته بعد.",
+  "appVersion": "Resto · الإصدار {version} ({build})",
+  "@appVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "dashTabOverview": "نظرة عامة",
+  "dashTabDishes": "الأطباق",
+  "dashTabTeam": "الفريق والخدمة",
+  "dashTabFinance": "المالية",
+  "coversLabel": "الأشخاص",
+  "perCoverLabel": "{amount} للشخص",
+  "@perCoverLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "occupancyLabel": "الطاولات المشغولة",
+  "paymentsByMethod": "التحصيل حسب وسيلة الدفع",
+  "busyHours": "الإقبال حسب اليوم والساعة",
+  "menuEngineering": "هندسة القائمة",
+  "menuEngineeringHint": "المبيعات × هامش كل طبق، حسب البطاقات الفنية.",
+  "engStars": "النجوم",
+  "engStarsHint": "مطلوبة ومربحة: أبقها في الواجهة.",
+  "engPlowhorses": "مطلوبة، قليلة الربح",
+  "engPlowhorsesHint": "راجع السعر أو التكلفة.",
+  "engPuzzles": "مربحة، قليلة المبيع",
+  "engPuzzlesHint": "أبرزها: صورة، إعلان، توصية الفريق.",
+  "engDogs": "للمراجعة",
+  "engDogsHint": "قليلة المبيع والربح: أعد العمل عليها أو أزلها.",
+  "engNoRecipe": "{count, plural, =1{طبق واحد بلا بطاقة فنية غير مصنف.} other{{count} أطباق بلا بطاقة فنية غير مصنفة.}}",
+  "@engNoRecipe": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "slowSellers": "أطباق قليلة المبيع",
+  "teamPerformance": "أداء الفريق",
+  "memberLabel": "العضو",
+  "staffOrders": "الطلبات",
+  "staffSales": "المبيعات",
+  "staffTips": "الإكراميات",
+  "serviceTimes": "أوقات الخدمة",
+  "serveTime": "الوصول إلى الطاولة",
+  "tableTime": "المدة على الطاولة",
+  "minutesValue": "{count} د",
+  "@minutesValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetMinutes": "الهدف: {count} د",
+  "@targetMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancellationsTitle": "الإلغاءات",
+  "cancelledOrdersCount": "{count, plural, =0{لا طلبات ملغاة} =1{طلب واحد ملغى} other{{count} طلبات ملغاة}}",
+  "@cancelledOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelledItemsCount": "{count, plural, =0{لا أصناف ملغاة بعد الإرسال} =1{صنف واحد ملغى بعد الإرسال} other{{count} أصناف ملغاة بعد الإرسال}}",
+  "@cancelledItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cancelReasonsTitle": "الأسباب الأكثر تكرارًا",
+  "dashPdf": "تقرير PDF",
+  "insightsUnavailable": "ستظهر المؤشرات التفصيلية بعد تحديث قاعدة البيانات (الترحيل 034).",
+  "salesByDayTitle": "المبيعات حسب اليوم",
+  "ordersCountLabel": "الطلبات",
+  "financeItemLabel": "البند",
+  "supplierLabel": "المورد",
+  "purchaseOrderTitle": "أمر شراء",
+  "supplierStatementTitle": "كشف حساب المورد",
+  "dueDateLabel": "تاريخ الاستحقاق",
+  "balanceDue": "الرصيد المستحق",
+  "purchasesThisMonth": "مشتريات الشهر",
+  "openInvoicesCount": "{count, plural, =0{لا فواتير للدفع} =1{فاتورة واحدة للدفع} other{{count} فواتير للدفع}}",
+  "@openInvoicesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "overdueInvoices": "فواتير متأخرة",
+  "dueWithinWeek": "تستحق خلال 7 أيام",
+  "pendingPurchaseOrders": "طلبات جارية",
+  "paymentSchedule": "جدول الدفعات",
+  "nothingToPay": "لا فواتير للدفع.",
+  "noDueDate": "بدون تاريخ استحقاق",
+  "purchasesByMonth": "المشتريات حسب الشهر",
+  "topSuppliers": "أهم الموردين (90 يومًا)",
+  "noPurchasesYet": "لا مشتريات بعد.",
+  "totalPurchased": "إجمالي المشتريات",
+  "purchaseOrderPdf": "أمر شراء PDF"
 }
