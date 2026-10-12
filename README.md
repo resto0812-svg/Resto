@@ -48,6 +48,8 @@ Dans le SQL Editor, dans cet ordre :
 35. `supabase/migrations/031_notifications_push.sql` puis `supabase/tests/031_notifications_push_tests.sql` (9) — puis déployer la fonction Edge `supabase/functions/send-push` (secret FCM_SERVICE_ACCOUNT, « Verify JWT » désactivé)
 36. `supabase/migrations/032_adresse_fonction_push.sql` (adresse de la fonction « send-push- »)
 37. `supabase/migrations/033_tables_client.sql` puis `supabase/tests/033_tables_client_tests.sql` (11)
+38. `supabase/migrations/034_tableau_de_bord.sql` puis `supabase/tests/034_tableau_de_bord_tests.sql` (6)
+39. `supabase/migrations/035_depenses_pro.sql` puis `supabase/tests/035_depenses_pro_tests.sql` (8)
 
 E-mails d'authentification (codes) : voir [docs/AUTH_EMAILS.md](docs/AUTH_EMAILS.md).
 
