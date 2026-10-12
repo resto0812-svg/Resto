@@ -99,6 +99,36 @@ class Api {
 
   Future<void> unregisterPushDevice(String token) => _db.rpc('unregister_push_device', params: {'p_token': token});
 
+  /// Étapes du guide « Bien démarrer » déjà faites (organisation).
+  Future<Set<String>> gettingStartedDone(String orgId) async {
+    Future<bool> any(String table, {bool active = false}) async {
+      try {
+        var q = _db.from(table).select('id').eq('organization_id', orgId);
+        if (active) q = q.eq('active', true);
+        return (await q.limit(1)).isNotEmpty;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    final r = await Future.wait<dynamic>([
+      branches(orgId),
+      any('menu_items'),
+      any('dining_tables', active: true),
+      any('payment_methods', active: true),
+      _db.from('memberships').select('id').eq('organization_id', orgId).eq('status', 'active').limit(2).then((v) => v.length > 1, onError: (_) => false),
+    ]);
+    final list = (r[0] as List<Branch>).where((b) => b.status == 'active').toList();
+    return {
+      if (list.any((b) => (b.addressLine1 ?? '').isNotEmpty && (b.phone ?? '').isNotEmpty)) 'profile',
+      if (r[1] as bool) 'dishes',
+      if (r[2] as bool) 'tables',
+      if (r[3] as bool) 'payments',
+      if (r[4] as bool) 'team',
+      if (list.any((b) => b.isPublished)) 'published',
+    };
+  }
+
   Future<Map<String, dynamic>?> myProfile() async {
     if (user == null) return null;
     return _db.from('profiles').select('display_name, locale, country_code, phone').eq('id', user!.id).maybeSingle();

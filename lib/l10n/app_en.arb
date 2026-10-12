@@ -2360,5 +2360,24 @@
   "recurringExample": "E.g. Premises rent",
   "expenseCategoryField": "Category",
   "dayOfMonthLabel": "Day of the month",
-  "budgetsHint": "Amount not to exceed each month, per category. Leave empty to skip a category."
+  "budgetsHint": "Amount not to exceed each month, per category. Leave empty to skip a category.",
+  "startTitle": "Get started",
+  "startProgress": "{done} of {total} steps done",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "Complete your restaurant details (address, phone, logo)",
+  "startDishes": "Add your dishes and drinks",
+  "startTables": "Set up your tables",
+  "startPayments": "Check your payment methods",
+  "startTeam": "Invite your team",
+  "startPublish": "Publish your restaurant for customers",
+  "hideAction": "Hide"
 }

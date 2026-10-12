@@ -2360,5 +2360,24 @@
   "recurringExample": "مثال: إيجار المحل",
   "expenseCategoryField": "الفئة",
   "dayOfMonthLabel": "يوم الشهر",
-  "budgetsHint": "مبلغ لا يُتجاوز كل شهر لكل فئة. اتركه فارغًا لعدم متابعة الفئة."
+  "budgetsHint": "مبلغ لا يُتجاوز كل شهر لكل فئة. اتركه فارغًا لعدم متابعة الفئة.",
+  "startTitle": "بداية جيدة",
+  "startProgress": "{done} من {total} خطوات مكتملة",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "أكمل بطاقة المطعم (العنوان، الهاتف، الشعار)",
+  "startDishes": "أضف أطباقك ومشروباتك",
+  "startTables": "أنشئ طاولاتك",
+  "startPayments": "تحقق من وسائل الدفع",
+  "startTeam": "ادعُ فريقك",
+  "startPublish": "انشر مطعمك للزبائن",
+  "hideAction": "إخفاء"
 }

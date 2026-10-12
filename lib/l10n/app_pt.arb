@@ -2360,5 +2360,24 @@
   "recurringExample": "Ex.: Renda do espaço",
   "expenseCategoryField": "Categoria",
   "dayOfMonthLabel": "Dia do mês",
-  "budgetsHint": "Montante a não ultrapassar por mês, por categoria. Deixe vazio para não acompanhar uma categoria."
+  "budgetsHint": "Montante a não ultrapassar por mês, por categoria. Deixe vazio para não acompanhar uma categoria.",
+  "startTitle": "Começar bem",
+  "startProgress": "{done} de {total} passos feitos",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "Complete a ficha do restaurante (morada, telefone, logótipo)",
+  "startDishes": "Adicione os seus pratos e bebidas",
+  "startTables": "Crie as suas mesas",
+  "startPayments": "Verifique os meios de pagamento",
+  "startTeam": "Convide a sua equipa",
+  "startPublish": "Publique o restaurante para os clientes",
+  "hideAction": "Ocultar"
 }

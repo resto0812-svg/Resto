@@ -28,6 +28,7 @@ import '../service/service_screen.dart';
 import '../settings/settings_screen.dart';
 import '../stock/stock_screen.dart';
 import '../team/team_screen.dart';
+import 'getting_started.dart';
 
 class _Section {
   const _Section(this.id, this.group, this.icon, this.label, this.build);
@@ -616,6 +617,7 @@ class _Launcher extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
+        GettingStartedCard(membership: membership, onOpenId: onOpenId),
         _ModuleGrid(sections: sections, onOpen: onOpen),
       ],
     );

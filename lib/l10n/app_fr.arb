@@ -3416,5 +3416,24 @@
   "recurringExample": "Ex. : Loyer du local",
   "expenseCategoryField": "Catégorie",
   "dayOfMonthLabel": "Jour du mois",
-  "budgetsHint": "Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie."
+  "budgetsHint": "Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie.",
+  "startTitle": "Bien démarrer",
+  "startProgress": "{done} étapes sur {total} terminées",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "Compléter la fiche du restaurant (adresse, téléphone, logo)",
+  "startDishes": "Ajouter vos plats et boissons",
+  "startTables": "Créer vos tables",
+  "startPayments": "Vérifier vos modes de paiement",
+  "startTeam": "Inviter votre équipe",
+  "startPublish": "Publier votre restaurant pour les clients",
+  "hideAction": "Masquer"
 }

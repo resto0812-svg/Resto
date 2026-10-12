@@ -6381,6 +6381,35 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get budgetsHint => '每个类别每月不超过的金额。留空则不跟踪该类别。';
+
+  @override
+  String get startTitle => '快速上手';
+
+  @override
+  String startProgress(int done, int total) {
+    return '已完成 $done/$total 步';
+  }
+
+  @override
+  String get startProfile => '完善餐厅资料（地址、电话、标志）';
+
+  @override
+  String get startDishes => '添加菜品和饮品';
+
+  @override
+  String get startTables => '创建餐桌';
+
+  @override
+  String get startPayments => '检查支付方式';
+
+  @override
+  String get startTeam => '邀请您的团队';
+
+  @override
+  String get startPublish => '向顾客发布您的餐厅';
+
+  @override
+  String get hideAction => '隐藏';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -12760,4 +12789,33 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get budgetsHint => '每個類別每月不超過的金額。留空則不追蹤該類別。';
+
+  @override
+  String get startTitle => '快速上手';
+
+  @override
+  String startProgress(int done, int total) {
+    return '已完成 $done/$total 步';
+  }
+
+  @override
+  String get startProfile => '完善餐廳資料（地址、電話、標誌）';
+
+  @override
+  String get startDishes => '新增餐點和飲品';
+
+  @override
+  String get startTables => '建立餐桌';
+
+  @override
+  String get startPayments => '檢查付款方式';
+
+  @override
+  String get startTeam => '邀請您的團隊';
+
+  @override
+  String get startPublish => '向顧客發布您的餐廳';
+
+  @override
+  String get hideAction => '隱藏';
 }

@@ -2360,5 +2360,24 @@
   "recurringExample": "例如：店面租金",
   "expenseCategoryField": "类别",
   "dayOfMonthLabel": "每月日期",
-  "budgetsHint": "每个类别每月不超过的金额。留空则不跟踪该类别。"
+  "budgetsHint": "每个类别每月不超过的金额。留空则不跟踪该类别。",
+  "startTitle": "快速上手",
+  "startProgress": "已完成 {done}/{total} 步",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "完善餐厅资料（地址、电话、标志）",
+  "startDishes": "添加菜品和饮品",
+  "startTables": "创建餐桌",
+  "startPayments": "检查支付方式",
+  "startTeam": "邀请您的团队",
+  "startPublish": "向顾客发布您的餐厅",
+  "hideAction": "隐藏"
 }

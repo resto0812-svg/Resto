@@ -13,12 +13,12 @@ abstract final class RestoColors {
   static const shadowDark = Color(0xFFE2D6C2); // ombre douce
   static const shadowLight = Color(0xFFFFFFFF);
   static const primary = Color(0xFFC69C3A); // or : actions, sélection (remplissages)
-  static const primaryDeep = Color(0xFF9A741F); // or foncé : textes et icônes sur fond clair
+  static const primaryDeep = Color(0xFF7E5F17); // or foncé : textes et icônes sur fond clair (contraste 5,4:1 sur ivoire)
   static const primaryBright = Color(0xFFE2C26F);
   static const primarySoft = Color(0xFFF6ECD4);
   static const onPrimary = Color(0xFFFFFFFF); // texte sur l'or
   static const ink = Color(0xFF231A12); // textes (brun très foncé)
-  static const muted = Color(0xFF85765F); // textes secondaires
+  static const muted = Color(0xFF6E6250); // textes secondaires (contraste 5,4:1 sur ivoire)
   static const line = Color(0xFFECE2D1); // filets
 
   /// Dégradé or (boutons principaux, bandeaux, sélection).

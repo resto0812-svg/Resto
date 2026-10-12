@@ -2360,5 +2360,24 @@
   "recurringExample": "Ej.: Alquiler del local",
   "expenseCategoryField": "Categoría",
   "dayOfMonthLabel": "Día del mes",
-  "budgetsHint": "Importe que no debe superarse cada mes, por categoría. Déjelo vacío para no seguir una categoría."
+  "budgetsHint": "Importe que no debe superarse cada mes, por categoría. Déjelo vacío para no seguir una categoría.",
+  "startTitle": "Empezar bien",
+  "startProgress": "{done} de {total} pasos hechos",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "Complete la ficha del restaurante (dirección, teléfono, logo)",
+  "startDishes": "Añada sus platos y bebidas",
+  "startTables": "Cree sus mesas",
+  "startPayments": "Revise sus medios de pago",
+  "startTeam": "Invite a su equipo",
+  "startPublish": "Publique su restaurante para los clientes",
+  "hideAction": "Ocultar"
 }

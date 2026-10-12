@@ -11382,6 +11382,60 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie.'**
   String get budgetsHint;
+
+  /// No description provided for @startTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bien démarrer'**
+  String get startTitle;
+
+  /// No description provided for @startProgress.
+  ///
+  /// In fr, this message translates to:
+  /// **'{done} étapes sur {total} terminées'**
+  String startProgress(int done, int total);
+
+  /// No description provided for @startProfile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Compléter la fiche du restaurant (adresse, téléphone, logo)'**
+  String get startProfile;
+
+  /// No description provided for @startDishes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter vos plats et boissons'**
+  String get startDishes;
+
+  /// No description provided for @startTables.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer vos tables'**
+  String get startTables;
+
+  /// No description provided for @startPayments.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérifier vos modes de paiement'**
+  String get startPayments;
+
+  /// No description provided for @startTeam.
+  ///
+  /// In fr, this message translates to:
+  /// **'Inviter votre équipe'**
+  String get startTeam;
+
+  /// No description provided for @startPublish.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publier votre restaurant pour les clients'**
+  String get startPublish;
+
+  /// No description provided for @hideAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masquer'**
+  String get hideAction;
 }
 
 class _AppLocalizationsDelegate

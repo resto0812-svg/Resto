@@ -167,6 +167,40 @@ class HeatmapCard extends StatelessWidget {
   }
 }
 
+/// Classement des plats vendus en quatre familles (stars, plowhorses,
+/// puzzles, dogs) d'après leur popularité et leur marge unitaire, et nombre
+/// de plats sans fiche technique (non classés).
+(Map<String, List<(SoldItem, int)>>, int) classifyMenu(List<SoldItem> items, List<RecipeCost> costs) {
+  // Coût unitaire moyen par plat (variantes ayant une fiche technique).
+  final byName = <String, List<int>>{};
+  for (final c in costs.where((c) => c.hasRecipe && c.costMinor != null)) {
+    byName.putIfAbsent(c.itemName, () => []).add(c.costMinor!);
+  }
+  final rows = <(SoldItem, int)>[];
+  var noRecipe = 0;
+  for (final it in items.where((i) => i.quantity > 0)) {
+    final list = byName[it.name];
+    if (list == null) {
+      noRecipe++;
+      continue;
+    }
+    final unitCost = list.reduce((a, b) => a + b) ~/ list.length;
+    rows.add((it, it.total ~/ it.quantity - unitCost));
+  }
+  final groups = <String, List<(SoldItem, int)>>{'stars': [], 'plowhorses': [], 'puzzles': [], 'dogs': []};
+  if (rows.isNotEmpty) {
+    final totalQty = rows.fold<int>(0, (a, r) => a + r.$1.quantity);
+    final popularity = 0.7 * totalQty / rows.length;
+    final avgMargin = rows.fold<int>(0, (a, r) => a + r.$2 * r.$1.quantity) / max(1, totalQty);
+    for (final r in rows) {
+      final pop = r.$1.quantity >= popularity;
+      final profit = r.$2 >= avgMargin;
+      groups[pop ? (profit ? 'stars' : 'plowhorses') : (profit ? 'puzzles' : 'dogs')]!.add(r);
+    }
+  }
+  return (groups, noRecipe);
+}
+
 /// Ingénierie de menu : popularité × marge (méthode des quatre familles).
 /// Popularité : au moins 70 % de la vente moyenne par plat. Rentabilité :
 /// marge unitaire au moins égale à la marge moyenne pondérée.
@@ -179,33 +213,8 @@ class MenuEngineeringCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = context.t;
-    // Coût unitaire moyen par plat (variantes ayant une fiche technique).
-    final byName = <String, List<int>>{};
-    for (final c in costs.where((c) => c.hasRecipe && c.costMinor != null)) {
-      byName.putIfAbsent(c.itemName, () => []).add(c.costMinor!);
-    }
-    final rows = <(SoldItem, int)>[];
-    var noRecipe = 0;
-    for (final it in items.where((i) => i.quantity > 0)) {
-      final list = byName[it.name];
-      if (list == null) {
-        noRecipe++;
-        continue;
-      }
-      final unitCost = list.reduce((a, b) => a + b) ~/ list.length;
-      rows.add((it, it.total ~/ it.quantity - unitCost));
-    }
-    final groups = <String, List<(SoldItem, int)>>{'stars': [], 'plowhorses': [], 'puzzles': [], 'dogs': []};
-    if (rows.isNotEmpty) {
-      final totalQty = rows.fold<int>(0, (a, r) => a + r.$1.quantity);
-      final popularity = 0.7 * totalQty / rows.length;
-      final avgMargin = rows.fold<int>(0, (a, r) => a + r.$2 * r.$1.quantity) / max(1, totalQty);
-      for (final r in rows) {
-        final pop = r.$1.quantity >= popularity;
-        final profit = r.$2 >= avgMargin;
-        groups[pop ? (profit ? 'stars' : 'plowhorses') : (profit ? 'puzzles' : 'dogs')]!.add(r);
-      }
-    }
+    final (groups, noRecipe) = classifyMenu(items, costs);
+    final rows = groups.values.expand((g) => g).toList();
     Widget quadrant(String key, IconData icon, String title, String hint, Color color) {
       final list = groups[key]!..sort((a, b) => b.$1.quantity.compareTo(a.$1.quantity));
       return Container(

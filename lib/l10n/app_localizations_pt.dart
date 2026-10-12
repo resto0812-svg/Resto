@@ -6659,4 +6659,34 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get budgetsHint =>
       'Montante a não ultrapassar por mês, por categoria. Deixe vazio para não acompanhar uma categoria.';
+
+  @override
+  String get startTitle => 'Começar bem';
+
+  @override
+  String startProgress(int done, int total) {
+    return '$done de $total passos feitos';
+  }
+
+  @override
+  String get startProfile =>
+      'Complete a ficha do restaurante (morada, telefone, logótipo)';
+
+  @override
+  String get startDishes => 'Adicione os seus pratos e bebidas';
+
+  @override
+  String get startTables => 'Crie as suas mesas';
+
+  @override
+  String get startPayments => 'Verifique os meios de pagamento';
+
+  @override
+  String get startTeam => 'Convide a sua equipa';
+
+  @override
+  String get startPublish => 'Publique o restaurante para os clientes';
+
+  @override
+  String get hideAction => 'Ocultar';
 }

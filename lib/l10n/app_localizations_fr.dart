@@ -6682,4 +6682,34 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get budgetsHint =>
       'Montant à ne pas dépasser chaque mois, par catégorie. Laissez vide pour ne pas suivre une catégorie.';
+
+  @override
+  String get startTitle => 'Bien démarrer';
+
+  @override
+  String startProgress(int done, int total) {
+    return '$done étapes sur $total terminées';
+  }
+
+  @override
+  String get startProfile =>
+      'Compléter la fiche du restaurant (adresse, téléphone, logo)';
+
+  @override
+  String get startDishes => 'Ajouter vos plats et boissons';
+
+  @override
+  String get startTables => 'Créer vos tables';
+
+  @override
+  String get startPayments => 'Vérifier vos modes de paiement';
+
+  @override
+  String get startTeam => 'Inviter votre équipe';
+
+  @override
+  String get startPublish => 'Publier votre restaurant pour les clients';
+
+  @override
+  String get hideAction => 'Masquer';
 }

@@ -6648,4 +6648,33 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get budgetsHint =>
       'مبلغ لا يُتجاوز كل شهر لكل فئة. اتركه فارغًا لعدم متابعة الفئة.';
+
+  @override
+  String get startTitle => 'بداية جيدة';
+
+  @override
+  String startProgress(int done, int total) {
+    return '$done من $total خطوات مكتملة';
+  }
+
+  @override
+  String get startProfile => 'أكمل بطاقة المطعم (العنوان، الهاتف، الشعار)';
+
+  @override
+  String get startDishes => 'أضف أطباقك ومشروباتك';
+
+  @override
+  String get startTables => 'أنشئ طاولاتك';
+
+  @override
+  String get startPayments => 'تحقق من وسائل الدفع';
+
+  @override
+  String get startTeam => 'ادعُ فريقك';
+
+  @override
+  String get startPublish => 'انشر مطعمك للزبائن';
+
+  @override
+  String get hideAction => 'إخفاء';
 }

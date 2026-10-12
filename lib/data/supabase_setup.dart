@@ -130,3 +130,17 @@ Future<String> readViewerKey() async {
   } catch (_) {}
   return key;
 }
+/// Guide « Bien démarrer » masqué pour cette organisation (sur cet appareil).
+Future<bool> readStartGuideHidden(String orgId) async {
+  try {
+    return await _storage.read(key: 'resto.start.$orgId') == 'hidden';
+  } catch (_) {
+    return false;
+  }
+}
+
+Future<void> hideStartGuide(String orgId) async {
+  try {
+    await _storage.write(key: 'resto.start.$orgId', value: 'hidden');
+  } catch (_) {}
+}

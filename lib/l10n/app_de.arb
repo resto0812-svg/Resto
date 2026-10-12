@@ -2360,5 +2360,24 @@
   "recurringExample": "z. B. Miete der Räume",
   "expenseCategoryField": "Kategorie",
   "dayOfMonthLabel": "Tag des Monats",
-  "budgetsHint": "Monatlicher Höchstbetrag je Kategorie. Leer lassen, um eine Kategorie nicht zu verfolgen."
+  "budgetsHint": "Monatlicher Höchstbetrag je Kategorie. Leer lassen, um eine Kategorie nicht zu verfolgen.",
+  "startTitle": "Gut starten",
+  "startProgress": "{done} von {total} Schritten erledigt",
+  "@startProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "startProfile": "Restaurantdaten vervollständigen (Adresse, Telefon, Logo)",
+  "startDishes": "Gerichte und Getränke hinzufügen",
+  "startTables": "Tische anlegen",
+  "startPayments": "Zahlungsarten prüfen",
+  "startTeam": "Team einladen",
+  "startPublish": "Restaurant für Gäste veröffentlichen",
+  "hideAction": "Ausblenden"
 }
