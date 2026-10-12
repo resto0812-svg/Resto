@@ -1,7 +1,8 @@
 # Publication de Resto Web : copie build\web dans le dépôt de publication
 # (C:\dev\resto-web\public), puis enregistrement et envoi vers GitHub ;
 # Cloudflare met le site à jour automatiquement.
-# Préalable : flutter build web --release --no-web-resources-cdn --dart-define-from-file=env/dev.json
+# Préalable (version de démonstration, sans bandeau) :
+#   flutter build web --release --no-web-resources-cdn --dart-define-from-file=env/demo.json
 param([string]$Message = "Mise à jour de Resto Web")
 $ErrorActionPreference = 'Stop'
 $src = 'C:\dev\resto\build\web'

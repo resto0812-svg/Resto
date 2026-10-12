@@ -20,6 +20,10 @@ class Env {
   }
   static bool get isProduction => appEnv == 'production';
 
+  /// Bandeau « Environnement : … » : seulement sur les versions de développement
+  /// (les versions de démonstration partagées n'en ont pas).
+  static bool get showEnvBanner => appEnv == 'development' || appEnv == 'staging';
+
   /// Firebase Cloud Messaging (notifications push) : identifiants publics du
   /// projet Firebase (Paramètres du projet › Vos applications). Vides : les
   /// notifications restent visibles dans l'application, sans push.

@@ -123,7 +123,7 @@ class _EnvironmentBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Env.isProduction) return child;
+    if (!Env.showEnvBanner) return child;
     return Column(children: [
       Material(
         color: RestoColors.primary,
