@@ -1153,7 +1153,6 @@
   "adCtaHint": "例如：立即訂購",
   "adCtaDefault": "立即訂購",
   "adLink": "按鈕連結（選填）",
-  "adPushNote": "通知會傳送給同意接收您優惠訊息的應用程式顧客。",
   "adDailyBudget": "每日預算",
   "adBudgetNote": "預計預算：推廣投放費用將由平台結算。",
   "adStart": "開始",
@@ -2379,5 +2378,14 @@
   "startPayments": "檢查付款方式",
   "startTeam": "邀請您的團隊",
   "startPublish": "向顧客發布您的餐廳",
-  "hideAction": "隱藏"
+  "hideAction": "隱藏",
+  "adPushNote": "通知會傳送給關注本餐廳、過去一年在此下單、喜歡其餐點或廣告，或住在 30 公里以內的顧客。排程優惠將在開始日期傳送。",
+  "adPushAudience": "{count, plural, =0{暫無可通知的顧客} other{{count} 位顧客將收到此優惠}}",
+  "@adPushAudience": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

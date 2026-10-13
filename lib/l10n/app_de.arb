@@ -1153,7 +1153,6 @@
   "adCtaHint": "Z. B. Jetzt bestellen",
   "adCtaDefault": "Jetzt bestellen",
   "adLink": "Link der Schaltfläche (optional)",
-  "adPushNote": "Die Benachrichtigung geht an App-Kunden, die Ihren Angeboten zugestimmt haben.",
   "adDailyBudget": "Tagesbudget",
   "adBudgetNote": "Geplantes Budget: Die gesponserte Ausspielung wird von der Plattform abgerechnet.",
   "adStart": "Beginn",
@@ -2379,5 +2378,14 @@
   "startPayments": "Zahlungsarten prüfen",
   "startTeam": "Team einladen",
   "startPublish": "Restaurant für Gäste veröffentlichen",
-  "hideAction": "Ausblenden"
+  "hideAction": "Ausblenden",
+  "adPushNote": "Die Benachrichtigung geht an Kunden, die dem Restaurant folgen, im letzten Jahr dort bestellt haben, seine Gerichte oder Anzeigen mögen oder im Umkreis von 30 km wohnen. Ein geplantes Angebot wird am Startdatum gesendet.",
+  "adPushAudience": "{count, plural, =0{Noch keine Kunden zu benachrichtigen} =1{1 Kunde erhält dieses Angebot} other{{count} Kunden erhalten dieses Angebot}}",
+  "@adPushAudience": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

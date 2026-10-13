@@ -7027,12 +7027,6 @@ abstract class AppLocalizations {
   /// **'Lien du bouton (facultatif)'**
   String get adLink;
 
-  /// No description provided for @adPushNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'La notification sera envoyée aux clients de l\'application qui ont accepté de recevoir vos offres.'**
-  String get adPushNote;
-
   /// No description provided for @adDailyBudget.
   ///
   /// In fr, this message translates to:
@@ -11436,6 +11430,18 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Masquer'**
   String get hideAction;
+
+  /// No description provided for @adPushNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'La notification part aux clients qui suivent le restaurant, y ont commandé dans l\'année, aiment ses plats ou ses publicités, ou habitent à moins de 30 km. Une offre programmée part à sa date de début.'**
+  String get adPushNote;
+
+  /// No description provided for @adPushAudience.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count, plural, =0{Aucun client à prévenir pour l\'instant} =1{1 client recevra cette offre} other{{count} clients recevront cette offre}}'**
+  String adPushAudience(int count);
 }
 
 class _AppLocalizationsDelegate

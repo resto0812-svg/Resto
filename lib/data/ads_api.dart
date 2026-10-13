@@ -225,6 +225,17 @@ class AdsApi {
     return AdCampaign.fromJson(row);
   }
 
+  /// Nombre de clients qui recevraient une offre « Notification » ; null si
+  /// l'information n'est pas disponible (indicatif seulement).
+  Future<int?> audienceCount(String brandId, List<String> branchIds) async {
+    try {
+      final r = await _db.rpc('promotion_audience_count', params: {'p_brand': brandId, 'p_branch_ids': branchIds});
+      return (r as num).toInt();
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<void> setStatus(String id, String status) => _db.from('ad_campaigns').update({'status': status}).eq('id', id);
 
   Future<void> delete(String id) => _db.from('ad_campaigns').delete().eq('id', id);

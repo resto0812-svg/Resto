@@ -4046,10 +4046,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get adLink => 'Enlace del botón (opcional)';
 
   @override
-  String get adPushNote =>
-      'La notificación se enviará a los clientes de la aplicación que aceptaron recibir sus ofertas.';
-
-  @override
   String get adDailyBudget => 'Presupuesto diario';
 
   @override
@@ -6691,4 +6687,20 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get hideAction => 'Ocultar';
+
+  @override
+  String get adPushNote =>
+      'La notificación llega a los clientes que siguen el restaurante, pidieron allí en el último año, les gustan sus platos o anuncios, o viven a menos de 30 km. Una oferta programada se envía en su fecha de inicio.';
+
+  @override
+  String adPushAudience(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count clientes recibirán esta oferta',
+      one: '1 cliente recibirá esta oferta',
+      zero: 'Aún no hay clientes a quienes avisar',
+    );
+    return '$_temp0';
+  }
 }

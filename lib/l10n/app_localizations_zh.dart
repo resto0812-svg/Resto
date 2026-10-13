@@ -3875,9 +3875,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get adLink => '按钮链接（可选）';
 
   @override
-  String get adPushNote => '通知将发送给同意接收您优惠信息的应用顾客。';
-
-  @override
   String get adDailyBudget => '每日预算';
 
   @override
@@ -6410,6 +6407,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get hideAction => '隐藏';
+
+  @override
+  String get adPushNote =>
+      '通知将发送给关注本餐厅、过去一年在此下单、喜欢其菜品或广告，或住在 30 公里以内的顾客。定时优惠将在开始日期发送。';
+
+  @override
+  String adPushAudience(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 位顾客将收到此优惠',
+      zero: '暂无可通知的顾客',
+    );
+    return '$_temp0';
+  }
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -10283,9 +10295,6 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get adLink => '按鈕連結（選填）';
 
   @override
-  String get adPushNote => '通知會傳送給同意接收您優惠訊息的應用程式顧客。';
-
-  @override
   String get adDailyBudget => '每日預算';
 
   @override
@@ -12818,4 +12827,19 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get hideAction => '隱藏';
+
+  @override
+  String get adPushNote =>
+      '通知會傳送給關注本餐廳、過去一年在此下單、喜歡其餐點或廣告，或住在 30 公里以內的顧客。排程優惠將在開始日期傳送。';
+
+  @override
+  String adPushAudience(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 位顧客將收到此優惠',
+      zero: '暫無可通知的顧客',
+    );
+    return '$_temp0';
+  }
 }

@@ -4057,10 +4057,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get adLink => 'Lien du bouton (facultatif)';
 
   @override
-  String get adPushNote =>
-      'La notification sera envoyée aux clients de l\'application qui ont accepté de recevoir vos offres.';
-
-  @override
   String get adDailyBudget => 'Budget journalier';
 
   @override
@@ -6712,4 +6708,20 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hideAction => 'Masquer';
+
+  @override
+  String get adPushNote =>
+      'La notification part aux clients qui suivent le restaurant, y ont commandé dans l\'année, aiment ses plats ou ses publicités, ou habitent à moins de 30 km. Une offre programmée part à sa date de début.';
+
+  @override
+  String adPushAudience(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count clients recevront cette offre',
+      one: '1 client recevra cette offre',
+      zero: 'Aucun client à prévenir pour l\'instant',
+    );
+    return '$_temp0';
+  }
 }

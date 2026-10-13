@@ -1153,7 +1153,6 @@
   "adCtaHint": "E.g. Order now",
   "adCtaDefault": "Order now",
   "adLink": "Button link (optional)",
-  "adPushNote": "The notification will be sent to app customers who agreed to receive your offers.",
   "adDailyBudget": "Daily budget",
   "adBudgetNote": "Planned budget: sponsored delivery will be billed by the platform.",
   "adStart": "Start",
@@ -2379,5 +2378,14 @@
   "startPayments": "Check your payment methods",
   "startTeam": "Invite your team",
   "startPublish": "Publish your restaurant for customers",
-  "hideAction": "Hide"
+  "hideAction": "Hide",
+  "adPushNote": "The notification goes to customers who follow the restaurant, ordered there in the past year, like its dishes or ads, or live within 30 km. A scheduled offer is sent on its start date.",
+  "adPushAudience": "{count, plural, =0{No customers to notify yet} =1{1 customer will receive this offer} other{{count} customers will receive this offer}}",
+  "@adPushAudience": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

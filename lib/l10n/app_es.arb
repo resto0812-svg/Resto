@@ -1153,7 +1153,6 @@
   "adCtaHint": "Ej.: Pedir ahora",
   "adCtaDefault": "Pedir ahora",
   "adLink": "Enlace del botón (opcional)",
-  "adPushNote": "La notificación se enviará a los clientes de la aplicación que aceptaron recibir sus ofertas.",
   "adDailyBudget": "Presupuesto diario",
   "adBudgetNote": "Presupuesto previsto: la difusión patrocinada la facturará la plataforma.",
   "adStart": "Inicio",
@@ -2379,5 +2378,14 @@
   "startPayments": "Revise sus medios de pago",
   "startTeam": "Invite a su equipo",
   "startPublish": "Publique su restaurante para los clientes",
-  "hideAction": "Ocultar"
+  "hideAction": "Ocultar",
+  "adPushNote": "La notificación llega a los clientes que siguen el restaurante, pidieron allí en el último año, les gustan sus platos o anuncios, o viven a menos de 30 km. Una oferta programada se envía en su fecha de inicio.",
+  "adPushAudience": "{count, plural, =0{Aún no hay clientes a quienes avisar} =1{1 cliente recibirá esta oferta} other{{count} clientes recibirán esta oferta}}",
+  "@adPushAudience": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

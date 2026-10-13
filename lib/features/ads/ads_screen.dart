@@ -206,6 +206,53 @@ String _momentLabel(BuildContext context, String m) {
 // ---------------------------------------------------------------------------
 // Créer / modifier une publicité
 
+/// Nombre de clients qui recevront l'offre « Notification » (recalculé quand
+/// les établissements visés changent).
+class _PushAudience extends StatefulWidget {
+  const _PushAudience({required this.brandId, required this.branchIds});
+  final String brandId;
+  final List<String> branchIds;
+
+  @override
+  State<_PushAudience> createState() => _PushAudienceState();
+}
+
+class _PushAudienceState extends State<_PushAudience> {
+  late Future<int?> _count = _load();
+
+  Future<int?> _load() => AppScope.read(context).api!.ads.audienceCount(widget.brandId, widget.branchIds);
+
+  @override
+  void didUpdateWidget(_PushAudience old) {
+    super.didUpdateWidget(old);
+    if (old.brandId != widget.brandId || old.branchIds.join(',') != widget.branchIds.join(',')) _count = _load();
+  }
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<int?>(
+    future: _count,
+    builder: (context, snap) {
+      final n = snap.data;
+      if (n == null) return const SizedBox.shrink();
+      return Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: Row(
+          children: [
+            const Icon(Icons.groups_rounded, size: 18, color: RestoColors.primaryDeep),
+            const SizedBox(width: 6),
+            Expanded(
+              child: Text(
+                context.t.adPushAudience(n),
+                style: const TextStyle(color: RestoColors.primaryDeep, fontWeight: FontWeight.w600, fontSize: 13),
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 class _CreateTab extends StatefulWidget {
   const _CreateTab({super.key, required this.scope, required this.data, required this.initial, required this.onSaved});
   final BranchContext scope;
@@ -597,6 +644,7 @@ class _CreateTabState extends State<_CreateTab> {
                   padding: const EdgeInsets.only(top: 6),
                   child: Text(t.adPushNote, style: const TextStyle(color: RestoColors.muted, fontSize: 12.5)),
                 ),
+              if (c.format == 'push') _PushAudience(brandId: c.brandId, branchIds: c.branchIds),
             ],
           ),
         ),

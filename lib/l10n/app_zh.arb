@@ -1153,7 +1153,6 @@
   "adCtaHint": "例如：立即下单",
   "adCtaDefault": "立即下单",
   "adLink": "按钮链接（可选）",
-  "adPushNote": "通知将发送给同意接收您优惠信息的应用顾客。",
   "adDailyBudget": "每日预算",
   "adBudgetNote": "预计预算：推广投放费用将由平台结算。",
   "adStart": "开始",
@@ -2379,5 +2378,14 @@
   "startPayments": "检查支付方式",
   "startTeam": "邀请您的团队",
   "startPublish": "向顾客发布您的餐厅",
-  "hideAction": "隐藏"
+  "hideAction": "隐藏",
+  "adPushNote": "通知将发送给关注本餐厅、过去一年在此下单、喜欢其菜品或广告，或住在 30 公里以内的顾客。定时优惠将在开始日期发送。",
+  "adPushAudience": "{count, plural, =0{暂无可通知的顾客} other{{count} 位顾客将收到此优惠}}",
+  "@adPushAudience": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

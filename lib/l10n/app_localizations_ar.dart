@@ -4067,10 +4067,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get adLink => 'رابط الزر (اختياري)';
 
   @override
-  String get adPushNote =>
-      'سيُرسل الإشعار إلى زبائن التطبيق الذين وافقوا على تلقي عروضك.';
-
-  @override
   String get adDailyBudget => 'الميزانية اليومية';
 
   @override
@@ -6677,4 +6673,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hideAction => 'إخفاء';
+
+  @override
+  String get adPushNote =>
+      'يصل الإشعار إلى الزبائن الذين يتابعون المطعم أو طلبوا منه خلال السنة أو أعجبتهم أطباقه أو إعلاناته أو يسكنون على بعد أقل من 30 كم. يُرسل العرض المجدول في تاريخ بدايته.';
+
+  @override
+  String adPushAudience(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'سيتلقى $count زبونًا هذا العرض',
+      one: 'سيتلقى زبون واحد هذا العرض',
+      zero: 'لا يوجد زبائن لإشعارهم حاليًا',
+    );
+    return '$_temp0';
+  }
 }
