@@ -94,7 +94,8 @@ class _CustomerHomeState extends State<CustomerHome> {
   Future<_HomeData> _load() async {
     final api = AppScope.read(context).api!.customer;
     final cities = await api.cities();
-    customerCity.value ??= cities.firstOrNull?.$1;
+    // Par défaut, le client voit les restaurants de toutes les villes ; il peut
+    // ensuite en choisir une.
     final city = customerCity.value;
     // Position enregistrée dans le profil (client connecté), si elle n'est pas déjà connue.
     if (customerPosition.value == null && api.user != null) {
@@ -206,12 +207,19 @@ class _CustomerHomeState extends State<CustomerHome> {
               padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
               child: Text(t.chooseCity, style: serifTitle(context, size: 24)),
             ),
+            ListTile(
+              leading: const Icon(Icons.public_rounded, color: RestoColors.primaryDeep),
+              title: Text(t.allCities),
+              trailing: Text('${cities.fold<int>(0, (s, c) => s + c.$2)}', style: const TextStyle(color: RestoColors.muted)),
+              selected: customerCity.value == null,
+              onTap: () => Navigator.pop(c, ''),
+            ),
             for (final (name, count) in cities)
               ListTile(
                 leading: const Icon(Icons.location_on_outlined, color: RestoColors.primaryDeep),
                 title: Text(name),
                 trailing: Text('$count', style: const TextStyle(color: RestoColors.muted)),
-                selected: name == customerCity.value,
+                selected: name.toLowerCase() == customerCity.value?.toLowerCase(),
                 onTap: () => Navigator.pop(c, name),
               ),
           ],
@@ -219,7 +227,8 @@ class _CustomerHomeState extends State<CustomerHome> {
       ),
     );
     if (city != null) {
-      customerCity.value = city;
+      // Chaîne vide : « Toutes les villes ».
+      customerCity.value = city.isEmpty ? null : city;
       _reload();
     }
   }
