@@ -25,18 +25,20 @@ update public.branches set city = btrim(city) where city <> btrim(city);
 -- majuscules (« Douala » plutôt que « DOUALA »).
 create or replace function public.public_cities()
 returns jsonb language sql stable security definer set search_path = '' as $$
+  with spellings as (
+    select lower(b.city) as k, b.city, count(*) as n
+      from public.branches b
+      join public.organizations o on o.id = b.organization_id and o.status = 'active'
+     where b.is_published and b.status = 'active'
+     group by lower(b.city), b.city
+  ), cities as (
+    select (array_agg(s.city order by s.n desc, (s.city = upper(s.city)), s.city))[1] as city,
+           sum(s.n)::integer as n
+      from spellings s
+     group by s.k
+  )
   select coalesce(jsonb_agg(jsonb_build_object('city', c.city, 'count', c.n) order by c.n desc, c.city), '[]'::jsonb)
-    from (select (select s.city from public.branches s
-                   join public.organizations so on so.id = s.organization_id and so.status = 'active'
-                  where lower(s.city) = lower(b.city) and s.is_published and s.status = 'active'
-                  group by s.city
-                  order by count(*) desc, (s.city = upper(s.city)), s.city
-                  limit 1) as city,
-                 count(*) as n
-            from public.branches b
-            join public.organizations o on o.id = b.organization_id and o.status = 'active'
-           where b.is_published and b.status = 'active'
-           group by lower(b.city)) c;
+    from cities c;
 $$;
 
 revoke all on function public.public_cities() from public;
